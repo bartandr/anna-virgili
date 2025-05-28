@@ -169,13 +169,13 @@
       "discount_label": "Risparmi {{ amount }} con {{ title }}",
       "subtotal": "Subtotale",
       "subtotal_items": "Articoli",
-      "shipping_at_checkout": "Spedizione e tasse calcolate al pagamento",
+      "shipping_at_checkout": "Calcolata al prossimo step",
       "customer_note": "Istruzioni speciali per il venditore",
       "cart_notes_label": "Aggiungi note dell'ordine",
       "gift_notes_label": "Che cos'è un regalo?",
       "gift_note_attribute": "Nota regalo",
       "update": "Aggiorna carrello",
-      "checkout": "Pagamento",
+      "checkout": "Check-out",
       "empty": "Il tuo carrello è attualmente vuoto.",
       "accept_terms": "Devi accettare i nostri termini e condizioni.",
       "accepted_terms": "Termini/condizioni accettati?",
@@ -467,7 +467,7 @@
       "close_menu": "Chiudi menu"
     },
     "cart": {
-      "title": "Carrello",
+      "title": "Il tuo carrello",
       "items_count": {
         "one": "articolo",
         "other": "articoli"

@@ -446,7 +446,7 @@
                     </nav>
                 {%- endcase -%}
 
-                <h1
+                {% comment %} <h1
                   class="product__title"
                   {% if title_style != blank %}
                     {{- title_style -}}
@@ -457,7 +457,7 @@
                   {%- else -%}
                     <a href="{{ product_url }}" title="{{ product_title }}">{{ product_title }}</a>
                   {%- endif -%}
-                </h1>
+                </h1> {% endcomment %}
               </div>{%- liquid
   assign currency_code_enable = settings.currency_code_enable
 

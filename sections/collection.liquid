@@ -826,6 +826,9 @@
             assign promo_width_class = 'collection-promo--one-column'
             assign promo_height = settings.image_aspect_ratio | times: 100
             assign current_promo_width = 1
+          when 'two-rows'
+            assign promo_width_class = 'collection-promo--two-columns-two-rows'
+            assign current_promo_width = 2
         endcase
       -%}
 {%- liquid
@@ -1342,7 +1345,7 @@
     assign promo_width = promo | split: '#promo_width#' | last | split: '#promo_width_class#' | first | times: 1
     assign promo_width_class = promo | split: '#promo_width_class#' | last
     assign promo_index_tag = '@' | append: promo_index | append: '@'
-    assign block_class = 'collection-promo' | append: ' ' | append: promo_width_class
+    assign block_class = 'collection-promo' | append: ' ' | append: promo_width_class | append: ' ' | append: 'hidden-md '
     assign block_tablet_class = ''
     assign promo_tablet_class = 'collection-promo--'
     assign tablet_class = 'tablet-grid'
@@ -1719,7 +1722,8 @@
           "options": [
             {"value": "full", "label": "Full width"},
             {"value": "half", "label": "2 grid items"},
-            {"value": "auto", "label": "Grid item"}
+            {"value": "auto", "label": "Grid item"},
+            {"value": "two-rows", "label": "Two Rows 2 grid items"}
           ]
         },
         {

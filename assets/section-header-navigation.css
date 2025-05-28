@@ -9,7 +9,7 @@
   list-style: none;
   display: flex;
   align-items: stretch;
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   left: 0;
   right: 0;
@@ -55,6 +55,7 @@
 
 .site-header--compress .nav {
   justify-content: flex-end;
+  width: fit-content;
 }
 .site-header--compress .nav .menu__item {
   display: none;
@@ -381,7 +382,8 @@
   right: var(--gutter);
   height: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  padding-top: 15px;
   justify-content: flex-end;
   margin-right: -10px;
 }

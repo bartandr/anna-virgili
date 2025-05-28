@@ -473,14 +473,11 @@
               class="cart__buttons{% if settings.enable_accept_terms %} cart__buttons--disabled{% endif %}"
               data-cart-checkout-buttons
             >
-              <fieldset class="cart__buttons__fieldset" data-cart-checkout-button>
-                <button
-                  type="submit"
-                  name="checkout"
-                  class="cart__checkout btn {{ cart_button_style }} {{ cart_button_color }} {{ cart_button_size }} btn--advanced btn--advanced-width-height btn--advanced-adaptive-width{% if has_dynamic_checkout_buttons %} cart__checkout--dynamic{% endif %}"
-                >
-                  <hover-button></hover-button>
-                  {{- 'cart.general.checkout' | t -}}
+              <div class="cart__subtotal__wrapper">
+                <div class="cart__subtotal__inner">
+                  <span>
+                    {{ 'cart.general.subtotal' | t }}
+                  </span>
                   <span class="cart__total__money" data-cart-total-price>
                     {%- liquid
                       if subtotal == 0
@@ -490,6 +487,34 @@
                       endif
                     -%}
                   </span>
+                </div>
+                <div class="cart__shipping__inner">
+                  <span>
+                    {{ 'customer.order.shipping' | t }}
+                  </span>
+                  <span>
+                    {{ 'cart.general.shipping_at_checkout' | t }}
+                  </span>
+                  {% comment %} <p class="cart__text">{{ 'cart.general.shipping_at_checkout' | t }}</p> {% endcomment %}
+                </div>
+              </div>
+              <fieldset class="cart__buttons__fieldset" data-cart-checkout-button>
+                <button
+                  type="submit"
+                  name="checkout"
+                  class="cart__checkout btn {{ cart_button_style }} {{ cart_button_color }} {{ cart_button_size }} btn--advanced btn--advanced-width-height btn--advanced-adaptive-width{% if has_dynamic_checkout_buttons %} cart__checkout--dynamic{% endif %}"
+                >
+                  <hover-button></hover-button>
+                  {{- 'cart.general.checkout' | t -}}
+                  {% comment %} <span class="cart__total__money" data-cart-total-price>
+                    {%- liquid
+                      if subtotal == 0
+                        echo 'products.product.free' | t
+                      else
+                        echo subtotal | money_with_currency
+                      endif
+                    -%}
+                  </span> {% endcomment %}
                 </button>
 
                 {%- if has_dynamic_checkout_buttons -%}
@@ -503,8 +528,6 @@
               </fieldset>
             </div>
           </div>
-
-          <p class="cart__text">{{ 'cart.general.shipping_at_checkout' | t }}</p>
         </div>
       </form>
 

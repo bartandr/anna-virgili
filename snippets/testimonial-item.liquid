@@ -41,6 +41,19 @@
       {% endif %}
     >
       <div class="testimonial__item__content">
+        {%- if customer_name != blank -%}
+          <div
+            class="testimonial__user__name"
+            {% if animations_enabled %}
+              data-aos="fade-up"
+              data-aos-anchor="{{ animation_anchor }}"
+              data-aos-delay="{{ animation_delay }}"
+              {%- assign animation_delay = animation_delay | plus: 150 -%}
+            {% endif %}
+          >
+            {{ customer_name | escape }}
+          </div>
+        {%- endif -%}
         {%- unless star_rating == 0 -%}
           <div
             class="testimonial__stars"
@@ -116,20 +129,6 @@
 
                   render 'image', image: image, width: retina_size, height: retina_size, widths: image_widths, sizes: sizes, cover: false, alt: image_alt, styles: styles, classes: 'testimonial__user__image__img'
                 -%}
-              </div>
-            {%- endif -%}
-
-            {%- if customer_name != blank -%}
-              <div
-                class="testimonial__user__name"
-                {% if animations_enabled %}
-                  data-aos="fade-up"
-                  data-aos-anchor="{{ animation_anchor }}"
-                  data-aos-delay="{{ animation_delay }}"
-                  {%- assign animation_delay = animation_delay | plus: 150 -%}
-                {% endif %}
-              >
-                {{ customer_name | escape }}
               </div>
             {%- endif -%}
 

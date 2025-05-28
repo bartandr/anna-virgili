@@ -55,6 +55,13 @@
   if header_transparent and section.settings.header_gradient
     assign header_gradient = true
   endif
+
+
+  assign show_locale_selector = section.settings.show_locale_selector
+  assign show_locale_code = section.settings.show_locale_code
+  assign show_country_selector = section.settings.show_country_selector
+  assign show_country_name = section.settings.show_country_name
+  assign show_country_flag = section.settings.show_country_flag
 -%}
 
 {{ 'section-header-navigation.css' | asset_url | stylesheet_tag }}
@@ -215,7 +222,15 @@
     </a>
   {%- endif -%}
 {%- endcapture -%}
-
+{%- if show_country_selector or show_locale_selector -%}
+  {%- render 'cross-border',
+    show_locale_selector: show_locale_selector,
+    show_locale_code: show_locale_code,
+    show_country_selector: show_country_selector,
+    show_country_name: show_country_name,
+    show_country_flag: show_country_flag
+  -%}
+{%- endif -%}
 <h1 class="logo" data-logo data-takes-space>
   {%- if logo_not_home_markup != blank or logo_markup != blank -%}
     {{- logo_not_home_markup -}}
@@ -348,16 +363,6 @@
           -%}
         {%- endfor -%}
       </div>
-    {%- endif -%}
-
-    {%- if show_country_selector or show_locale_selector -%}
-      {%- render 'cross-border',
-        show_locale_selector: show_locale_selector,
-        show_locale_code: show_locale_code,
-        show_country_selector: show_country_selector,
-        show_country_name: show_country_name,
-        show_country_flag: show_country_flag
-      -%}
     {%- endif -%}
 
     {%- if settings.show_header_search -%}

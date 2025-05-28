@@ -1,1 +1,254 @@
-{"sections":{"main":{"type":"product","blocks":{"title":{"type":"title","settings":{"subheading":"vendor","title_size":80,"price_size":100,"bold_price":true,"padding_bottom":0}},"inventory_countdown":{"type":"inventory_countdown","settings":{"max_inventory":10,"hide_inventory_count":true,"padding_bottom":20}},"form":{"type":"form","settings":{"show_labels":true,"show_quantity":false,"show_payment_button":false,"enable_subscriptions_selectors":false,"padding_bottom":20}},"description":{"type":"description","settings":{"enable_full_width":false,"padding_bottom":20}},"product_accordion":{"type":"product_accordion","settings":{"show_description":false,"show_read_more":true,"open_by_default":false,"enable_full_width":false,"tabs_bg_color":"","text_color":"text-dark","show_accordion_divider":false,"line_thickness":"normal","accordion_heading":"DESCRIZIONE PRODOTTO","heading_style":"font-body","accordion_text":"<p>DESCRIZIONE PRODOTTO<\/p>","accordion_page":"","padding_bottom":10}},"9927e90d-2ecb-4104-af67-0dadf75b2a0a":{"type":"product_accordion","settings":{"show_description":false,"show_read_more":true,"open_by_default":false,"enable_full_width":false,"tabs_bg_color":"","text_color":"text-dark","show_accordion_divider":false,"line_thickness":"normal","accordion_heading":"SPEDIZIONE","heading_style":"font-body","accordion_text":"<p>SPEDIZIONE<\/p>","accordion_page":"","padding_bottom":10}},"product_accordion_eF7cjf":{"type":"product_accordion","settings":{"show_description":false,"show_read_more":true,"open_by_default":false,"enable_full_width":false,"tabs_bg_color":"","text_color":"text-dark","show_accordion_divider":false,"line_thickness":"normal","accordion_heading":"CONDIVIDI","heading_style":"font-body","accordion_text":"<p>CONDIVIDI<\/p>","accordion_page":"","padding_bottom":10}}},"block_order":["title","inventory_countdown","form","description","product_accordion","9927e90d-2ecb-4104-af67-0dadf75b2a0a","product_accordion_eF7cjf"],"settings":{"product_sticky_enable":true,"image_layout":"carousel","image_width":"standard","product_image_aspect_ratio":true,"enable_zoom":true,"enable_video_looping":false,"bg_color":"","gradient":"","width":"wrapper","padding_top":60,"padding_bottom":60}},"related":{"type":"related-products","blocks":{"related":{"type":"related","settings":{"title":"COMPLETA L’OUTFIT CON","product_recommendations_limit":4}},"recent":{"type":"recent","settings":{"title":"POTREBBE PIACERTI ANCHE","product_recently_limit":4}}},"block_order":["related","recent"],"settings":{"enable_tabs":false,"layout":"carousel","columns_mobile":"1","type_style":"font-heading","tab_heading_size":120,"bg_color":"","width":"wrapper--full-padded","padding_top":60,"padding_bottom":60}}},"order":["main","related"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "product",
+      "blocks": {
+        "text_A7y6PV": {
+          "type": "text",
+          "settings": {
+            "title": "<h3><strong>{{ product.vendor }}</strong></h3>",
+            "text_alignment": "left",
+            "padding_bottom": 0
+          }
+        },
+        "text_9HbVgG": {
+          "type": "text",
+          "settings": {
+            "title": "<p>{{ product.title }}</p>",
+            "text_alignment": "left",
+            "padding_bottom": 20
+          }
+        },
+        "text_C6cDLi": {
+          "type": "text",
+          "settings": {
+            "title": "<p>Descrizione di prodotto (short) Esempio:<br/></p>",
+            "text_alignment": "left",
+            "padding_bottom": 0
+          }
+        },
+        "text_FTy7k3": {
+          "type": "text",
+          "settings": {
+            "title": "<p>Borsa a tracolla vera medium in pelle nera</p>",
+            "text_alignment": "left",
+            "padding_bottom": 20
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "subheading": "none",
+            "title_size": 70,
+            "price_size": 85,
+            "bold_price": true,
+            "padding_bottom": 0
+          }
+        },
+        "form": {
+          "type": "form",
+          "settings": {
+            "show_labels": true,
+            "show_quantity": true,
+            "show_payment_button": true,
+            "enable_subscriptions_selectors": false,
+            "padding_bottom": 20
+          }
+        },
+        "inventory_countdown": {
+          "type": "inventory_countdown",
+          "settings": {
+            "max_inventory": 10,
+            "hide_inventory_count": true,
+            "padding_bottom": 20
+          }
+        },
+        "product_accordion": {
+          "type": "product_accordion",
+          "settings": {
+            "show_description": false,
+            "show_read_more": true,
+            "open_by_default": false,
+            "enable_full_width": false,
+            "tabs_bg_color": "",
+            "text_color": "text-dark",
+            "show_accordion_divider": false,
+            "line_thickness": "normal",
+            "accordion_heading": "DESCRIZIONE PRODOTTO",
+            "heading_style": "font-body",
+            "accordion_text": "<p>DESCRIZIONE PRODOTTO</p>",
+            "accordion_page": "",
+            "padding_bottom": 10
+          }
+        },
+        "9927e90d-2ecb-4104-af67-0dadf75b2a0a": {
+          "type": "product_accordion",
+          "settings": {
+            "show_description": false,
+            "show_read_more": true,
+            "open_by_default": false,
+            "enable_full_width": false,
+            "tabs_bg_color": "",
+            "text_color": "text-dark",
+            "show_accordion_divider": false,
+            "line_thickness": "normal",
+            "accordion_heading": "SPEDIZIONE",
+            "heading_style": "font-body",
+            "accordion_text": "<p>Ordina entro le ore 13:00 per ricevere domani.</p>",
+            "accordion_page": "",
+            "padding_bottom": 10
+          }
+        },
+        "product_accordion_eF7cjf": {
+          "type": "product_accordion",
+          "settings": {
+            "show_description": false,
+            "show_read_more": true,
+            "open_by_default": false,
+            "enable_full_width": false,
+            "tabs_bg_color": "",
+            "text_color": "text-dark",
+            "show_accordion_divider": false,
+            "line_thickness": "normal",
+            "accordion_heading": "CONDIVIDI",
+            "heading_style": "font-body",
+            "accordion_text": "<p>CONDIVIDI</p>",
+            "accordion_page": "",
+            "padding_bottom": 10
+          }
+        }
+      },
+      "block_order": [
+        "text_A7y6PV",
+        "text_9HbVgG",
+        "text_C6cDLi",
+        "text_FTy7k3",
+        "title",
+        "form",
+        "inventory_countdown",
+        "product_accordion",
+        "9927e90d-2ecb-4104-af67-0dadf75b2a0a",
+        "product_accordion_eF7cjf"
+      ],
+      "settings": {
+        "product_sticky_enable": false,
+        "image_layout": "carousel",
+        "image_width": "large",
+        "product_image_aspect_ratio": false,
+        "enable_zoom": true,
+        "enable_video_looping": false,
+        "bg_color": "",
+        "gradient": "",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "section_accordions_bp9xeD": {
+      "type": "section-accordions",
+      "blocks": {
+        "text_KdnygX": {
+          "type": "text",
+          "settings": {
+            "title": "How long does it take to get my products?",
+            "text": "<p>Domestic shipping can take up to 5 business days.<br/><br/>Foreign shipping could take up to 14 business days.<br/><br/>Due to global supply chain challenges, shipping times could be longer than usual.</p>"
+          }
+        },
+        "text_QKxxf9": {
+          "type": "text",
+          "settings": {
+            "title": "Do you offer warranty for your products?",
+            "text": "<p>All our products are subject to quality control.<br/><br/>Our warranty provides a guarantee against manufacturer defects.<br/><br/>The guarantee covers any manufacturing, design, or material defect. Please notify us within 2 months of noticing any defects.<br/><br/>It does not cover blows, improper use, or other issues that are not attributable to a manufacturer defects.</p>"
+          }
+        },
+        "text_QnjmnH": {
+          "type": "text",
+          "settings": {
+            "title": "Do you offer refunds?",
+            "text": "<p>Yes, we offer full and partial refunds.<br/><br/>Please enquire for more information about our Refund policy.</p>"
+          }
+        },
+        "text_3BQqrW": {
+          "type": "text",
+          "settings": {
+            "title": "What shipping methods do you offer?",
+            "text": "<p>We use all major carriers, and local courier partners. Use the shipping estimator in the cart to check your shipping rates.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_KdnygX",
+        "text_QKxxf9",
+        "text_QnjmnH",
+        "text_3BQqrW"
+      ],
+      "name": "Accordions",
+      "settings": {
+        "layout": "one-column",
+        "show_accordion_divider": false,
+        "line_thickness": "normal",
+        "subheading": "",
+        "title": "Frequently Asked Questions",
+        "type_style": "font-heading",
+        "heading_size": 120,
+        "text": "",
+        "tabs_bg_color": "#fafafa",
+        "bg_color": "",
+        "gradient": "",
+        "text_color": "text-dark",
+        "border_color": "",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "related": {
+      "type": "related-products",
+      "blocks": {
+        "related": {
+          "type": "related",
+          "settings": {
+            "title": "COMPLETA L’OUTFIT CON",
+            "product_recommendations_limit": 4
+          }
+        },
+        "recent": {
+          "type": "recent",
+          "settings": {
+            "title": "POTREBBE PIACERTI ANCHE",
+            "product_recently_limit": 4
+          }
+        }
+      },
+      "block_order": [
+        "related",
+        "recent"
+      ],
+      "settings": {
+        "enable_tabs": false,
+        "layout": "carousel",
+        "columns_mobile": "1",
+        "type_style": "font-heading",
+        "tab_heading_size": 120,
+        "bg_color": "",
+        "width": "wrapper--full-padded",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_accordions_bp9xeD",
+    "related"
+  ]
+}

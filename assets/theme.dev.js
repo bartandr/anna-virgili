@@ -19109,14 +19109,17 @@
 
           // iOS smooth scrolling fix
           window.theme.flickitySmoothScrolling(slider);
-
+          
           if (thumbs !== null) {
             this.flktyNav = new window.theme.Flickity(thumbs, {
               asNavFor: slider,
+              vertical: true,
               contain: true,
               pageDots: false,
               prevNextButtons: false,
               resize: true,
+              cellAlign: 'top',
+              adaptiveHeight: false, 
               on: {
                 ready: () => {
                   thumbs.setAttribute(attributes$9.tabIndex, '-1');

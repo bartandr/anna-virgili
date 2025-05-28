@@ -1,1 +1,741 @@
-{"sections":{"section_banner_image_nVR8Up":{"type":"section-banner-image","blocks":{"subheading_ArkHqV":{"type":"subheading","disabled":true,"settings":{"text":"<p>Welcome to<\/p>","size":100}},"heading_HqDAP8":{"type":"heading","disabled":true,"settings":{"text":"<p>Palo Alto<\/p>","size":180,"heading_highlight_type":"underline-hand-drawn","highlight_color":"#000000","highlight_text_color":""}},"text_nHnLhB":{"type":"text","disabled":true,"settings":{"text":"<p>Share information about your brand, describe a product, share announcements, or welcome customers to your store.<\/p>","size":100}},"button_cVEW7Q":{"type":"button","disabled":true,"settings":{"stacked_button":false,"button_1_text":"Shop All","button_1_link":"shopify:\/\/collections\/all","button_1_color":"btn--white","button_1_style":"btn--solid-border","button_1_size":"btn--medium","button_2_text":"","button_2_link":"","button_2_color":"btn--black","button_2_style":"btn--solid","button_2_size":"btn--medium"}}},"block_order":["subheading_ArkHqV","heading_HqDAP8","text_nHnLhB","button_cVEW7Q"],"name":"Banner image","settings":{"height":"six-fifty-height","enable_mobile_height":false,"mobile_height":"four-fifty-height-mobile","image":"shopify:\/\/shop_images\/hp-hero.png","overlay_opacity":10,"transition":"fade","enable_zoom_animation":true,"enable_card_scrolling":false,"increase_border_radius":true,"content_width":80,"text_position":"left","text_alignment":"text-left","text_color":"text-light","width":"wrapper--full","padding_top":0,"padding_bottom":0}},"section-marquee-0":{"type":"section-marquee","blocks":{"image_7VRfdU":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/logo-ck.png","link":"","image_width":150}},"image_gkFGjn":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/logo-guess.png","link":"","image_width":150}},"image_MgXjNC":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/logo-borbonese.png","link":"","image_width":180}},"image_mCbYxw":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/logo-coccinele.png","link":"","image_width":180}},"image_GjDzAK":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/logo-piquadro.png","link":"","image_width":180}},"image_RwytGp":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/logo-the-bridge.png","link":"","image_width":180}}},"block_order":["image_7VRfdU","image_gkFGjn","image_MgXjNC","image_mCbYxw","image_GjDzAK","image_RwytGp"],"settings":{"layout":"marquee","show_top_border":true,"show_bottom_border":true,"padding":20,"marquee_speed":100,"direction":"ticker-ltr","slider_speed":7,"show_arrows":false,"text_caps":false,"type_font":"space_mono_n4","text_size":120,"letter_spacing":0,"message_spacing":35,"bg_color":"#ffffff","gradient":"","color":"#000000","border_color":"#000000","padding_top":0,"padding_bottom":0}},"section-text-0":{"type":"section-text","blocks":{"section-text-0-block-1":{"type":"heading","settings":{"text":"<p><strong>I migliori marchi<\/strong><\/p>","size":120,"heading_highlight_type":"italics","highlight_color":"#000000","highlight_text_color":"rgba(0,0,0,0)"}},"text_3hCNWn":{"type":"text","settings":{"text":"<p>La nostra selezione per te<\/p>","size":100}}},"block_order":["section-text-0-block-1","text_3hCNWn"],"settings":{"text_position":"center","bg_color":"","gradient":"","text_color":"text-dark","width":"wrapper--narrow","padding_top":50,"padding_bottom":0}},"section_multicolumn_VNFb9b":{"type":"section-multicolumn","blocks":{"image_8gNaEi":{"type":"image","settings":{"column_width":33,"image":"shopify:\/\/shop_images\/hp-migliori-marchi-1a-classe.png","image_width":100,"aspect_ratio_desktop":1.3,"aspect_ratio_mobile":1,"title":"Versatilità ed eleganza, rendi unico ogni look","heading_size":120,"text":"<h3><strong>1a Classe<\/strong><\/h3>","text_size":100,"button_text":"ACQUISTA ORA","button_link":"","button_color":"btn--black","button_style":"btn--text","button_size":"btn--medium"}},"image_Qh6tVB":{"type":"image","settings":{"column_width":33,"image":"shopify:\/\/shop_images\/hp-migliori-marchi-samsonite.png","image_width":100,"aspect_ratio_desktop":1.3,"aspect_ratio_mobile":1,"title":"Versatilità ed eleganza, rendi unico ogni look","heading_size":120,"text":"<h3><strong>Samsonite<\/strong><\/h3>","text_size":100,"button_text":"ACQUISTA ORA","button_link":"","button_color":"btn--black","button_style":"btn--text","button_size":"btn--medium"}},"image_GDg9pr":{"type":"image","settings":{"column_width":33,"image":"shopify:\/\/shop_images\/hp-migliori-marchi-borbonese.png","image_width":100,"aspect_ratio_desktop":1.3,"aspect_ratio_mobile":1,"title":"Top brand","heading_size":120,"text":"<h3><strong>Borbonese<\/strong><\/h3>","text_size":100,"button_text":"ACQUISTA ORA","button_link":"","button_color":"btn--black","button_style":"btn--text","button_size":"btn--small"}}},"block_order":["image_8gNaEi","image_Qh6tVB","image_GDg9pr"],"name":"Multi column","settings":{"title":"","heading_size":120,"text":"","text_size":100,"align_heading":"text-left","align_text":"text-left","bg_color":"","gradient":"","text_color":"text-dark","layout_mobile":"stacked","width":"wrapper","padding_top":0,"padding_bottom":60}},"section_text_8zXRwx":{"type":"section-text","blocks":{"heading_zmz7GX":{"type":"heading","settings":{"text":"<p><strong>Must have<\/strong><\/p>","size":120,"heading_highlight_type":"italics","highlight_color":"#000000","highlight_text_color":"rgba(0,0,0,0)"}},"text_9ahPqy":{"type":"text","settings":{"text":"<p>Eleganza e stile per tutti i giorni<\/p>","size":100}}},"block_order":["heading_zmz7GX","text_9ahPqy"],"settings":{"text_position":"center","bg_color":"","gradient":"","text_color":"text-dark","width":"wrapper--narrow","padding_top":50,"padding_bottom":0}},"section_collection_DWXBKw":{"type":"section-collection","name":"Featured collection","settings":{"collection":"","products_layout":"carousel","products_limit":8,"products_per_row_on_desktop":4,"columns_mobile":"2","text_alignment":"text-center","title":"","heading_size":100,"heading_highlight_type":"underline-hand-drawn","highlight_color":"#000000","highlight_text_color":"","text":"","text_size":100,"button_position":"bottom","button_text":"Shop Now","button_color":"btn--black","button_style":"btn--solid","button_size":"btn--medium","bg_color":"","enable_slider_mobile":true,"width":"wrapper--full-padded","padding_top":0,"padding_bottom":60}},"section_grid_mFgcbg":{"type":"section-grid","blocks":{"image_JQnEB3":{"type":"image","settings":{"width":"50","image":"shopify:\/\/shop_images\/hp-split-per-lei.png","overlay_opacity":10,"text_position":"bottom-center","subheading":"","title":"Selezione per lei","text":"","button_1_text":"ACQUISTA ORA","button_1_link":"","button_2_text":"","button_2_link":"","overlay_text_color":"text-light"}},"image_LrpzXr":{"type":"image","settings":{"width":"50","image":"shopify:\/\/shop_images\/hp-split-per-lui.png","overlay_opacity":10,"text_position":"bottom-center","subheading":"","title":"Selezione per lui","text":"","button_1_text":"ACQUISTA ORA","button_1_link":"","button_2_text":"","button_2_link":"","overlay_text_color":"text-light"}}},"block_order":["image_JQnEB3","image_LrpzXr"],"name":"Grid","settings":{"desktop_height":"full-height","enable_mobile_height":false,"mobile_height":"four-fifty-height-mobile","heading_size":80,"text_size":70,"button_1_color":"btn--white","button_1_style":"btn--text","button_1_size":"btn--small","button_2_color":"btn--black","button_2_style":"btn--text","button_2_size":"btn--medium","section_bg_color":"","gradient":"","enable_slider_mobile":false,"columns_mobile":"1","overlay_text":true,"width":"wrapper--full","add_gutter":false,"padding_top":0,"padding_bottom":0}},"section_text_yeWJUt":{"type":"section-text","blocks":{"heading_8qkDzD":{"type":"heading","settings":{"text":"<h2><strong>Anna Virgili<\/strong><\/h2>","size":120,"heading_highlight_type":"italics","highlight_color":"#000000","highlight_text_color":"rgba(0,0,0,0)"}},"text_GA88aG":{"type":"text","settings":{"text":"<p>Il lusso Made in Italy accessibile a tutti<\/p>","size":100}}},"block_order":["heading_8qkDzD","text_GA88aG"],"settings":{"text_position":"center","bg_color":"","gradient":"","text_color":"text-dark","width":"wrapper--narrow","padding_top":50,"padding_bottom":0}},"section-collection-0":{"type":"section-collection","settings":{"collection":"","products_layout":"carousel","products_limit":8,"products_per_row_on_desktop":4,"columns_mobile":"2","text_alignment":"text-center","title":"","heading_size":175,"heading_highlight_type":"underline-hand-drawn","highlight_color":"#000000","highlight_text_color":"rgba(0,0,0,0)","text":"","text_size":100,"button_position":"bottom","button_text":"Shop now","button_color":"btn--black","button_style":"btn--outline","button_size":"btn--medium","bg_color":"","enable_slider_mobile":false,"width":"wrapper--full-padded","padding_top":0,"padding_bottom":80}},"section_testimonials_W778J3":{"type":"section-testimonials","blocks":{"testimonial_zGDK9k":{"type":"testimonial","settings":{"star_rating":5,"enable_border":false,"heading":"Love it!","text_size":125,"text":"<p>Excellent customer service. I love their products!<\/p>","content_size":100,"customer_name":"John Edmonson","subheading":"<p>Happy customer<\/p>"}},"testimonial_fVkVw3":{"type":"testimonial","settings":{"star_rating":5,"enable_border":false,"heading":"Love it!","text_size":125,"text":"<p>Excellent customer service. I love their products!<\/p>","content_size":100,"customer_name":"Lindsay Smith","subheading":"<p>Los Angeles, CA<\/p>"}},"testimonial_CrmR8P":{"type":"testimonial","settings":{"star_rating":5,"enable_border":false,"heading":"Love it!","text_size":125,"text":"<p>Excellent customer service. I love their products!<\/p>","content_size":100,"customer_name":"Eric Lopez","subheading":"<p>12 days ago<\/p>"}}},"block_order":["testimonial_zGDK9k","testimonial_fVkVw3","testimonial_CrmR8P"],"name":"Testimonials","settings":{"subheading":"To update the layout of this section","subheading_size":100,"title":"Cosa dicono di noi","heading_size":100,"text_alignment":"text-center","bg_color":"#97d1dc","gradient":"","testimonial_block_color":"","star_color":"#fae68c","testimonial_text_color":"text-light","width":"wrapper--full-padded","padding_top":60,"padding_bottom":60}},"section_banner_image_6WcgC8":{"type":"section-banner-image","blocks":{"subheading_NhTWGr":{"type":"subheading","settings":{"text":"<p>SEMPRE VICINI A TE<\/p>","size":100}},"heading_abDwjM":{"type":"heading","settings":{"text":"<p>Vieni a trovarci in negozio<\/p>","size":130,"heading_highlight_type":"underline-hand-drawn","highlight_color":"#000000","highlight_text_color":""}},"button_UfDPCb":{"type":"button","settings":{"stacked_button":false,"button_1_text":"trova un negozio","button_1_link":"shopify:\/\/collections\/all","button_1_color":"btn--white","button_1_style":"btn--solid","button_1_size":"btn--medium","button_2_text":"","button_2_link":"","button_2_color":"btn--black","button_2_style":"btn--solid","button_2_size":"btn--medium"}}},"block_order":["subheading_NhTWGr","heading_abDwjM","button_UfDPCb"],"name":"Banner image","settings":{"height":"six-fifty-height","enable_mobile_height":false,"mobile_height":"four-fifty-height-mobile","image":"shopify:\/\/shop_images\/hp-store.png","overlay_opacity":35,"transition":"fade","enable_zoom_animation":true,"enable_card_scrolling":false,"increase_border_radius":true,"content_width":100,"text_position":"left","text_alignment":"text-center","text_color":"text-light","width":"wrapper--full","padding_top":0,"padding_bottom":0}},"section_text_yKHLmr":{"type":"section-text","blocks":{"heading_f7BA8E":{"type":"heading","settings":{"text":"<h2><strong>Lasciati ispirare<\/strong><\/h2>","size":120,"heading_highlight_type":"italics","highlight_color":"#000000","highlight_text_color":"rgba(0,0,0,0)"}},"text_UqMHmR":{"type":"text","settings":{"text":"<p>Entra nel mondo di @annavirgili<\/p>","size":100}}},"block_order":["heading_f7BA8E","text_UqMHmR"],"settings":{"text_position":"center","bg_color":"","gradient":"","text_color":"text-dark","width":"wrapper--narrow","padding_top":50,"padding_bottom":0}},"section_social_gallery_nrpgQk":{"type":"section-social-gallery","blocks":{"image_6eWqG4":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/hp-social-1.png","text":"","text_size":75,"button_text":"","button_link":"","link_target_blank":true}},"image_geG6JX":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/hp-social-2.png","text":"","text_size":75,"button_text":"","button_link":"","link_target_blank":true}},"image_Hia6wY":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/hp-social-3.png","text":"","text_size":75,"button_text":"","button_link":"","link_target_blank":true}},"image_LagBAm":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/hp-social-4.png","text":"","text_size":75,"button_text":"","button_link":"","link_target_blank":true}},"image_cmmWgf":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/hp-social-5.png","text":"","text_size":75,"button_text":"","button_link":"","link_target_blank":true}}},"block_order":["image_6eWqG4","image_geG6JX","image_Hia6wY","image_LagBAm","image_cmmWgf"],"custom_css":[".wrapper--full-padded {padding-left: 0; padding-right: 0;}",".section-columns__slider {gap: 0;}",".column-item__image-wrapper,.column-item__image {border-radius: 0;}"],"name":"Social gallery","settings":{"align_heading":"text-left","align_text":"text-center","columns":5,"aspect_ratio_desktop":1,"aspect_ratio_mobile":1,"subheading":"","title":"","heading_size":120,"button_color":"btn--black","button_style":"btn--text","button_size":"btn--medium","bg_color":"","gradient":"","text_color":"text-dark","width":"wrapper--full-padded","padding_top":0,"padding_bottom":0}}},"order":["section_banner_image_nVR8Up","section-marquee-0","section-text-0","section_multicolumn_VNFb9b","section_text_8zXRwx","section_collection_DWXBKw","section_grid_mFgcbg","section_text_yeWJUt","section-collection-0","section_testimonials_W778J3","section_banner_image_6WcgC8","section_text_yKHLmr","section_social_gallery_nrpgQk"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_banner_image_nVR8Up": {
+      "type": "section-banner-image",
+      "blocks": {
+        "subheading_ArkHqV": {
+          "type": "subheading",
+          "settings": {
+            "text": "",
+            "size": 100
+          }
+        },
+        "heading_HqDAP8": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Palo Alto</p>",
+            "size": 180,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": ""
+          }
+        },
+        "text_nHnLhB": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Share information about your brand, describe a product, share announcements, or welcome customers to your store.</p>",
+            "size": 100
+          }
+        },
+        "button_cVEW7Q": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "stacked_button": false,
+            "button_1_text": "Shop All",
+            "button_1_link": "shopify://collections/all",
+            "button_1_color": "btn--white",
+            "button_1_style": "btn--solid-border",
+            "button_1_size": "btn--medium",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_color": "btn--black",
+            "button_2_style": "btn--solid",
+            "button_2_size": "btn--medium"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_ArkHqV",
+        "heading_HqDAP8",
+        "text_nHnLhB",
+        "button_cVEW7Q"
+      ],
+      "settings": {
+        "height": "full-height",
+        "enable_mobile_height": false,
+        "mobile_height": "four-fifty-height-mobile",
+        "image": "shopify://shop_images/hp-hero.png",
+        "overlay_opacity": 10,
+        "transition": "fade",
+        "enable_zoom_animation": true,
+        "enable_card_scrolling": false,
+        "increase_border_radius": true,
+        "content_width": 80,
+        "text_position": "left",
+        "text_alignment": "text-left",
+        "text_color": "text-light",
+        "width": "wrapper--full",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "section-marquee-0": {
+      "type": "section-marquee",
+      "blocks": {
+        "image_7VRfdU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/logo-ck.png",
+            "link": "",
+            "image_width": 150
+          }
+        },
+        "image_gkFGjn": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/logo-guess.png",
+            "link": "",
+            "image_width": 150
+          }
+        },
+        "image_MgXjNC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/logo-borbonese.png",
+            "link": "",
+            "image_width": 180
+          }
+        },
+        "image_mCbYxw": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/logo-coccinele.png",
+            "link": "",
+            "image_width": 180
+          }
+        },
+        "image_GjDzAK": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/logo-piquadro.png",
+            "link": "",
+            "image_width": 180
+          }
+        },
+        "image_RwytGp": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/logo-the-bridge.png",
+            "link": "",
+            "image_width": 180
+          }
+        }
+      },
+      "block_order": [
+        "image_7VRfdU",
+        "image_gkFGjn",
+        "image_MgXjNC",
+        "image_mCbYxw",
+        "image_GjDzAK",
+        "image_RwytGp"
+      ],
+      "settings": {
+        "layout": "marquee",
+        "show_top_border": true,
+        "show_bottom_border": true,
+        "padding": 20,
+        "marquee_speed": 100,
+        "direction": "ticker-ltr",
+        "slider_speed": 7,
+        "show_arrows": false,
+        "text_caps": false,
+        "type_font": "space_mono_n4",
+        "text_size": 120,
+        "letter_spacing": 0,
+        "message_spacing": 35,
+        "bg_color": "#ffffff",
+        "gradient": "",
+        "color": "#000000",
+        "border_color": "#000000",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "section-text-0": {
+      "type": "section-text",
+      "blocks": {
+        "section-text-0-block-1": {
+          "type": "heading",
+          "settings": {
+            "text": "<p><strong>I migliori marchi</strong></p>",
+            "size": 120,
+            "heading_highlight_type": "italics",
+            "highlight_color": "#000000",
+            "highlight_text_color": "rgba(0,0,0,0)"
+          }
+        },
+        "text_3hCNWn": {
+          "type": "text",
+          "settings": {
+            "text": "<p>La nostra selezione per te</p>",
+            "size": 100
+          }
+        }
+      },
+      "block_order": [
+        "section-text-0-block-1",
+        "text_3hCNWn"
+      ],
+      "settings": {
+        "text_position": "center",
+        "bg_color": "",
+        "gradient": "",
+        "text_color": "text-dark",
+        "width": "wrapper--narrow",
+        "padding_top": 50,
+        "padding_bottom": 0
+      }
+    },
+    "section_multicolumn_VNFb9b": {
+      "type": "section-multicolumn",
+      "blocks": {
+        "image_8gNaEi": {
+          "type": "image",
+          "settings": {
+            "column_width": 33,
+            "image": "shopify://shop_images/hp-migliori-marchi-1a-classe.png",
+            "image_width": 100,
+            "aspect_ratio_desktop": 1.3,
+            "aspect_ratio_mobile": 1,
+            "title": "Versatilità ed eleganza, rendi unico ogni look",
+            "heading_size": 120,
+            "text": "<h3><strong>1a Classe</strong></h3>",
+            "text_size": 100,
+            "button_text": "ACQUISTA ORA",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--text",
+            "button_size": "btn--medium"
+          }
+        },
+        "image_Qh6tVB": {
+          "type": "image",
+          "settings": {
+            "column_width": 33,
+            "image": "shopify://shop_images/hp-migliori-marchi-samsonite.png",
+            "image_width": 100,
+            "aspect_ratio_desktop": 1.3,
+            "aspect_ratio_mobile": 1,
+            "title": "Versatilità ed eleganza, rendi unico ogni look",
+            "heading_size": 120,
+            "text": "<h3><strong>Samsonite</strong></h3>",
+            "text_size": 100,
+            "button_text": "ACQUISTA ORA",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--text",
+            "button_size": "btn--medium"
+          }
+        },
+        "image_GDg9pr": {
+          "type": "image",
+          "settings": {
+            "column_width": 33,
+            "image": "shopify://shop_images/hp-migliori-marchi-borbonese.png",
+            "image_width": 100,
+            "aspect_ratio_desktop": 1.3,
+            "aspect_ratio_mobile": 1,
+            "title": "Top brand",
+            "heading_size": 120,
+            "text": "<h3><strong>Borbonese</strong></h3>",
+            "text_size": 100,
+            "button_text": "ACQUISTA ORA",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--text",
+            "button_size": "btn--small"
+          }
+        }
+      },
+      "block_order": [
+        "image_8gNaEi",
+        "image_Qh6tVB",
+        "image_GDg9pr"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": 120,
+        "text": "",
+        "text_size": 100,
+        "align_heading": "text-left",
+        "align_text": "text-left",
+        "bg_color": "",
+        "gradient": "",
+        "text_color": "text-dark",
+        "layout_mobile": "stacked",
+        "width": "wrapper",
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    },
+    "section_text_8zXRwx": {
+      "type": "section-text",
+      "blocks": {
+        "heading_zmz7GX": {
+          "type": "heading",
+          "settings": {
+            "text": "<p><strong>Must have</strong></p>",
+            "size": 120,
+            "heading_highlight_type": "italics",
+            "highlight_color": "#000000",
+            "highlight_text_color": "rgba(0,0,0,0)"
+          }
+        },
+        "text_9ahPqy": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Eleganza e stile per tutti i giorni</p>",
+            "size": 100
+          }
+        }
+      },
+      "block_order": [
+        "heading_zmz7GX",
+        "text_9ahPqy"
+      ],
+      "settings": {
+        "text_position": "center",
+        "bg_color": "",
+        "gradient": "",
+        "text_color": "text-dark",
+        "width": "wrapper--narrow",
+        "padding_top": 50,
+        "padding_bottom": 0
+      }
+    },
+    "section_collection_DWXBKw": {
+      "type": "section-collection",
+      "settings": {
+        "collection": "",
+        "products_layout": "carousel",
+        "products_limit": 8,
+        "products_per_row_on_desktop": 4,
+        "columns_mobile": "2",
+        "text_alignment": "text-center",
+        "title": "",
+        "heading_size": 100,
+        "heading_highlight_type": "underline-hand-drawn",
+        "highlight_color": "#000000",
+        "highlight_text_color": "",
+        "text": "",
+        "text_size": 100,
+        "button_position": "bottom",
+        "button_text": "Shop Now",
+        "button_color": "btn--black",
+        "button_style": "btn--solid",
+        "button_size": "btn--medium",
+        "bg_color": "",
+        "enable_slider_mobile": true,
+        "width": "wrapper--full-padded",
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    },
+    "section_grid_mFgcbg": {
+      "type": "section-grid",
+      "blocks": {
+        "image_JQnEB3": {
+          "type": "image",
+          "settings": {
+            "width": "50",
+            "image": "shopify://shop_images/hp-split-per-lei.png",
+            "overlay_opacity": 10,
+            "text_position": "bottom-center",
+            "subheading": "",
+            "title": "Selezione per lei",
+            "text": "",
+            "button_1_text": "ACQUISTA ORA",
+            "button_1_link": "",
+            "button_2_text": "",
+            "button_2_link": "",
+            "overlay_text_color": "text-light"
+          }
+        },
+        "image_LrpzXr": {
+          "type": "image",
+          "settings": {
+            "width": "50",
+            "image": "shopify://shop_images/hp-split-per-lui.png",
+            "overlay_opacity": 10,
+            "text_position": "bottom-center",
+            "subheading": "",
+            "title": "Selezione per lui",
+            "text": "",
+            "button_1_text": "ACQUISTA ORA",
+            "button_1_link": "",
+            "button_2_text": "",
+            "button_2_link": "",
+            "overlay_text_color": "text-light"
+          }
+        }
+      },
+      "block_order": [
+        "image_JQnEB3",
+        "image_LrpzXr"
+      ],
+      "settings": {
+        "desktop_height": "full-height",
+        "enable_mobile_height": false,
+        "mobile_height": "four-fifty-height-mobile",
+        "heading_size": 80,
+        "text_size": 70,
+        "button_1_color": "btn--white",
+        "button_1_style": "btn--text",
+        "button_1_size": "btn--small",
+        "button_2_color": "btn--black",
+        "button_2_style": "btn--text",
+        "button_2_size": "btn--medium",
+        "section_bg_color": "",
+        "gradient": "",
+        "enable_slider_mobile": false,
+        "columns_mobile": "1",
+        "overlay_text": true,
+        "width": "wrapper--full",
+        "add_gutter": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "section_text_yeWJUt": {
+      "type": "section-text",
+      "blocks": {
+        "heading_8qkDzD": {
+          "type": "heading",
+          "settings": {
+            "text": "<h2><strong>Anna Virgili</strong></h2>",
+            "size": 120,
+            "heading_highlight_type": "italics",
+            "highlight_color": "#000000",
+            "highlight_text_color": "rgba(0,0,0,0)"
+          }
+        },
+        "text_GA88aG": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Il lusso Made in Italy accessibile a tutti</p>",
+            "size": 100
+          }
+        }
+      },
+      "block_order": [
+        "heading_8qkDzD",
+        "text_GA88aG"
+      ],
+      "settings": {
+        "text_position": "center",
+        "bg_color": "",
+        "gradient": "",
+        "text_color": "text-dark",
+        "width": "wrapper--narrow",
+        "padding_top": 50,
+        "padding_bottom": 0
+      }
+    },
+    "section-collection-0": {
+      "type": "section-collection",
+      "settings": {
+        "collection": "",
+        "products_layout": "carousel",
+        "products_limit": 8,
+        "products_per_row_on_desktop": 4,
+        "columns_mobile": "2",
+        "text_alignment": "text-center",
+        "title": "",
+        "heading_size": 175,
+        "heading_highlight_type": "underline-hand-drawn",
+        "highlight_color": "#000000",
+        "highlight_text_color": "rgba(0,0,0,0)",
+        "text": "",
+        "text_size": 100,
+        "button_position": "bottom",
+        "button_text": "Shop now",
+        "button_color": "btn--black",
+        "button_style": "btn--outline",
+        "button_size": "btn--medium",
+        "bg_color": "",
+        "enable_slider_mobile": false,
+        "width": "wrapper--full-padded",
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "section_testimonials_W778J3": {
+      "type": "section-testimonials",
+      "blocks": {
+        "testimonial_zGDK9k": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "enable_border": false,
+            "heading": "",
+            "text_size": 125,
+            "text": "<p>Excellent customer service. I love their products!</p>",
+            "content_size": 100,
+            "customer_name": "John Edmonson",
+            "subheading": ""
+          }
+        },
+        "testimonial_fVkVw3": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "enable_border": false,
+            "heading": "",
+            "text_size": 125,
+            "text": "<p>Excellent customer service. I love their products!</p>",
+            "content_size": 100,
+            "customer_name": "Lindsay Smith",
+            "subheading": ""
+          }
+        },
+        "testimonial_CrmR8P": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "enable_border": false,
+            "heading": "",
+            "text_size": 125,
+            "text": "<p>Excellent customer service. I love their products!</p>",
+            "content_size": 100,
+            "customer_name": "Eric Lopez",
+            "subheading": ""
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_zGDK9k",
+        "testimonial_fVkVw3",
+        "testimonial_CrmR8P"
+      ],
+      "settings": {
+        "subheading": "Le recensioni dei nostri clienti",
+        "subheading_size": 100,
+        "title": "Cosa dicono di noi",
+        "heading_size": 100,
+        "text_alignment": "text-center",
+        "bg_color": "#97d1dc",
+        "gradient": "",
+        "testimonial_block_color": "",
+        "star_color": "#fae68c",
+        "testimonial_text_color": "text-light",
+        "width": "wrapper--full-padded",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "section_banner_image_6WcgC8": {
+      "type": "section-banner-image",
+      "blocks": {
+        "subheading_NhTWGr": {
+          "type": "subheading",
+          "settings": {
+            "text": "<p>SEMPRE VICINI A TE</p>",
+            "size": 100
+          }
+        },
+        "heading_abDwjM": {
+          "type": "heading",
+          "settings": {
+            "text": "<p>Vieni a trovarci in negozio</p>",
+            "size": 130,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": ""
+          }
+        },
+        "button_UfDPCb": {
+          "type": "button",
+          "settings": {
+            "stacked_button": false,
+            "button_1_text": "trova un negozio",
+            "button_1_link": "shopify://collections/all",
+            "button_1_color": "btn--white",
+            "button_1_style": "btn--solid",
+            "button_1_size": "btn--medium",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_color": "btn--black",
+            "button_2_style": "btn--solid",
+            "button_2_size": "btn--medium"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_NhTWGr",
+        "heading_abDwjM",
+        "button_UfDPCb"
+      ],
+      "settings": {
+        "height": "six-fifty-height",
+        "enable_mobile_height": false,
+        "mobile_height": "four-fifty-height-mobile",
+        "image": "shopify://shop_images/hp-store.png",
+        "overlay_opacity": 35,
+        "transition": "fade",
+        "enable_zoom_animation": true,
+        "enable_card_scrolling": false,
+        "increase_border_radius": true,
+        "content_width": 100,
+        "text_position": "left",
+        "text_alignment": "text-center",
+        "text_color": "text-light",
+        "width": "wrapper--full",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "section_text_yKHLmr": {
+      "type": "section-text",
+      "blocks": {
+        "heading_f7BA8E": {
+          "type": "heading",
+          "settings": {
+            "text": "<h2><strong>Lasciati ispirare</strong></h2>",
+            "size": 120,
+            "heading_highlight_type": "italics",
+            "highlight_color": "#000000",
+            "highlight_text_color": "rgba(0,0,0,0)"
+          }
+        },
+        "text_UqMHmR": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Entra nel mondo di @annavirgili</p>",
+            "size": 100
+          }
+        }
+      },
+      "block_order": [
+        "heading_f7BA8E",
+        "text_UqMHmR"
+      ],
+      "settings": {
+        "text_position": "center",
+        "bg_color": "",
+        "gradient": "",
+        "text_color": "text-dark",
+        "width": "wrapper--narrow",
+        "padding_top": 50,
+        "padding_bottom": 0
+      }
+    },
+    "section_social_gallery_nrpgQk": {
+      "type": "section-social-gallery",
+      "blocks": {
+        "image_6eWqG4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hp-social-1.png",
+            "text": "",
+            "text_size": 75,
+            "button_text": "",
+            "button_link": "",
+            "link_target_blank": true
+          }
+        },
+        "image_geG6JX": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hp-social-2.png",
+            "text": "",
+            "text_size": 75,
+            "button_text": "",
+            "button_link": "",
+            "link_target_blank": true
+          }
+        },
+        "image_Hia6wY": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hp-social-3.png",
+            "text": "",
+            "text_size": 75,
+            "button_text": "",
+            "button_link": "",
+            "link_target_blank": true
+          }
+        },
+        "image_LagBAm": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hp-social-4.png",
+            "text": "",
+            "text_size": 75,
+            "button_text": "",
+            "button_link": "",
+            "link_target_blank": true
+          }
+        },
+        "image_cmmWgf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hp-social-5.png",
+            "text": "",
+            "text_size": 75,
+            "button_text": "",
+            "button_link": "",
+            "link_target_blank": true
+          }
+        }
+      },
+      "block_order": [
+        "image_6eWqG4",
+        "image_geG6JX",
+        "image_Hia6wY",
+        "image_LagBAm",
+        "image_cmmWgf"
+      ],
+      "custom_css": [
+        ".wrapper--full-padded {padding-left: 0; padding-right: 0;}",
+        ".section-columns__slider {gap: 0;}",
+        ".column-item__image-wrapper,.column-item__image {border-radius: 0;}"
+      ],
+      "settings": {
+        "align_heading": "text-left",
+        "align_text": "text-center",
+        "columns": 5,
+        "aspect_ratio_desktop": 1,
+        "aspect_ratio_mobile": 1,
+        "subheading": "",
+        "title": "",
+        "heading_size": 120,
+        "button_color": "btn--black",
+        "button_style": "btn--text",
+        "button_size": "btn--medium",
+        "bg_color": "",
+        "gradient": "",
+        "text_color": "text-dark",
+        "width": "wrapper--full-padded",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "section_banner_image_nVR8Up",
+    "section-marquee-0",
+    "section-text-0",
+    "section_multicolumn_VNFb9b",
+    "section_text_8zXRwx",
+    "section_collection_DWXBKw",
+    "section_grid_mFgcbg",
+    "section_text_yeWJUt",
+    "section-collection-0",
+    "section_testimonials_W778J3",
+    "section_banner_image_6WcgC8",
+    "section_text_yKHLmr",
+    "section_social_gallery_nrpgQk"
+  ]
+}

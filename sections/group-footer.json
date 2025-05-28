@@ -1,1 +1,121 @@
-{"type":"footer","name":"Footer","sections":{"section_newsletter_DbRgzk":{"type":"section-newsletter","custom_css":["h2,h3 {text-align: center; margin: 0;}","h2 em > strong {font-family: \"Times New Roman\"; font-size: 48px; font-weight: 400;}","h2 > strong {font-size: 40px; font-weight: 400;}","h3 strong {font-size: 25px; font-weight: 400;}",".newsletter-section__entry {flex: 0; flex-basis: 50%; margin-right: auto;}",".newsletter {flex-basis: 35%;}",".input-group__fields,.input-group__item {flex-basis: 100%;}",".input-group__field--email {border: none; border-bottom: 1px solid #000; border-radius: 0; padding-left: 5px; padding-bottom: 5px;}"],"settings":{"flex_align":"align--middle-split","text_color":"text-dark","title":"","text":"<h2><em><strong>Anna Virgili Newsletter<\/strong><\/em><\/h2><h2><strong>ISCRIVITI E OTTIENI IL 10%<\/strong><\/h2><h3><strong>di sconto sul tuo primo acquisto.<\/strong><\/h3>","extra_fields":"","button_text":"ISCRIVITI","bg_color":"#97d1dc","gradient":"","image_height":"three-fifty-height","overlay_opacity":10,"width":"wrapper","padding_top":80,"padding_bottom":80}},"footer":{"type":"footer","blocks":{"footer-block-2":{"type":"link","settings":{"alignment":"text-left","menu":"main-menu","title":"Shop","column_width":"15"}},"footer-block-3":{"type":"link","settings":{"alignment":"text-left","menu":"footer","title":"Helpful Links","column_width":"15"}},"link_AbJFRi":{"type":"link","settings":{"alignment":"text-left","menu":"main-menu","title":"Shop","column_width":"20"}}},"block_order":["footer-block-2","footer-block-3","link_AbJFRi"],"settings":{"show_footer_wave":false,"enable_footer_parallax":false,"increase_border_radius":true,"bottom_bar_alignment":"text-left","show_social_links":true,"enable_follow_on_shop":false,"show_payment_icons":false,"enable_greyscale":false,"bottom_menu":"","color_text":"#000000","color_bg":"#ffffff","color_border":"#ffffff","show_locale_selector":false,"show_locale_code":true,"show_country_selector":false,"show_country_name":false,"show_country_flag":false,"width":"wrapper","padding_top":30,"padding_bottom":30}}},"order":["section_newsletter_DbRgzk","footer"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "Footer",
+  "sections": {
+    "section_newsletter_DbRgzk": {
+      "type": "section-newsletter",
+      "custom_css": [
+        "h2,h3 {text-align: center; margin: 0;}",
+        "h2 em > strong {font-family: \"Times New Roman\"; font-size: 48px; font-weight: 400;}",
+        "h2 > strong {font-size: 40px; font-weight: 400;}",
+        "h3 strong {font-size: 25px; font-weight: 400;}",
+        ".newsletter-section__entry {flex: 0; flex-basis: 50%; margin-right: auto;}",
+        ".newsletter {flex-basis: 35%;}",
+        ".input-group__fields,.input-group__item {flex-basis: 100%;}",
+        ".input-group__field--email {border: none; border-bottom: 1px solid #000; border-radius: 0; padding-left: 5px; padding-bottom: 5px;}"
+      ],
+      "settings": {
+        "flex_align": "align--middle-split",
+        "text_color": "text-dark",
+        "title": "",
+        "text": "<h2><em><strong>Anna Virgili Newsletter</strong></em></h2><h2><strong>ISCRIVITI E OTTIENI IL 10%</strong></h2><h3><strong>di sconto sul tuo primo acquisto.</strong></h3>",
+        "extra_fields": "",
+        "button_text": "ISCRIVITI",
+        "bg_color": "#97d1dc",
+        "gradient": "",
+        "image_height": "three-fifty-height",
+        "overlay_opacity": 10,
+        "width": "wrapper",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "footer-block-2": {
+          "type": "link",
+          "settings": {
+            "alignment": "text-left",
+            "menu": "main-menu",
+            "title": "Shop",
+            "column_width": "15"
+          }
+        },
+        "footer-block-3": {
+          "type": "link",
+          "settings": {
+            "alignment": "text-left",
+            "menu": "footer",
+            "title": "Helpful Links",
+            "column_width": "15"
+          }
+        },
+        "link_AbJFRi": {
+          "type": "link",
+          "settings": {
+            "alignment": "text-left",
+            "menu": "main-menu",
+            "title": "Shop",
+            "column_width": "20"
+          }
+        },
+        "divider_KeRQW4": {
+          "type": "divider",
+          "settings": {
+            "show_border_line": true,
+            "column_width": "30"
+          }
+        },
+        "social_links_qbLGr6": {
+          "type": "social_links",
+          "settings": {
+            "title": "Shop"
+          }
+        }
+      },
+      "block_order": [
+        "footer-block-2",
+        "footer-block-3",
+        "link_AbJFRi",
+        "divider_KeRQW4",
+        "social_links_qbLGr6"
+      ],
+      "settings": {
+        "show_footer_wave": false,
+        "enable_footer_parallax": false,
+        "increase_border_radius": true,
+        "bottom_bar_alignment": "text-left",
+        "show_social_links": false,
+        "enable_follow_on_shop": false,
+        "show_payment_icons": false,
+        "enable_greyscale": false,
+        "bottom_menu": "",
+        "color_text": "#000000",
+        "color_bg": "#ffffff",
+        "color_border": "#ffffff",
+        "show_locale_selector": false,
+        "show_locale_code": true,
+        "show_country_selector": false,
+        "show_country_name": false,
+        "show_country_flag": false,
+        "width": "wrapper",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    }
+  },
+  "order": [
+    "section_newsletter_DbRgzk",
+    "footer"
+  ]
+}

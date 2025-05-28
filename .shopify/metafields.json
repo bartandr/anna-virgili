@@ -1,0 +1,146 @@
+{
+  "article": [],
+  "blog": [],
+  "collection": [
+    {
+      "key": "immagine_2_collezioni",
+      "namespace": "custom",
+      "name": "immagine_2_collezioni",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "immagine_1_collezioni",
+      "namespace": "custom",
+      "name": "immagine_1_collezioni",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "brand",
+      "namespace": "custom",
+      "name": "Brand",
+      "description": "",
+      "type": {
+        "name": "boolean",
+        "category": "TRUE_FALSE"
+      }
+    }
+  ],
+  "company": [],
+  "company_location": [],
+  "location": [],
+  "market": [],
+  "order": [],
+  "page": [],
+  "product": [
+    {
+      "key": "sku_modello",
+      "namespace": "pdp",
+      "name": "SKU Modello",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "sku_modello_colore",
+      "namespace": "pdp",
+      "name": "SKU Modello Colore",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "gender",
+      "namespace": "pdp",
+      "name": "Gender",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "stagione",
+      "namespace": "pdp",
+      "name": "Stagione",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "categoria",
+      "namespace": "pdp",
+      "name": "Categoria",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "sub_categoria",
+      "namespace": "pdp",
+      "name": "Sub Categoria",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "colore",
+      "namespace": "pdp",
+      "name": "Colore",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "sku_beststore",
+      "namespace": "pdp",
+      "name": "SKU BestStore",
+      "description": "questo manterrà lo SKU che abbiamo ricevuto dal miglior negozio.",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "linea",
+      "namespace": "pdp",
+      "name": "Linea Interna",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "famiglia",
+      "namespace": "pdp",
+      "name": "Famiglia",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    }
+  ],
+  "variant": [],
+  "shop": []
+}

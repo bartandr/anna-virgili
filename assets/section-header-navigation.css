@@ -56,6 +56,7 @@
 .site-header--compress .nav {
   justify-content: flex-end;
   width: fit-content;
+  padding: 0;
 }
 .site-header--compress .nav .menu__item {
   display: none;
@@ -457,6 +458,12 @@
   font-size: calc(1rem * var(--adjust-nav));
 }
 
+.dropdown__family > .navlink.navlink--grandchild:last-child {
+  margin-top: auto;
+  padding-top: 10px;
+  font-weight: 600;
+}
+
 .header__dropdown__image {
   position: relative;
   letter-spacing: initial;
@@ -474,7 +481,7 @@
   }
 }
 .header__dropdown__image .hero__title {
-  color: var(--white);
+  color: var(--black);
   font-size: calc(1.5rem * var(--adjust-heading));
   margin: 0;
 }
@@ -483,17 +490,19 @@
   color: var(--white);
 }
 .header__dropdown__image .hero__content {
-  padding: 30px;
+  padding: 10px 0;
+  width: 100%;
+  text-align: center;
   margin: 0;
   max-width: none;
 }
 
 .hero__content__wrapper {
   display: flex;
-  position: absolute;
-  top: 0;
+  /* position: absolute; */
+  /* top: 0;
   right: 0;
-  z-index: 200;
+  z-index: 200; */
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -873,13 +882,18 @@
 .mobile-menu__button--burger {
   position: absolute;
   top: 50%;
+  transform: translateY(-50%);
   left: calc(var(--gutter) - 12px);
-  margin-top: -22px;
   margin-right: 0;
 }
 @media only screen and (max-width: 1023px) {
   .mobile-menu__button--burger {
     left: 8px;
+  }
+
+  .mobile-menu__button {
+    width: 35px;
+    height: 35px;
   }
 }
 .site-header--compress .mobile-menu__button--burger {
@@ -979,7 +993,7 @@
 
 .mobile-navlink--level-2 {
   font-size: calc(1rem * var(--adjust-nav));
-  padding: var(--link-item-level-2-padding, 5px) 5px var(--link-item-level-2-padding, 5px) var(--inner);
+  padding: var(--link-item-level-2-padding, 5px) 5px var(--link-item-level-2-padding, 5px) 35px;
 }
 
 .mobile-navlink--level-3 {
@@ -1018,7 +1032,6 @@
 }
 
 .body--rounded-corners .navlink--image .image-fill,
-.body--rounded-corners .header__dropdown__image,
 .body--rounded-corners .parent > .header__dropdown {
   border-radius: var(--radius);
   overflow: hidden;

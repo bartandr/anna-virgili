@@ -16,6 +16,7 @@
       assign block_selector_id = '#' | append: block_id
       assign is_wide = block.settings.wide_image
       assign show_text_shadow = settings.show_text_shadow
+      assign show_text_shadow = false
       assign image = block.settings.image
       assign title = block.settings.title
       assign link = block.settings.link
@@ -120,6 +121,7 @@
       {%- endstyle -%}
 
       <div class="header__dropdown__image{{ hover_scale_class }}">
+        {%- render 'image-fill', img_object: image, aspect_ratio: aspect_ratio, sizes: sizes, loading: 'lazy', fetchpriority: 'high' -%}
         {%- if link != blank -%}
           <a href="{{ link }}" class="link-over-image">
         {%- endif -%}
@@ -144,8 +146,6 @@
         {%- if link != blank -%}
           </a>
         {%- endif -%}
-
-        {%- render 'image-fill', img_object: image, aspect_ratio: aspect_ratio, sizes: sizes, loading: 'lazy', fetchpriority: 'high' -%}
       </div>
     </div>
 

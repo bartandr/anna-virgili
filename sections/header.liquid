@@ -417,6 +417,20 @@
     {%- render 'search-popdown', unique: 'mobile', in_header: true, classes: 'mobile-menu__button caps' -%}
   {%- endif -%}
 
+  {%- if shop.customer_accounts_enabled -%}
+    <a
+      href="{{ routes.account_url }}"
+      class="mobile-menu__button {% if settings.nav_caps_toplevel %} caps{% endif %}{% if link_hover_dot %} navlink--dot{% endif %}"
+    >
+      <span class="visually-hidden">{{ 'general.accessibility.my_account' | t }}</span>
+      {%- if header_icons_as_text -%}
+        <span class="navtext">{{ 'layout.customer.account' | t }}</span>
+      {%- else -%}
+        {%- render 'icon-user' -%}
+      {%- endif -%}
+    </a>
+  {%- endif -%}
+
   <a
     href="{{ routes.cart_url }}"
     class="mobile-menu__button cart__toggle{% if cart.item_count > 0 %} cart__toggle--has-items{% endif %}{% if cart_animation %} cart__toggle--animation{% endif %}"

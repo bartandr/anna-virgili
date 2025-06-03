@@ -6427,7 +6427,10 @@ toggle-ellipsis {
 }
 @media only screen and (max-width: 479px) {
   .logo {
-    max-width: calc(100% - 117px);
+    max-width: 130px;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 .site-header--nav-left .logo, .site-header--compress .logo {
@@ -16846,9 +16849,12 @@ hover-slideshow .btn-quick-buy {
   margin-bottom: 0;
   padding: 0 8px;
 }
-@media only screen and (max-width: 1439px) {
+@media only screen and (max-width: 1305px) {
   .shopify-section-header .localization-form {
     display: none;
+  }
+  .shopify-section-header .menu__item.menu__item--compress .localization-form {
+    display: flex;
   }
 }
 .localization-form .select-popout__list {

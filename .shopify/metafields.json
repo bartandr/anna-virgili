@@ -61,16 +61,6 @@
       }
     },
     {
-      "key": "gender",
-      "namespace": "pdp",
-      "name": "Gender",
-      "description": "",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
       "key": "stagione",
       "namespace": "pdp",
       "name": "Stagione",
@@ -161,9 +151,19 @@
       }
     },
     {
-      "key": "genderelencopuntato",
+      "key": "descrizione_breve",
       "namespace": "pdo",
-      "name": "GenderElencoPuntato",
+      "name": "Descrizione Breve",
+      "description": "Descrizione breve del prodotto",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "gender",
+      "namespace": "pdp",
+      "name": "Gender",
       "description": "",
       "type": {
         "name": "list.single_line_text_field",

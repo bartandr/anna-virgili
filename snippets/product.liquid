@@ -378,6 +378,12 @@
           -%}
 
           {%- case block.type -%}
+            {%- when 'product-meta-variants' -%}
+            {% comment %} CUSTOM VARIANTS {% endcomment %}
+              <div class="">
+                
+              </div>
+            {% comment %} ENDCUSTOM {% endcomment %}
             {%- when '@app' -%}
               {%- capture app_code -%}
                 {%- render block -%}

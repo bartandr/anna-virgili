@@ -141,9 +141,9 @@
             data-popout-toggle
           >
             {%- if show_locale_code -%}
-              {{ localization.language.iso_code | upcase }}
+              {{ localization.language.endonym_name  | upcase | truncate: 6 | replace: '...', ''}}
             {%- else -%}
-              {{ localization.language.endonym_name | capitalize }}
+              {{ localization.language.endonym_name }}
             {%- endif -%}
             {%- render 'icon-select' -%}
           </button>

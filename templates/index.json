@@ -408,6 +408,69 @@
         "padding_bottom": 0
       }
     },
+    "section_multicolumn_p867w3": {
+      "type": "section-multicolumn",
+      "blocks": {
+        "image_VeYrxc": {
+          "type": "image",
+          "settings": {
+            "column_width": 50,
+            "image": "shopify://shop_images/hp-split-per-lei.png",
+            "image_width": 100,
+            "aspect_ratio_desktop": 1.2,
+            "aspect_ratio_mobile": 1.4,
+            "title": "Stile ed eleganza:",
+            "heading_size": 100,
+            "text": "<h2><strong>Selezione per lei</strong></h2>",
+            "text_size": 100,
+            "button_text": "Acquista ora",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--text",
+            "button_size": "btn--medium"
+          }
+        },
+        "image_i6RNXf": {
+          "type": "image",
+          "settings": {
+            "column_width": 50,
+            "image": "shopify://shop_images/hp-split-per-lui.png",
+            "image_width": 100,
+            "aspect_ratio_desktop": 1.2,
+            "aspect_ratio_mobile": 1.4,
+            "title": "Comodità e versatilità:",
+            "heading_size": 100,
+            "text": "<h2><strong>Selezione per lui</strong></h2>",
+            "text_size": 100,
+            "button_text": "ACQUISTA ORA",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--text",
+            "button_size": "btn--medium"
+          }
+        }
+      },
+      "block_order": [
+        "image_VeYrxc",
+        "image_i6RNXf"
+      ],
+      "name": "Multi column",
+      "settings": {
+        "title": "",
+        "heading_size": 120,
+        "text": "",
+        "text_size": 100,
+        "align_heading": "text-left",
+        "align_text": "text-center",
+        "bg_color": "",
+        "gradient": "",
+        "text_color": "text-dark",
+        "layout_mobile": "stacked",
+        "width": "wrapper--full-padded",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
     "section_text_yeWJUt": {
       "type": "section-text",
       "blocks": {
@@ -731,6 +794,7 @@
     "section_text_8zXRwx",
     "section_collection_DWXBKw",
     "section_grid_mFgcbg",
+    "section_multicolumn_p867w3",
     "section_text_yeWJUt",
     "section-collection-0",
     "section_testimonials_W778J3",

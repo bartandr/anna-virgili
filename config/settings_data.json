@@ -206,6 +206,19 @@
           "swym_variant_selector_create_list_placeholder_text": "Enter wishlist name",
           "swym_variant_selector_create_list_title": "Name Your Wishlist"
         }
+      },
+      "940388356285384148": {
+        "type": "shopify://apps/connectif/blocks/app-embed/2b4f4d30-7186-4bfa-b3d9-3e3cbf2f8a81",
+        "disabled": false,
+        "settings": {
+          "CartVariants": true,
+          "ProductId": "id",
+          "CustomProductImageHeight": 300,
+          "CustomProductImageWidth": 300,
+          "ShowNewsletterSubscriptionStatus": true,
+          "CustomCustomerTags": "",
+          "CustomProductTags": ""
+        }
       }
     }
   },

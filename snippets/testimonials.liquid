@@ -78,16 +78,6 @@
   <div class="{{ section_width }}">
     {%- if title != blank or subheading != blank -%}
       <div class="section__header {{ text_alignment }}">
-        {%- if subheading != blank -%}
-          <h4 class="testimonial__subheading subheading-text"
-            {% if animations_enabled %}
-              data-aos="fade-up"
-              data-aos-anchor="{{ animation_anchor }}"
-              data-aos-delay="{{ animation_delay }}"
-              {%- assign animation_delay = animation_delay | plus: 150 -%}
-            {% endif %}>{{ subheading }}</h4>
-        {%- endif -%}
-
         {%- if title != blank -%}
           <h2 class="testimonial__heading section__heading h2"
             {% if animations_enabled %}
@@ -96,6 +86,16 @@
               data-aos-delay="{{ animation_delay }}"
             {% endif %}
           >{{ title | escape }}</h2>
+        {%- endif -%}
+
+        {%- if subheading != blank -%}
+          <h4 class="testimonial__subheading"
+            {% if animations_enabled %}
+              data-aos="fade-up"
+              data-aos-anchor="{{ animation_anchor }}"
+              data-aos-delay="{{ animation_delay }}"
+              {%- assign animation_delay = animation_delay | plus: 150 -%}
+            {% endif %}>{{ subheading }}</h4>
         {%- endif -%}
 
         {%- if settings.show_spacer_lines -%}

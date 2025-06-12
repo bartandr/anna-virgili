@@ -122,7 +122,7 @@
       ],
       "settings": {
         "sticky_header": false,
-        "link_hover_effect": "dot",
+        "link_hover_effect": "line",
         "header_border": false,
         "header_border_color": "",
         "border_opacity": 50,

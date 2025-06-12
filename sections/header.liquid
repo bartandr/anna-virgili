@@ -325,6 +325,12 @@
     {%- endif -%}
 
     <div class="menu__item menu__item--icon">
+      <a href="#swym-wishlist" class="swym-wishlist">
+        <i aria-hidden="true" focusable="false" role="presentation" class="icon icon-swym-wishlist"></i>
+      </a>
+    </div>
+
+    <div class="menu__item menu__item--icon">
       <a
         href="{{ routes.cart_url }}"
         class="navlink navlink--icon cart__toggle cart__toggle{% if cart.item_count > 0 %} cart__toggle--has-items{% endif %}{% if cart_animation %} cart__toggle--animation{% endif %}{% if settings.nav_caps_toplevel %} caps{% endif %}{% if link_hover_dot %} navlink--dot{% endif %}"
@@ -390,6 +396,12 @@
         </a>
       </div>
     {%- endif -%}
+
+    <div class="menu__item menu__item--icon">
+      <a href="#swym-wishlist" class="swym-wishlist">
+        <i aria-hidden="true" focusable="false" role="presentation" class="icon icon-swym-wishlist"></i>
+      </a>
+    </div>
 
     <div class="menu__item menu__item--icon">
       <a

@@ -206,7 +206,7 @@
         "gradient": "",
         "text_color": "text-dark",
         "border_color": "",
-        "width": "wrapper",
+        "width": "wrapper--narrow",
         "padding_top": 60,
         "padding_bottom": 60
       }

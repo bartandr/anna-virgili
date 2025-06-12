@@ -317,6 +317,9 @@
     },
     "section_collection_DWXBKw": {
       "type": "section-collection",
+      "custom_css": [
+        ".btn {color: #fff;}"
+      ],
       "settings": {
         "collection": "",
         "products_layout": "carousel",
@@ -332,11 +335,11 @@
         "text": "",
         "text_size": 100,
         "button_position": "bottom",
-        "button_text": "Shop Now",
-        "button_color": "btn--black",
+        "button_text": "Scopri di più",
+        "button_color": "btn--primary",
         "button_style": "btn--solid",
         "button_size": "btn--medium",
-        "bg_color": "",
+        "bg_color": "rgba(0,0,0,0)",
         "enable_slider_mobile": true,
         "width": "wrapper--full-padded",
         "padding_top": 0,
@@ -523,7 +526,7 @@
         "text": "",
         "text_size": 100,
         "button_position": "bottom",
-        "button_text": "Shop now",
+        "button_text": "SCOPRI DI PIù",
         "button_color": "btn--black",
         "button_style": "btn--outline",
         "button_size": "btn--medium",

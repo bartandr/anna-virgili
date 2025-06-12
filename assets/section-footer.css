@@ -212,11 +212,15 @@
 
 .footer-title {
   color: var(--text);
+  font-weight: 700;
+  text-transform: uppercase; 
 }
 
 .footer-title__button {
   text-align: left;
   -webkit-appearance: none;
+  font-weight: 700;
+  text-transform: uppercase; 
 }
 @media only screen and (min-width: 768px) {
   .footer-title__button {

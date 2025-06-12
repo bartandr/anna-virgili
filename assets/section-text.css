@@ -1,6 +1,6 @@
 /*================ "Text" ================*/
 .text-section {
-  --text-gap: 16px;
+  --text-gap: 6px;
   position: relative;
   background: var(--bg);
 }

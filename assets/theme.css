@@ -4235,7 +4235,8 @@ body:has(.section-footer--visible) .parallax-rounded-corners {
 }
 
 .section__heading {
-  margin-bottom: var(--heading-margin);
+  /* margin-bottom: var(--heading-margin); */
+  margin-bottom: 4px;
   text-align: center;
 }
 .text-left .section__heading {
@@ -5362,7 +5363,7 @@ body:not(.no-outline) [data-collapsible-trigger]:focus {
 /*================ Search popdown ================*/
 search-popdown {
   --width: 600px;
-  --icon-size: 26px;
+  --icon-size: 24px;
   --search-popdown-height: 68px;
   display: flex;
 }
@@ -6438,6 +6439,7 @@ toggle-ellipsis {
   margin-right: auto;
   padding-left: var(--inner);
   padding-right: var(--inner);
+  padding-left: 175px;
 }
 .site-header--nav-left .logo .logo__image-link--home:not(.logo__image-link--single), .site-header--compress .logo .logo__image-link--home:not(.logo__image-link--single) {
   left: var(--inner);
@@ -12783,6 +12785,10 @@ body:not(.no-outline) .product-grid-item__image:focus-within {
   margin: 0;
 }
 
+.product__subheading h3 {
+  margin-bottom: 0;
+}
+
 .product__price-and-badge {
   display: flex;
   flex-wrap: wrap;
@@ -16850,7 +16856,7 @@ hover-slideshow .btn-quick-buy {
   margin-bottom: 0;
   padding: 0 8px;
 }
-@media only screen and (max-width: 1305px) {
+@media only screen and (max-width: 1313px) {
   .shopify-section-header .localization-form {
     display: none;
   }
@@ -18998,4 +19004,43 @@ body:not(.no-outline) .radio__input.focus-visible + .radio__label {
   .video-text-wrapper .align--bottom-right {
     justify-content: flex-start;
   }
+}
+
+/* CUSTOM */
+
+.menu__item.menu__item--icon:has(.swym-wishlist) {
+  width: 41px;
+  height: 41px;
+}
+
+.menu__item.menu__item--icon .swym-wishlist {
+  padding: 8px;
+  width: 100%;
+}
+
+i.icon-swym-wishlist {
+  font-family: 'swym-font';
+  font-style: normal;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+i.icon-swym-wishlist+span {
+  vertical-align: middle;
+}
+
+i.icon-swym-wishlist:after {
+  content: '';
+  font-size: 22px;
+  line-height: 22px;
+  text-align: center;
+  display: inline;
+}
+
+/*content rendered after swym is ready to avoid showing block/invalid chars*/
+.swym-ready i.icon-swym-wishlist:after {
+  /* content: '\f004'; */
+  content: '\f08a';
 }

@@ -48,7 +48,7 @@
             "alignment": "text-left",
             "menu": "footer-menu-1-ita",
             "title": "Anna Virgili",
-            "column_width": "25"
+            "column_width": "20"
           }
         },
         "footer-block-3": {
@@ -57,7 +57,7 @@
             "alignment": "text-left",
             "menu": "footer-2-menu",
             "title": "Assistenza Clienti",
-            "column_width": "25"
+            "column_width": "20"
           }
         },
         "link_AbJFRi": {
@@ -66,14 +66,14 @@
             "alignment": "text-left",
             "menu": "area-legale",
             "title": "Legal",
-            "column_width": "25"
+            "column_width": "20"
           }
         },
         "divider_KeRQW4": {
           "type": "divider",
           "settings": {
             "show_border_line": true,
-            "column_width": "5"
+            "column_width": "15"
           }
         },
         "social_links_qbLGr6": {

@@ -20,10 +20,10 @@
         "padding_bottom": 60
       }
     },
-    "section_text_XntwLJ": {
+    "section_text_jrUGaB": {
       "type": "section-text",
       "blocks": {
-        "heading_GawYWf": {
+        "heading_gDg3nw": {
           "type": "heading",
           "settings": {
             "text": "<p><strong>Contatti</strong></p>",
@@ -32,8 +32,25 @@
             "highlight_color": "#000000",
             "highlight_text_color": ""
           }
-        },
-        "text_4KX7Mp": {
+        }
+      },
+      "block_order": [
+        "heading_gDg3nw"
+      ],
+      "settings": {
+        "text_position": "center",
+        "bg_color": "",
+        "gradient": "",
+        "text_color": "text-dark",
+        "width": "wrapper--full-padded",
+        "padding_top": 60,
+        "padding_bottom": 0
+      }
+    },
+    "section_text_zqkWem": {
+      "type": "section-text",
+      "blocks": {
+        "text_6TYaYR": {
           "type": "text",
           "name": "Testo-contatti",
           "settings": {
@@ -43,8 +60,7 @@
         }
       },
       "block_order": [
-        "heading_GawYWf",
-        "text_4KX7Mp"
+        "text_6TYaYR"
       ],
       "settings": {
         "text_position": "center",
@@ -52,7 +68,7 @@
         "gradient": "",
         "text_color": "text-dark",
         "width": "wrapper--full-padded",
-        "padding_top": 60,
+        "padding_top": 40,
         "padding_bottom": 0
       }
     },
@@ -152,7 +168,8 @@
   },
   "order": [
     "main",
-    "section_text_XntwLJ",
+    "section_text_jrUGaB",
+    "section_text_zqkWem",
     "section_image_with_text_WBPtA9",
     "contact-form"
   ]

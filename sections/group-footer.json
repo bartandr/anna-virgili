@@ -55,7 +55,7 @@
           "type": "link",
           "settings": {
             "alignment": "text-left",
-            "menu": "footer",
+            "menu": "footer-2-menu",
             "title": "Assistenza Clienti",
             "column_width": "20"
           }
@@ -64,7 +64,7 @@
           "type": "link",
           "settings": {
             "alignment": "text-left",
-            "menu": "main-menu",
+            "menu": "area-legale",
             "title": "Legal",
             "column_width": "20"
           }

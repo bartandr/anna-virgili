@@ -29,7 +29,7 @@
             "text": "<p>Contatti</p>",
             "size": 100,
             "heading_highlight_type": "underline-hand-drawn",
-            "highlight_color": "#000",
+            "highlight_color": "#000000",
             "highlight_text_color": ""
           }
         },
@@ -45,7 +45,6 @@
         "heading_GawYWf",
         "text_4KX7Mp"
       ],
-      "name": "Text",
       "settings": {
         "text_position": "center",
         "bg_color": "",
@@ -82,7 +81,6 @@
         "text_DMaE3X",
         "text_r6pTMR"
       ],
-      "name": "Image with text",
       "settings": {
         "show_accordion_divider": true,
         "increase_border_radius": false,
@@ -108,14 +106,14 @@
         "contact-form-0": {
           "type": "heading",
           "settings": {
-            "title": "Contact us"
+            "title": "Contattaci"
           }
         },
         "contact-form-1": {
           "type": "text",
           "settings": {
-            "title": "Name",
-            "required": false
+            "title": "Nome",
+            "required": true
           }
         },
         "contact-form-2": {
@@ -128,7 +126,7 @@
         "contact-form-3": {
           "type": "body",
           "settings": {
-            "title": "Message",
+            "title": "Messaggio",
             "required": true
           }
         }

@@ -92,7 +92,7 @@
       ],
       "custom_css": [
         "a.footer-link {text-transform: uppercase; font-size: 12px !important;}",
-        "#FooterMenu--follow-us-4 {padding-top: 0 !important; margin-top: -30px !important;}"
+        "@media screen and (min-width: 1200px){#FooterMenu--follow-us-4 {padding-top: 0 !important; margin-top: -30px !important;}.footer-block.footer-block--social-links {width: 17%;}}"
       ],
       "settings": {
         "show_footer_wave": false,

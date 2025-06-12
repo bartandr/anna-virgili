@@ -321,7 +321,7 @@
         ".btn {color: #fff;}"
       ],
       "settings": {
-        "collection": "",
+        "collection": "dev-borse-da-donna",
         "products_layout": "carousel",
         "products_limit": 8,
         "products_per_row_on_desktop": 4,
@@ -512,7 +512,7 @@
     "section-collection-0": {
       "type": "section-collection",
       "settings": {
-        "collection": "",
+        "collection": "dev-borse-da-donna",
         "products_layout": "carousel",
         "products_limit": 8,
         "products_per_row_on_desktop": 4,

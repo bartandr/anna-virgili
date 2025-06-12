@@ -26,7 +26,7 @@
         "heading_GawYWf": {
           "type": "heading",
           "settings": {
-            "text": "<p>Contatti</p>",
+            "text": "<p><strong>Contatti</strong></p>",
             "size": 100,
             "heading_highlight_type": "underline-hand-drawn",
             "highlight_color": "#000000",
@@ -36,7 +36,7 @@
         "text_4KX7Mp": {
           "type": "text",
           "settings": {
-            "text": "<p>Hai bisogno di supporto, desideri ricevere maggiori informazioni o sei interessato a<br/>collaborare con noi?<br/>Il nostro team di assistenza clienti è a tua completa disposizione dal lunedì al venerdì, dalle<br/>09:00 alle 18:00 (esclusi i giorni festivi), e può essere contattato via e-mail, WhatsApp o<br/>telefono.<br/>In alternativa, compila il modulo sottostante indicando nome e cognome, numero di telefono,<br/>e-mail e un messaggio dettagliato: ti ricontatteremo il prima possibile per offrirti la migliore<br/>assistenza.</p>",
+            "text": "<p>Hai bisogno di supporto, desideri ricevere maggiori informazioni o sei interessato a collaborare con noi?<br/>Il nostro team di assistenza clienti è a tua completa disposizione dal lunedì al venerdì, dalle 09:00 alle 18:00 (esclusi i giorni festivi), e può essere contattato via e-mail, WhatsApp o telefono.<br/></p><p>In alternativa, compila il modulo sottostante indicando nome e cognome, numero di telefono, e-mail e un messaggio dettagliato: ti ricontatteremo il prima possibile per offrirti la migliore assistenza.</p>",
             "size": 100
           }
         }
@@ -50,7 +50,7 @@
         "bg_color": "",
         "gradient": "",
         "text_color": "text-dark",
-        "width": "wrapper--narrow",
+        "width": "wrapper--full-padded",
         "padding_top": 60,
         "padding_bottom": 0
       }

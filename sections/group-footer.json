@@ -90,6 +90,9 @@
         "divider_KeRQW4",
         "social_links_qbLGr6"
       ],
+      "custom_css": [
+        "a.footer-link {text-transform: uppercase;}"
+      ],
       "settings": {
         "show_footer_wave": false,
         "enable_footer_parallax": false,

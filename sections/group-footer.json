@@ -47,8 +47,8 @@
           "settings": {
             "alignment": "text-left",
             "menu": "main-menu",
-            "title": "Shop",
-            "column_width": "15"
+            "title": "Anna Virgili",
+            "column_width": "20"
           }
         },
         "footer-block-3": {
@@ -56,8 +56,8 @@
           "settings": {
             "alignment": "text-left",
             "menu": "footer",
-            "title": "Helpful Links",
-            "column_width": "15"
+            "title": "Assistenza Clienti",
+            "column_width": "20"
           }
         },
         "link_AbJFRi": {
@@ -65,7 +65,7 @@
           "settings": {
             "alignment": "text-left",
             "menu": "main-menu",
-            "title": "Shop",
+            "title": "Legal",
             "column_width": "20"
           }
         },
@@ -73,13 +73,13 @@
           "type": "divider",
           "settings": {
             "show_border_line": true,
-            "column_width": "30"
+            "column_width": "20"
           }
         },
         "social_links_qbLGr6": {
           "type": "social_links",
           "settings": {
-            "title": "Shop"
+            "title": "Follow Us"
           }
         }
       },

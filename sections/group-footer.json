@@ -92,12 +92,12 @@
       ],
       "custom_css": [
         "a.footer-link {text-transform: uppercase; font-size: 12px !important;}",
-        "@media screen and (min-width: 1200px){#FooterMenu--follow-us-4 {padding-top: 0 !important; margin-top: -30px !important;}.footer-block.footer-block--social-links {width: 17%;}}"
+        "@media screen and (min-width: 1200px) {#FooterMenu--follow-us-4 {padding-top: 0 !important; margin-top: -30px !important; } .footer-block.footer-block--social-links {width: 17%; }}"
       ],
       "settings": {
         "show_footer_wave": false,
         "enable_footer_parallax": false,
-        "increase_border_radius": true,
+        "increase_border_radius": false,
         "bottom_bar_alignment": "text-left",
         "show_social_links": false,
         "enable_follow_on_shop": false,
@@ -108,7 +108,7 @@
         "color_bg": "#ffffff",
         "color_border": "#ffffff",
         "show_locale_selector": false,
-        "show_locale_code": true,
+        "show_locale_code": false,
         "show_country_selector": false,
         "show_country_name": false,
         "show_country_flag": false,

@@ -21,7 +21,7 @@
     "type_base_font": "helvetica_n4",
     "text_size": 105,
     "type_nav_font": "body",
-    "nav_font_weight": "normal",
+    "nav_font_weight": "light",
     "nav_size": 90,
     "nav_top_level_links_size": 80,
     "nav_caps_toplevel": true,

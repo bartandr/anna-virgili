@@ -1,4 +1,4 @@
-<div class="social-sharing-wrapper">
+<div class="social-sharing-wrapper" {%if collapse == true %}data-collapsible-content{% endif %}>
   {%- if show_social_links -%}
     {%- if settings.social_instagram_link != blank -%}
       <a class="social-sharing-icon instagram" rel="noopener" href = "{{ settings.social_instagram_link }}" title="{{ 'footer.socials.title' | t: social: 'Instagram', shop_name: shop.name }}">

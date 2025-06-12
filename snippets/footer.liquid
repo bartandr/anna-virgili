@@ -151,6 +151,9 @@
   {%- endif -%}
   <div class="footer-content {{ section_width }}">
     <div class="footer-blocks">
+      <div class="footer-blocks__footer-block--logo-mobile mobile-only text-center">
+        <img src="{{ 'logo-av-mini.svg' | file_url }}">
+      </div>
       {%- for block in section.blocks -%}
         {%- liquid
           assign title = block.settings.title
@@ -427,16 +430,34 @@
               style="{{ block_style }}"
               {{ block.shopify_attributes }}
             >
-              {%- if title != blank -%}
+              <button
+                class="footer-title__button h5"
+                aria-controls="FooterMenu--{{ title | handle }}-{{ forloop.index0 }}"
+                data-collapsible-trigger
+                data-collapsible-trigger-mobile
+                aria-expanded="false"
+              >
+                  {{- title -}}
+                {%- render 'icon-toggle-plus' -%}
+                {%- render 'icon-toggle-minus' -%}
+              </button>
+              {% comment %} {%- if title != blank -%}
                 <p class="footer-title h5">{{ title }}</p>
-              {%- endif -%}
-
+              {%- endif -%} {% endcomment %}
+              <div
+                  class="footer-links__wrapper"
+                  {% if title != blank %}
+                    id="FooterMenu--{{ title | handle }}-{{ forloop.index0 }}" data-collapsible-container-mobile
+                  {% endif %}
+                >
               {%- render 'footer-social',
                 show_social_links: true,
                 show_follow_on_shop: show_follow_on_shop,
                 color_bg: color_bg,
-                color_text: color_text
+                color_text: color_text,
+                collapse: true
               -%}
+              </div>
             </div>
           {%- when 'divider' -%}
             <div

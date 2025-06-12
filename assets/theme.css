@@ -6441,6 +6441,13 @@ toggle-ellipsis {
   padding-right: var(--inner);
   padding-left: 175px;
 }
+
+@media only screen and (max-width: 990px) {
+  .site-header--compress .logo {
+    padding-left: var(--inner);
+  } 
+}
+
 .site-header--nav-left .logo .logo__image-link--home:not(.logo__image-link--single), .site-header--compress .logo .logo__image-link--home:not(.logo__image-link--single) {
   left: var(--inner);
   max-width: calc(100% - var(--inner) * 2);
@@ -14487,7 +14494,15 @@ body:not(.no-outline) .deferred-media__poster.focus-visible {
   align-items: flex-start;
   justify-content: flex-start;
   gap: 5px;
+  font-weight: 400;
+  font-size: 14px;
 }
+
+.product-grid-item__price {
+  font-weight: 400;
+  font-size: 14px;
+}
+
 @media only screen and (max-width: 479px) {
   .product-grid-item__title {
     font-size: calc(1.1rem * var(--adjust-product-grid-heading));

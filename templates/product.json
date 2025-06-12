@@ -153,6 +153,70 @@
         "padding_bottom": 60
       }
     },
+    "section_testimonials_ic9V8D": {
+      "type": "section-testimonials",
+      "blocks": {
+        "testimonial_aTVFwr": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "enable_border": false,
+            "heading": "",
+            "text_size": 125,
+            "text": "<p>Excellent customer service. I love their products!</p>",
+            "content_size": 100,
+            "customer_name": "John Edmonson",
+            "subheading": ""
+          }
+        },
+        "testimonial_ia4LdA": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "enable_border": false,
+            "heading": "",
+            "text_size": 125,
+            "text": "<p>Excellent customer service. I love their products!</p>",
+            "content_size": 100,
+            "customer_name": "Lindsay Smith",
+            "subheading": ""
+          }
+        },
+        "testimonial_BnD76q": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "enable_border": false,
+            "heading": "",
+            "text_size": 125,
+            "text": "<p>Excellent customer service. I love their products!</p>",
+            "content_size": 100,
+            "customer_name": "Eric Lopez",
+            "subheading": ""
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_aTVFwr",
+        "testimonial_ia4LdA",
+        "testimonial_BnD76q"
+      ],
+      "settings": {
+        "subheading": "Le recensioni dei nostri clienti",
+        "subheading_size": 100,
+        "title": "Cosa dicono di noi",
+        "heading_size": 100,
+        "text_alignment": "text-center",
+        "bg_color": "#97d1dc",
+        "gradient": "",
+        "testimonial_block_color": "",
+        "star_color": "#fae68c",
+        "testimonial_text_color": "text-light",
+        "width": "wrapper--full-padded",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
     "section_accordions_bp9xeD": {
       "type": "section-accordions",
       "blocks": {
@@ -248,6 +312,7 @@
   },
   "order": [
     "main",
+    "section_testimonials_ic9V8D",
     "section_accordions_bp9xeD",
     "related"
   ]

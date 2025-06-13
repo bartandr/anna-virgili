@@ -136,8 +136,8 @@
         "accordion_block_2_0": {
           "type": "text",
           "settings": {
-            "title": "How long does it take to get my products?",
-            "text": "<p>Domestic shipping can take up to 5 business days.<br/><br/>Foreign shipping could take up to 14 business days.<br/><br/>Due to global supply chain challenges, shipping times could be longer than usual.</p>"
+            "title": "Come faccio a trovare il negozio Anna Virgili più vicino a me?",
+            "text": "<p>Puoi cliccare qui per accedere al nostro motore di ricerca store e scoprire il punto vendita Anna</p><p>Virgili più vicino a te.</p><p>Troverai tutte le informazioni utili: indirizzo, contatti, giorni e orari di apertura.</p>"
           }
         },
         "accordion_block_2_1": {
@@ -181,7 +181,7 @@
         "show_accordion_divider": false,
         "line_thickness": "normal",
         "subheading": "",
-        "title": "Shipping & Delivery",
+        "title": "Negozi Anna Virgili",
         "type_style": "font-heading",
         "heading_size": 120,
         "text": "",

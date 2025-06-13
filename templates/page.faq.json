@@ -216,6 +216,13 @@
             "title": "Ho bisogno di un account per acquistare sul sito?",
             "text": "<p>No, non è necessario creare un account manualmente. Al momento dell'acquisto, un account</p><p>viene generato automaticamente e associato alla tua email. Qui vengono memorizzati i tuoi</p><p>ordini, dati anagrafici e indirizzi di spedizione. Per accedere, visita la sezione Accedi e inserisci la</p><p>tua email. Riceverai un OTP via email da inserire per accedere alla tua area personale.</p>"
           }
+        },
+        "text_Mq8Mjm": {
+          "type": "text",
+          "settings": {
+            "title": "Come posso tracciare un ordine?",
+            "text": "<p>Al momento della spedizione, riceverai un'e-mail con il numero di tracking per monitorare l'avanzamento della spedizione tramite il sito del corriere o il link fornito. In alternativa, puoi sempre monitorare lo stato della spedizione dalla tua area personale.</p>"
+          }
         }
       },
       "block_order": [
@@ -223,7 +230,8 @@
         "accordion_block_3_1",
         "text_GNHTVq",
         "accordion_block_3_2",
-        "text_zR7wjj"
+        "text_zR7wjj",
+        "text_Mq8Mjm"
       ],
       "settings": {
         "layout": "two-columns",

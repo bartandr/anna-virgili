@@ -273,8 +273,8 @@
         "accordion_block_4_1": {
           "type": "text",
           "settings": {
-            "title": "How long after I complete a purchase can I ask for a refund?",
-            "text": "<p>A refund request can be submitted within a month after the purchase is made.</p>"
+            "title": "Quali sono le condizioni per effettuare un reso?",
+            "text": "<p>Periodo per effettuare il reso: la richiesta deve essere inviata entro 14 giorni dalla data di ricezione dell’ordine.</p><p>Condizioni del prodotto: il prodotto deve essere restituito integro, inutilizzato, con etichette e imballo originali.</p>"
           }
         },
         "accordion_block_4_2": {

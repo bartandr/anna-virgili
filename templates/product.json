@@ -223,39 +223,22 @@
         "text_KdnygX": {
           "type": "text",
           "settings": {
-            "title": "How long does it take to get my products?",
-            "text": "<p>Domestic shipping can take up to 5 business days.<br/><br/>Foreign shipping could take up to 14 business days.<br/><br/>Due to global supply chain challenges, shipping times could be longer than usual.</p>"
+            "title": "I vostri prodotti sono autentici?",
+            "text": "<p>Sì, tutti i nostri prodotti sono nuovi e autentici. Siamo rivenditori ufficiali di tutti i brand disponibili</p><p>sul nostro sito. Tutti i prodotti sono completi di etichette e packaging originale.</p>"
           }
         },
         "text_QKxxf9": {
           "type": "text",
           "settings": {
-            "title": "Do you offer warranty for your products?",
-            "text": "<p>All our products are subject to quality control.<br/><br/>Our warranty provides a guarantee against manufacturer defects.<br/><br/>The guarantee covers any manufacturing, design, or material defect. Please notify us within 2 months of noticing any defects.<br/><br/>It does not cover blows, improper use, or other issues that are not attributable to a manufacturer defects.</p>"
-          }
-        },
-        "text_QnjmnH": {
-          "type": "text",
-          "settings": {
-            "title": "Do you offer refunds?",
-            "text": "<p>Yes, we offer full and partial refunds.<br/><br/>Please enquire for more information about our Refund policy.</p>"
-          }
-        },
-        "text_3BQqrW": {
-          "type": "text",
-          "settings": {
-            "title": "What shipping methods do you offer?",
-            "text": "<p>We use all major carriers, and local courier partners. Use the shipping estimator in the cart to check your shipping rates.</p>"
+            "title": "Gli articoli esauriti vengono riassortiti?",
+            "text": "<p>Lo store Anna Virgili mostra in tempo reale la disponibilità degli articoli presenti nei nostri</p><p>magazzini e nei punti vendita.</p><p>Se una taglia non è attualmente disponibile, significa che è terminata e, al momento, non</p><p>possiamo prevedere se ci sarà un riassortimento nel corso della stagione.</p><p>Ti consigliamo di visitare periodicamente la pagina del prodotto o della collezione per verificare</p><p>eventuali aggiornamenti sulla disponibilità. Puoi anche salvare i tuoi articoli preferiti nella</p><p>WISHLIST, così da tenerli sempre sotto controllo.</p>"
           }
         }
       },
       "block_order": [
         "text_KdnygX",
-        "text_QKxxf9",
-        "text_QnjmnH",
-        "text_3BQqrW"
+        "text_QKxxf9"
       ],
-      "name": "Accordions",
       "settings": {
         "layout": "one-column",
         "show_accordion_divider": false,

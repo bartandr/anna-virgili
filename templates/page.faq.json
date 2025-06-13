@@ -287,8 +287,8 @@
         "accordion_block_4_3": {
           "type": "text",
           "settings": {
-            "title": "Who pays the shipping costs in the case of a refund when the order doesn't have free shipping?",
-            "text": "<p>When an order does not include free shipping, all shipping costs (including the return shipping) are handled by the customer.</p>"
+            "title": "Come posso effettuare un reso in un punto vendita Anna Virgili?",
+            "text": "<p>Puoi restituire i tuoi articoli direttamente in uno dei nostri negozi Anna Virgili. Consulta il nostro motore di ricerca per trovare il punto vendita più vicino a te. All’arrivo in negozio, una commessa verificherà le condizioni generali del prodotto affinchè sia conforme alle politiche di reso.</p><p>Per effettuare la restituzione, ti basterà:</p><ul><li>presentarti in negozio entro 14 giorni dalla ricezione dell’ordine</li><li>portare con te due copie cartacee della conferma d’ordine</li></ul><p>Entrambe le copie verranno <strong>firmate e timbrate dal negozio</strong>: una resterà a te come riscontro, l’altra sarà trattenuta dal negozio a conferma dell’avvenuta restituzione e presa in carico.</p><p>Per maggiori informazioni, consulta la pagina <a href=\"/pages/resi-e-rimborsi\" title=\"Resi e rimborsi\">Resi & Rimborsi</a>.</p>"
           }
         },
         "accordion_block_4_4": {

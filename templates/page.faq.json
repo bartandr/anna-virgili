@@ -203,6 +203,13 @@
             "text": "<p>Una volta confermato, l’ordine non può essere modificato o cancellato. Ti invitiamo a verificare con attenzione il contenuto del carrello prima di procedere al pagamento. Per qualsiasi esigenza o segnalazione, puoi comunque contattarci attraverso la sezione Contatti del sito.</p>"
           }
         },
+        "text_L6aVNA": {
+          "type": "text",
+          "settings": {
+            "title": "Sono un cliente extra EU, i vostri prezzi includono i dazi doganali?",
+            "text": "<p>No, eventuali dazi doganali e tasse d’importazione sono a carico del cliente e devono essere corrisposti al corriere secondo le modalità indicate.</p>"
+          }
+        },
         "accordion_block_3_2": {
           "type": "text",
           "settings": {
@@ -229,6 +236,7 @@
         "accordion_block_3_0",
         "accordion_block_3_1",
         "text_GNHTVq",
+        "text_L6aVNA",
         "accordion_block_3_2",
         "text_zR7wjj",
         "text_Mq8Mjm"

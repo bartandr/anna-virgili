@@ -297,6 +297,13 @@
             "title": "Il reso è gratuito?",
             "text": "<p>RESO ONLINE</p><p>La procedura ha un costo fisso di € 5,00, che verrà dedotto dall’importo rimborsato.</p><p>RESO IN UN PUNTO VENDITA ANNA VIRGILI</p><p>La procedura è GRATUITA e non prevede alcun costo. L'importo del tuo ordine verrà rimborsato per intero.</p><p>*Nota: L’importo delle spese di spedizione sostenute al momento dell’acquisto verrà rimborsato</p><p>per intero, salvo in caso di reso parziale. In quest’ultimo caso, il costo di spedizione iniziale non verrà rimborsato.</p>"
           }
+        },
+        "text_Czq8hr": {
+          "type": "text",
+          "settings": {
+            "title": "Posso cambiare un prodotto acquistato con un’altra taglia o colore?",
+            "text": "<p>Al momento non offriamo la possibilità di effettuare cambi diretti. Se desideri una taglia o un colore diverso, ti invitiamo a effettuare un nuovo ordine e a procedere con il reso dell’articolo che</p><p>non intendi tenere, seguendo le modalità indicate nella sezione Resi & Rimborsi.</p><p>Per qualsiasi dubbio o necessità, il nostro Servizio Clienti è sempre a tua disposizione.</p>"
+          }
         }
       },
       "block_order": [
@@ -304,7 +311,8 @@
         "accordion_block_4_1",
         "accordion_block_4_2",
         "accordion_block_4_3",
-        "accordion_block_4_4"
+        "accordion_block_4_4",
+        "text_Czq8hr"
       ],
       "settings": {
         "layout": "two-columns",

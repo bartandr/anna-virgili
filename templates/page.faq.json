@@ -151,7 +151,7 @@
           "type": "text",
           "settings": {
             "title": "Tutti i prodotti disponibili online si trovano anche in negozio?",
-            "text": "<p>Generalmente sì, ma potrebbero esserci delle differenze. Alcuni articoli possono essere</p><p>disponibili esclusivamente online, mentre altri potrebbero far parte di collezioni dedicate ai nostri</p><p>store fisici. Ti consigliamo di contattare il negozio più vicino per verificare la disponibilità di uno</p><p>specifico prodotto.</p>"
+            "text": "<p>Generalmente sì, ma potrebbero esserci delle differenze. Alcuni articoli possono essere disponibili esclusivamente online, mentre altri potrebbero far parte di collezioni dedicate ai nostri store fisici. Ti consigliamo di contattare il negozio più vicino per verificare la disponibilità di uno specifico prodotto.</p>"
           }
         }
       },

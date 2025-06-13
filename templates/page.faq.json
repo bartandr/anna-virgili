@@ -280,8 +280,8 @@
         "accordion_block_4_2": {
           "type": "text",
           "settings": {
-            "title": "How much can I get refunded?",
-            "text": "<p>In the case when the<strong>product and packaging are unopened and undamaged</strong>, you are<strong>eligible</strong>for a full refund.<br/><br/>In the case when<strong>the packaging has been opened and the product has been used</strong>, you are<strong>eligible</strong>for a partial refund.<br/><br/>In the case when a<strong>product has been damaged</strong>, and the damage is not covered by your warranty, you are<strong>not eligible</strong>for a refund.<br/><br/>Please check our <a href=\"/policies/terms-of-service\" title=\"Terms of Service\">Terms of Service</a> to see if you're eligible for a refund.</p>"
+            "title": "Quanto tempo ci vuole per ricevere il mio rimborso dopo aver effettuato un reso?",
+            "text": "<p>Una volta ricevuto il prodotto (procedura online o su punto vendita Anna Virgili), ci riserviamo 3–7</p><p>giorni lavorativi per approvare il rimborso. L’importo verrà poi accreditato sullo stesso metodo di</p><p>pagamento utilizzato in fase di acquisto.</p>"
           }
         },
         "accordion_block_4_3": {

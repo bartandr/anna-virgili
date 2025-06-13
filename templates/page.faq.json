@@ -199,8 +199,8 @@
         "text_GNHTVq": {
           "type": "text",
           "settings": {
-            "title": "Posso effettuare un ordine e ritirarlo in un punto vendita Anna Virgili?",
-            "text": "<p>Sì, durante il checkout potrai scegliere tra diverse modalità di spedizione.</p><p>Oltre alla consegna a domicilio, è disponibile anche il ritiro in negozio, selezionando il punto</p><p>vendita Anna Virgili più vicino alla tua posizione tra quelli disponibili.</p><p>Il servizio è GRATUITO e non prevede costi di spedizione aggiuntivi.</p><p>Non appena il tuo ordine sarà disponibile per il ritiro, riceverai una notifica via email e un</p><p>aggiornamento sarà visibile anche all’interno del tuo account personale.</p>"
+            "title": "Posso modificare o annullare un ordine?",
+            "text": "<p>Una volta confermato, l’ordine non può essere modificato o cancellato. Ti invitiamo a verificare con attenzione il contenuto del carrello prima di procedere al pagamento. Per qualsiasi esigenza o segnalazione, puoi comunque contattarci attraverso la sezione Contatti del sito.</p>"
           }
         },
         "accordion_block_3_2": {

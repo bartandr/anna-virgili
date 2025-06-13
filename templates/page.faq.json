@@ -294,8 +294,8 @@
         "accordion_block_4_4": {
           "type": "text",
           "settings": {
-            "title": "Who pays the shipping costs in the case of a refund when the order has free shipping?",
-            "text": "<p>When an order includes free shipping, only the cost of the return shipping is handled by the customer.</p>"
+            "title": "Il reso è gratuito?",
+            "text": "<p>RESO ONLINE</p><p>La procedura ha un costo fisso di € 5,00, che verrà dedotto dall’importo rimborsato.</p><p>RESO IN UN PUNTO VENDITA ANNA VIRGILI</p><p>La procedura è GRATUITA e non prevede alcun costo. L'importo del tuo ordine verrà rimborsato per intero.</p><p>*Nota: L’importo delle spese di spedizione sostenute al momento dell’acquisto verrà rimborsato</p><p>per intero, salvo in caso di reso parziale. In quest’ultimo caso, il costo di spedizione iniziale non verrà rimborsato.</p>"
           }
         }
       },

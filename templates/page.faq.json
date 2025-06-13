@@ -196,18 +196,34 @@
             "text": "<p>Sì, durante il checkout potrai scegliere tra diverse modalità di spedizione.</p><p>Oltre alla consegna a domicilio, è disponibile anche il ritiro in negozio, selezionando il punto</p><p>vendita Anna Virgili più vicino alla tua posizione tra quelli disponibili.</p><p>Il servizio è GRATUITO e non prevede costi di spedizione aggiuntivi.</p><p>Non appena il tuo ordine sarà disponibile per il ritiro, riceverai una notifica via email e un</p><p>aggiornamento sarà visibile anche all’interno del tuo account personale.</p>"
           }
         },
+        "text_GNHTVq": {
+          "type": "text",
+          "settings": {
+            "title": "Posso effettuare un ordine e ritirarlo in un punto vendita Anna Virgili?",
+            "text": "<p>Sì, durante il checkout potrai scegliere tra diverse modalità di spedizione.</p><p>Oltre alla consegna a domicilio, è disponibile anche il ritiro in negozio, selezionando il punto</p><p>vendita Anna Virgili più vicino alla tua posizione tra quelli disponibili.</p><p>Il servizio è GRATUITO e non prevede costi di spedizione aggiuntivi.</p><p>Non appena il tuo ordine sarà disponibile per il ritiro, riceverai una notifica via email e un</p><p>aggiornamento sarà visibile anche all’interno del tuo account personale.</p>"
+          }
+        },
         "accordion_block_3_2": {
           "type": "text",
           "settings": {
             "title": "Quali sono i costi e i tempi di spedizione?",
             "text": "<p>Il corriere che utilizziamo è UPS e spediamo in Italia in 24-48 ore con consegna espressa, e fuori</p><p>dall’Italia in 4/7 giorni lavorativi. In Italia, la spedizione ha un costo di €7 per ordini inferiori a €150</p><p>ed è gratuita per ordini pari o superiori a €150. Per le spedizioni internazionali, i costi partono da</p><p>€12.Per consultare l’elenco completo dei paesi in cui spediamo e i relativi costi, ti invitiamo a visitare</p><p>la pagina <a href=\"/pages/ordini-e-spedizioni\" title=\"Ordini e spedizioni\">Spedizioni</a>.</p>"
           }
+        },
+        "text_zR7wjj": {
+          "type": "text",
+          "settings": {
+            "title": "Ho bisogno di un account per acquistare sul sito?",
+            "text": "<p>No, non è necessario creare un account manualmente. Al momento dell'acquisto, un account</p><p>viene generato automaticamente e associato alla tua email. Qui vengono memorizzati i tuoi</p><p>ordini, dati anagrafici e indirizzi di spedizione. Per accedere, visita la sezione Accedi e inserisci la</p><p>tua email. Riceverai un OTP via email da inserire per accedere alla tua area personale.</p>"
+          }
         }
       },
       "block_order": [
         "accordion_block_3_0",
         "accordion_block_3_1",
-        "accordion_block_3_2"
+        "text_GNHTVq",
+        "accordion_block_3_2",
+        "text_zR7wjj"
       ],
       "settings": {
         "layout": "two-columns",

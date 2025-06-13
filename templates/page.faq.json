@@ -157,8 +157,8 @@
         "accordion_block_2_3": {
           "type": "text",
           "settings": {
-            "title": "Do you ship internationally?",
-            "text": "<p>Yes, we ship our products all over the globe.<br/><br/>Please note that free shipping is not applicable for international orders and that shipping rates could vary depending on your region.</p>"
+            "title": "Tutti i prodotti disponibili online si trovano anche in negozio?",
+            "text": "<p>Generalmente sì, ma potrebbero esserci delle differenze. Alcuni articoli possono essere</p><p>disponibili esclusivamente online, mentre altri potrebbero far parte di collezioni dedicate ai nostri</p><p>store fisici. Ti consigliamo di contattare il negozio più vicino per verificare la disponibilità di uno</p><p>specifico prodotto.</p>"
           }
         },
         "accordion_block_2_4": {

@@ -28,18 +28,10 @@
             "padding_bottom": 20
           }
         },
-        "text_C6cDLi": {
-          "type": "text",
-          "settings": {
-            "title": "<p>Descrizione di prodotto (short) Esempio:<br/></p>",
-            "text_alignment": "left",
-            "padding_bottom": 0
-          }
-        },
         "text_FTy7k3": {
           "type": "text",
           "settings": {
-            "title": "<p>Borsa a tracolla vera medium in pelle nera</p>",
+            "title": "<p>{{ product.metafields.pdo.descrizione_breve | metafield_tag }}</p>",
             "text_alignment": "left",
             "padding_bottom": 20
           }
@@ -130,7 +122,6 @@
       "block_order": [
         "text_A7y6PV",
         "text_9HbVgG",
-        "text_C6cDLi",
         "text_FTy7k3",
         "title",
         "form",

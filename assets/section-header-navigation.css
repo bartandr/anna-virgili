@@ -140,6 +140,11 @@
   display: inline-block;
   text-decoration: none !important;
 }
+
+.grandparent .navlink--child > .navtext {
+  font-weight: 400 !important;
+}
+
 .navlink--toplevel > .navtext:before, .navlink--toplevel > .navtext:after,
 .navlink--icon .navtext:before,
 .navlink--icon .navtext:after,
@@ -462,7 +467,11 @@
 .dropdown__family > .navlink.navlink--grandchild:last-child {
   margin-top: auto;
   padding-top: 10px;
-  font-weight: 600;
+  font-weight: 400;
+}
+
+.dropdown__family > .navlink.navlink--grandchild:last-child span {
+  font-weight: 400 !important;
 }
 
 .header__dropdown__image {

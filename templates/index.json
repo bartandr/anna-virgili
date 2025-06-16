@@ -511,6 +511,9 @@
     },
     "section-collection-0": {
       "type": "section-collection",
+      "custom_css": [
+        ".btn {color: #fff;}"
+      ],
       "settings": {
         "collection": "dev-borse-da-donna",
         "products_layout": "carousel",
@@ -527,10 +530,10 @@
         "text_size": 100,
         "button_position": "bottom",
         "button_text": "SCOPRI DI PIù",
-        "button_color": "btn--black",
-        "button_style": "btn--outline",
+        "button_color": "btn--primary",
+        "button_style": "btn--solid",
         "button_size": "btn--medium",
-        "bg_color": "",
+        "bg_color": "rgba(0,0,0,0)",
         "enable_slider_mobile": false,
         "width": "wrapper--full-padded",
         "padding_top": 0,

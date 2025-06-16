@@ -77,7 +77,7 @@
         "template--21524360200470__8d9a9dcc-b650-4240-8dbe-558bd59ba535-heading-1": {
           "type": "heading",
           "settings": {
-            "text": "<h1>{{ collection.title }}</h1>",
+            "text": "<h1><strong>{{ collection.title }}</strong></h1>",
             "size": 100,
             "heading_highlight_type": "highlight-color",
             "highlight_color": "#d43747",

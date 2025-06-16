@@ -193,7 +193,7 @@
         "96343c36-f832-4740-8cd6-2a90dcf9e4d9": {
           "type": "promo",
           "settings": {
-            "collection": "",
+            "collection": "anna-virgili",
             "image": "{{ block.settings.collection.metafields.pdp.immagine_collezione_1.value }}",
             "promo_position": 3,
             "width": "two-rows",
@@ -219,7 +219,7 @@
         "promo_8ikkML": {
           "type": "promo",
           "settings": {
-            "collection": "",
+            "collection": "anna-virgili",
             "image": "{{ block.settings.collection.metafields.pdp.immagine_collezione_2.value }}",
             "promo_position": 11,
             "width": "two-rows",

@@ -75,10 +75,32 @@
             "padding": true,
             "padding_bottom": 10
           }
+        },
+        "login_VJ8QMH": {
+          "type": "login",
+          "settings": {
+            "text_size": 100,
+            "pin_to_bottom": true,
+            "padding_bottom": 10
+          }
+        },
+        "localization_zwkP3P": {
+          "type": "localization",
+          "settings": {
+            "show_locale_selector": true,
+            "show_locale_code": true,
+            "show_country_selector": false,
+            "show_country_name": false,
+            "show_country_flag": false,
+            "pin_to_bottom": true,
+            "padding_bottom": 10
+          }
         }
       },
       "block_order": [
-        "menu"
+        "menu",
+        "login_VJ8QMH",
+        "localization_zwkP3P"
       ],
       "settings": {
         "logo_max_width": 100

@@ -165,7 +165,7 @@
         "image_qqY7xe"
       ],
       "custom_css": [
-        "@media screen and (max-width:768px) {.mosaic__item {max-width: 90%;}.mosaic__item:last-of-type {margin-top: -20%; margin-left: auto;}.mosaic__item__inner {border-radius: 0;} }"
+        "@media screen and (max-width: 768px) {.mosaic__item {max-width: 90%; } .mosaic__item:last-of-type {margin-top: -20%; margin-left: auto; } .mosaic__item__inner {border-radius: 0; }}"
       ],
       "settings": {
         "desktop_height": "five-fifty-height",
@@ -196,7 +196,7 @@
         "96343c36-f832-4740-8cd6-2a90dcf9e4d9": {
           "type": "promo",
           "settings": {
-            "collection": "anna-virgili",
+            "collection": "{{ collection }}",
             "image": "{{ block.settings.collection.metafields.pdp.immagine_collezione_1.value }}",
             "promo_position": 3,
             "width": "two-rows",
@@ -222,7 +222,7 @@
         "promo_8ikkML": {
           "type": "promo",
           "settings": {
-            "collection": "anna-virgili",
+            "collection": "{{ collection }}",
             "image": "{{ block.settings.collection.metafields.pdp.immagine_collezione_2.value }}",
             "promo_position": 11,
             "width": "two-rows",

@@ -14507,6 +14507,7 @@ body:not(.no-outline) .deferred-media__poster.focus-visible {
 @media only screen and (max-width: 479px) {
   .product-grid-item__title {
     font-size: calc(1.1rem * var(--adjust-product-grid-heading));
+    font-size: 14px;
   }
 }
 .product-grid-item__title.font-heading {

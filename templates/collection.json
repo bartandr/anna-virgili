@@ -128,7 +128,7 @@
         "96343c36-f832-4740-8cd6-2a90dcf9e4d9": {
           "type": "promo",
           "settings": {
-            "collection": "",
+            "collection": "dev-borse-da-donna",
             "image": "{{ block.settings.collection.metafields.pdp.immagine_collezione_1.value }}",
             "promo_position": 3,
             "width": "half",
@@ -154,7 +154,7 @@
         "promo_8ikkML": {
           "type": "promo",
           "settings": {
-            "collection": "",
+            "collection": "dev-borse-da-donna",
             "image": "{{ block.settings.collection.metafields.pdp.immagine_collezione_2.value }}",
             "promo_position": 13,
             "width": "half",

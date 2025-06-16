@@ -6872,6 +6872,8 @@ body:has(.site-header[data-transparent=true]):has(.main-content > .supports-tran
   width: 100%;
   margin-top: auto;
   margin-top: calc(var(--inner) / 2);
+  border-top: 1px solid #000;
+  padding-top: 20px;
 }
 
 .drawer__overlay {

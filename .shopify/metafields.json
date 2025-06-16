@@ -3,33 +3,23 @@
   "blog": [],
   "collection": [
     {
-      "key": "immagine_2_collezioni",
-      "namespace": "custom",
-      "name": "immagine_2_collezioni",
+      "key": "immagine_collezione_1",
+      "namespace": "pdp",
+      "name": "Immagine_Collezione_1",
       "description": "",
       "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
+        "name": "file_reference",
+        "category": "REFERENCE"
       }
     },
     {
-      "key": "immagine_1_collezioni",
-      "namespace": "custom",
-      "name": "immagine_1_collezioni",
+      "key": "immagine_collezione_2",
+      "namespace": "pdp",
+      "name": "Immagine Collezione 2",
       "description": "",
       "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "brand",
-      "namespace": "custom",
-      "name": "Brand",
-      "description": "",
-      "type": {
-        "name": "boolean",
-        "category": "TRUE_FALSE"
+        "name": "file_reference",
+        "category": "REFERENCE"
       }
     }
   ],
@@ -165,6 +155,26 @@
       "namespace": "pdp",
       "name": "Gender",
       "description": "",
+      "type": {
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "varianti_prodotto",
+      "namespace": "pdo",
+      "name": "Varianti Prodotto",
+      "description": "",
+      "type": {
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "GenderElencoPuntato",
+      "namespace": "pdp",
+      "name": "Gender Elenco Puntato",
+      "description": "Lista dei generi disponibili per il prodotto",
       "type": {
         "name": "list.single_line_text_field",
         "category": "TEXT"

@@ -1,6 +1,6 @@
 /*================ Site Nav and Dropdowns ================*/
 .nav {
-  --icon-size: 26px;
+  --icon-size: 24px;
   --inner: 15px;
   font-family: var(--FONT-STACK-NAV);
   font-style: var(--FONT-STYLE-NAV);

@@ -337,6 +337,7 @@ em {
 
 b, strong {
   font-weight: var(--FONT-WEIGHT-BODY-BOLD);
+  font-weight: 600;
 }
 
 small {

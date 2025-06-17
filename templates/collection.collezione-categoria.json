@@ -36,7 +36,7 @@
             "text_position": "center",
             "subheading": "",
             "title": "{{ collection.title }}",
-            "text": "",
+            "text": "{{ collection.metafields.coll.descrizione_breve_collezione.value }}",
             "button_1_text": "",
             "button_1_link": "",
             "button_2_text": "",
@@ -68,6 +68,41 @@
         "width": "wrapper--full",
         "add_gutter": false,
         "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "section_text_9F7EJg": {
+      "type": "section-text",
+      "blocks": {
+        "heading_HjHpEN": {
+          "type": "heading",
+          "settings": {
+            "text": "<h1>{{ collection.title }}</h1>",
+            "size": 100,
+            "heading_highlight_type": "highlight-color",
+            "highlight_color": "#d43747",
+            "highlight_text_color": "#000000"
+          }
+        },
+        "text_8dEnGy": {
+          "type": "text",
+          "settings": {
+            "text": "{{ collection.description }}",
+            "size": 100
+          }
+        }
+      },
+      "block_order": [
+        "heading_HjHpEN",
+        "text_8dEnGy"
+      ],
+      "settings": {
+        "text_position": "center",
+        "bg_color": "",
+        "gradient": "",
+        "text_color": "text-dark",
+        "width": "wrapper--full-padded",
+        "padding_top": 16,
         "padding_bottom": 0
       }
     },
@@ -171,6 +206,7 @@
   "order": [
     "hero",
     "b5058786-b763-4ab8-b375-d96e3dbab791",
+    "section_text_9F7EJg",
     "subcollections",
     "main"
   ]

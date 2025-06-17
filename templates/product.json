@@ -125,6 +125,16 @@
         "padding_bottom": 60
       }
     },
+    "section_custom_html_TGm3Fi": {
+      "type": "section-custom-html",
+      "name": "Custom code",
+      "settings": {
+        "custom_code": "<div class=\"social-share\">\n  <a href=\"https://www.facebook.com/sharer/sharer.php?u={{ canonical_url }}\" target=\"_blank\" rel=\"noopener noreferrer\">\n    <i class=\"fab fa-facebook fa-2x\"></i>\n  </a>\n\n  <a href=\"https://api.whatsapp.com/send?text={{ canonical_url }}\" target=\"_blank\" rel=\"noopener noreferrer\">\n    <i class=\"fab fa-whatsapp fa-2x\"></i>\n  </a>\n\n  <a href=\"https://twitter.com/intent/tweet?url={{ canonical_url }}&text=Guarda questo prodotto!\" target=\"_blank\" rel=\"noopener noreferrer\">\n    <i class=\"fab fa-x-twitter fa-2x\"></i>\n  </a>\n\n  <a href=\"https://www.linkedin.com/sharing/share-offsite/?url={{ canonical_url }}\" target=\"_blank\" rel=\"noopener noreferrer\">\n    <i class=\"fab fa-linkedin fa-2x\"></i>\n  </a>\n\n  <a href=\"https://pinterest.com/pin/create/button/?url={{ canonical_url }}\" target=\"_blank\" rel=\"noopener noreferrer\">\n    <i class=\"fab fa-pinterest fa-2x\"></i>\n  </a>\n\n  <a href=\"https://t.me/share/url?url={{ canonical_url }}&text=Guarda questo prodotto!\" target=\"_blank\" rel=\"noopener noreferrer\">\n    <i class=\"fab fa-telegram fa-2x\"></i>\n  </a>\n\n  <a href=\"https://www.tiktok.com/@iltuoprofilo\" target=\"_blank\" rel=\"noopener noreferrer\">\n    <i class=\"fab fa-tiktok fa-2x\"></i>\n  </a>\n\n  <a href=\"mailto:?subject=Guarda questo prodotto&body=Guarda questo link: {{ canonical_url }}\">\n    <i class=\"fas fa-envelope fa-2x\"></i>\n  </a>\n</div>",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
     "section_testimonials_ic9V8D": {
       "type": "section-testimonials",
       "blocks": {
@@ -267,6 +277,7 @@
   },
   "order": [
     "main",
+    "section_custom_html_TGm3Fi",
     "section_testimonials_ic9V8D",
     "section_accordions_bp9xeD",
     "related"

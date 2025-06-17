@@ -50,7 +50,7 @@
       ],
       "custom_css": [
         ".mosaic__item__inner h3 {font-weight: bold !important;}",
-        ".mosaic__item__text.p{font-weight: normal;"
+        ".mosaic__item__text.p{font-weight: normal;}"
       ],
       "settings": {
         "desktop_height": "three-fifty-height",

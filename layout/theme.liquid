@@ -15,7 +15,7 @@
 {%- unless settings.type_heading_font.system? -%}
   <link rel="preload" as="font" href="{{ settings.type_heading_font | font_url }}" type="font/woff2" crossorigin>
 {%- endunless -%}
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-dfg0c3Vx2oNhqdS6vL7epO4pO6Iu6DHsJuYgF2cdM0k7zD2mQb6f/OA1Onw96HzlEbAT3vGPzC3DgVbSuIZi7A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="preload" as="image" href="{{ 'loading.svg' | asset_url }}">{%- liquid
   assign loading_appearance = settings.loading_appearance
   assign image_width = settings.loading_image_width

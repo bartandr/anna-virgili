@@ -77,7 +77,7 @@
             "line_thickness": "normal",
             "accordion_heading": "DESCRIZIONE PRODOTTO",
             "heading_style": "font-body",
-            "accordion_text": "<p>DESCRIZIONE PRODOTTO</p>",
+            "accordion_text": "{{ block.settings.accordion_page.content }}",
             "accordion_page": "",
             "padding_bottom": 10
           }

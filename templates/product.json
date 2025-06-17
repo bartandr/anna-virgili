@@ -99,24 +99,6 @@
             "accordion_page": "",
             "padding_bottom": 10
           }
-        },
-        "product_accordion_eF7cjf": {
-          "type": "product_accordion",
-          "settings": {
-            "show_description": false,
-            "show_read_more": true,
-            "open_by_default": false,
-            "enable_full_width": false,
-            "tabs_bg_color": "",
-            "text_color": "text-dark",
-            "show_accordion_divider": false,
-            "line_thickness": "normal",
-            "accordion_heading": "CONDIVIDI",
-            "heading_style": "font-body",
-            "accordion_text": "",
-            "accordion_page": "",
-            "padding_bottom": 10
-          }
         }
       },
       "block_order": [
@@ -127,14 +109,13 @@
         "form",
         "inventory_countdown",
         "product_accordion",
-        "9927e90d-2ecb-4104-af67-0dadf75b2a0a",
-        "product_accordion_eF7cjf"
+        "9927e90d-2ecb-4104-af67-0dadf75b2a0a"
       ],
       "settings": {
         "product_sticky_enable": false,
         "image_layout": "carousel",
         "image_width": "large",
-        "product_image_aspect_ratio": false,
+        "product_image_aspect_ratio": true,
         "enable_zoom": true,
         "enable_video_looping": false,
         "bg_color": "",

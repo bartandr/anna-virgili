@@ -35,7 +35,7 @@
             "overlay_opacity": 10,
             "text_position": "center",
             "subheading": "",
-            "title": "",
+            "title": "{{ collection.title }}",
             "text": "",
             "button_1_text": "",
             "button_1_link": "",
@@ -68,41 +68,6 @@
         "width": "wrapper--full",
         "add_gutter": false,
         "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "8d9a9dcc-b650-4240-8dbe-558bd59ba535": {
-      "type": "section-text",
-      "blocks": {
-        "template--21524360200470__8d9a9dcc-b650-4240-8dbe-558bd59ba535-heading-1": {
-          "type": "heading",
-          "settings": {
-            "text": "<h1>{{ collection.title }}</h1>",
-            "size": 100,
-            "heading_highlight_type": "highlight-color",
-            "highlight_color": "#d43747",
-            "highlight_text_color": "#000000"
-          }
-        },
-        "template--21524360200470__8d9a9dcc-b650-4240-8dbe-558bd59ba535-text-1": {
-          "type": "text",
-          "settings": {
-            "text": "{{ collection.description }}",
-            "size": 100
-          }
-        }
-      },
-      "block_order": [
-        "template--21524360200470__8d9a9dcc-b650-4240-8dbe-558bd59ba535-heading-1",
-        "template--21524360200470__8d9a9dcc-b650-4240-8dbe-558bd59ba535-text-1"
-      ],
-      "settings": {
-        "text_position": "center",
-        "bg_color": "",
-        "gradient": "",
-        "text_color": "text-dark",
-        "width": "wrapper--full-padded",
-        "padding_top": 16,
         "padding_bottom": 0
       }
     },
@@ -206,7 +171,6 @@
   "order": [
     "hero",
     "b5058786-b763-4ab8-b375-d96e3dbab791",
-    "8d9a9dcc-b650-4240-8dbe-558bd59ba535",
     "subcollections",
     "main"
   ]

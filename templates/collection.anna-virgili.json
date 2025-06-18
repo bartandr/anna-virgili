@@ -101,7 +101,7 @@
         "bg_color": "",
         "gradient": "",
         "text_color": "text-dark",
-        "width": "wrapper--full-padded",
+        "width": "wrapper--narrow",
         "padding_top": 30,
         "padding_bottom": 0
       }

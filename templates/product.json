@@ -41,7 +41,7 @@
           "settings": {
             "subheading": "none",
             "title_size": 70,
-            "price_size": 85,
+            "price_size": 90,
             "bold_price": true,
             "padding_bottom": 0
           }

@@ -8998,15 +8998,14 @@ body:has(.site-header[data-transparent=true]):has(.main-content > .supports-tran
 }
 
 .flickity-page-dots .dot {
-  border: var(--BORDER-WIDTH) solid var(--text);
-  background-color: transparent;
+  background-color: #D2D2D2;
   transition: border 0.5s ease, width 0.5s ease, opacity 0.5s ease;
   border-radius: 5px;
   pointer-events: auto;
 }
 
 .flickity-page-dots .dot.is-selected {
-  width: 25px;
+  background: #727272;
 }
 
 .flickity-page-dots .dot:only-child {

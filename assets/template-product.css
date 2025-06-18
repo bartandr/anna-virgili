@@ -194,8 +194,12 @@
   width: 100%;
   position: relative;
   z-index: 15;
+  margin-top: 55px;
 }
 @media only screen and (min-width: 768px) {
+  .product-single__details {
+    margin-top: 0;
+  }
   .product-single__details .form__wrapper {
     max-width: 460px;
     margin: 0 auto;

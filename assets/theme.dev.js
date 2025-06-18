@@ -19041,8 +19041,8 @@
         if (media.length > 1) {
           this.flkty = new window.theme.Flickity(slider, {
             wrapAround: true,
-            pageDots: false,
-            adaptiveHeight: true,
+            pageDots: true,
+            adaptiveHeight: false,
             on: {
               ready: () => {
                 this.slidesAriaHidden(slider);

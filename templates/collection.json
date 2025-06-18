@@ -101,9 +101,9 @@
         "bg_color": "",
         "gradient": "",
         "text_color": "text-dark",
-        "width": "wrapper--full-padded",
-        "padding_top": 16,
-        "padding_bottom": 0
+        "width": "wrapper--narrow",
+        "padding_top": 40,
+        "padding_bottom": 20
       }
     },
     "subcollections": {

@@ -14859,6 +14859,53 @@ body:not(.no-outline) .deferred-media__poster.focus-visible {
   color: var(--saving-text);
 }
 
+.product__block.product__meta-variants {
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.product__block.product__meta-variants ul {
+  display: flex;
+  list-style: none;
+  margin-left: 0;
+  flex-flow: row;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 6px;
+  margin-bottom: 0;
+}
+
+.product__block.product__meta-variants ul li {
+  min-width: fit-content;
+  scroll-snap-align: start;
+  margin-bottom: 0;
+}
+
+.product__block.product__meta-variants ul li a {
+  display: block;
+}
+
+.product__block.product__meta-variants img {
+  display: block;
+  object-fit: cover;
+}
+
+/* Scroll Bar */
+
+/* WebKit-браузеры: Chrome, Edge, Safari */
+.product__block.product__meta-variants ul::-webkit-scrollbar {
+  height: 4px;
+  background-color: rgba(0,0,0,0.3);
+}
+
+.product__block.product__meta-variants ul::-webkit-scrollbar-thumb {
+  height: 2px;
+  background: #98D2DD;
+}
+
+/* End Scroll Bar */
+
 .body--rounded-corners .product-grid-item__image,
 .body--rounded-corners .product__media__slider:not(.flickity-enabled) .product-gallery__media {
   border-radius: var(--radius);

@@ -34,7 +34,7 @@
     "subheading_letter_spacing": 100,
     "type_labels_font": "body",
     "label_font_weight": "bold",
-    "label_caps": true,
+    "label_caps": false,
     "label_size": 65,
     "type_highlight_font": "pacifico_n4",
     "type_button_font": "body",

@@ -14869,7 +14869,7 @@ body:not(.no-outline) .deferred-media__poster.focus-visible {
   list-style: none;
   margin-left: 0;
   flex-flow: row;
-  overflow-x: scroll;
+  overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   gap: 6px;
@@ -18346,7 +18346,7 @@ body:not(.no-outline) .selector-wrapper--swatches .radio__fieldset:focus-within,
 }
 
 .radio__legend__label {
-  font-size: calc(1.1rem * var(--adjust-label));
+  font-size: calc(1.2rem * var(--adjust-label));
 }
 @media only screen and (max-width: 767px) {
   .radio__legend__label {

@@ -152,7 +152,7 @@
         "logo_max_width": 250,
         "main-menu": "main-menu",
         "main_menu_secondary": "",
-        "show_images": true,
+        "show_images": false,
         "image_aspect_ratio": 1,
         "menu_alignment": "center",
         "header_icons_as_text": false,

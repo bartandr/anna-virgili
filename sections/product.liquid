@@ -44,33 +44,6 @@
   <div class="{{ section_width }}">
     {%- render 'product', animation_anchor: animation_anchor -%}
   </div>
-  {% if product.metafields.pdo.varianti_prodotto != blank %}
-    <div class="product-similar-variants" style="margin-top: 40px;">
-      <h3 class="h5">Prodotti Simili</h3>
-      <div class="product-similar-thumbnails" style="display: flex; gap: 20px; flex-wrap: wrap;">
-        {% assign handles_string = product.metafields.pdo.varianti_prodotto.value %}
-        {% assign handles = handles_string | split: '\n' %}
-
-        {% for handle in handles %}
-          {% assign similar_product = all_products[handle] %}
-          {% if similar_product %}
-            <a
-              href="{{ similar_product.url }}"
-              class="similar-product-link"
-              style="text-align: center; text-decoration: none; color: inherit;"
-            >
-              <img
-                src="{{ similar_product.featured_image | img_url: '180x180' }}"
-                alt="{{ similar_product.title }}"
-                style="width: 100px; height: 100px; object-fit: cover; border-radius: 8px; border: 1px solid #ddd; margin-bottom: 5px;"
-              >
-              <p style="font-size: 13px;">{{ similar_product.title }}</p>
-            </a>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </div>
-  {% endif %}
 </section>
 
 {%- assign current_variant = product.selected_or_first_available_variant -%}

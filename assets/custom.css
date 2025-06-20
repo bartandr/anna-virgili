@@ -31,19 +31,3 @@ body.template-product .product__block.product__meta-variants ul {
 body.template-product div.product__block.product__meta-variants ul li a img {
   border-radius: var(--radius-medium);
 }
-body.template-product div.product__block.product__meta-variants ul li a:active {
-  border: 1px solid #000;
-  border-radius: var(--radius-medium);
-}
-body.template-product div.product__block.product__meta-variants ul li a:visited {
-  border: 1px solid #000;
-  border-radius: var(--radius-medium);
-}
-body.template-product div.product__block.product__meta-variants ul li a:focus {
-  border: 1px solid #000;
-  border-radius: var(--radius-medium);
-}
-body.template-product div.product__block.product__meta-variants ul li a:target {
-  border: 1px solid #000;
-  border-radius: var(--radius-medium);
-}

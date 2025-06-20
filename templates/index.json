@@ -629,7 +629,7 @@
           "settings": {
             "stacked_button": false,
             "button_1_text": "trova un negozio",
-            "button_1_link": "shopify://collections/all",
+            "button_1_link": "shopify://pages/store-locator",
             "button_1_color": "btn--white",
             "button_1_style": "btn--solid",
             "button_1_size": "btn--medium",

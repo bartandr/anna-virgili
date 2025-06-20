@@ -634,7 +634,7 @@
             "button_1_style": "btn--solid",
             "button_1_size": "btn--medium",
             "button_2_text": "",
-            "button_2_link": "",
+            "button_2_link": "shopify://pages/store-locator",
             "button_2_color": "btn--black",
             "button_2_style": "btn--solid",
             "button_2_size": "btn--medium"

@@ -51,3 +51,14 @@ body.template-product .is-nav-selected .product-single__thumbnail-link {
     font-size: 0.875rem;
   }
 }
+/*Fine Modifiche Pagina Prodotto*/
+/*Modifiche Footer*/
+@media screen and (max-width: 992px)
+{
+  div.section-footer h2 em > strong {
+  font-family: "Times New Roman";
+  font-size: 30px;
+  font-weight: 400;
+}
+}
+/*Fine Modifiche Footer*/

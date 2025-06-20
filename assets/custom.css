@@ -56,9 +56,9 @@ body.template-product .is-nav-selected .product-single__thumbnail-link {
 @media screen and (max-width: 992px) {
   div.newsletter-section__content h2 em > strong {
     font-size: 30px !important;
+    padding-bottom: 20px !important;
   }
   div.newsletter-section__content h2 strong {
-    padding-top: 20px !important;
     font-size: 20px !important;
   }
   div.newsletter-section__content h3 strong {

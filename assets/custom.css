@@ -64,6 +64,9 @@ body.template-product .is-nav-selected .product-single__thumbnail-link {
   div.newsletter-section__content h3 strong {
     font-size: 16px !important;
   }
+  .newsletter-section__content {
+    flex-basis: auto !important;
+  }
 }
 
 /*Fine Modifiche Footer*/

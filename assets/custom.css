@@ -12,7 +12,7 @@ body.template-product input[type="number"] {
 
 /*Modifiche pagina prodotto*/
 
-body.template-product .product-single__thumbnails {
+body.template-product .product-single__thumbnail {
   margin-top: 0 !important;
   padding-top: 0 !important;
   padding-right: 0 !important;

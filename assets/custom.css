@@ -9,3 +9,9 @@ body.template-product input[type="number"]::-webkit-outer-spin-button {
 body.template-product input[type="number"] {
   -moz-appearance: textfield;
 }
+
+/*Modifiche pagina prodotto*/
+
+body.template-product .product-single__thumbnails {
+  margin-top: 0 !important;
+}

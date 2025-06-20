@@ -36,6 +36,6 @@ body.template-product
   ul
   li
   a
-  img:active {
+  img:focus {
   border: 1px solid #000;
 }

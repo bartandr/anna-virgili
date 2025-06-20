@@ -31,3 +31,6 @@ body.template-product .product__block.product__meta-variants ul {
 body.template-product div.product__block.product__meta-variants ul li a img {
   border-radius: var(--radius-medium);
 }
+body.template-product .is-nav-selected .product-single__thumbnail-link {
+  border-color: #ddd;
+}

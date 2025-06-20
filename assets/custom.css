@@ -46,4 +46,8 @@ body.template-product .is-nav-selected .product-single__thumbnail-link {
     max-width: 50px;
     float: left;
   }
+  body.template-product .select__fieldset .radio__legend__label,
+  body.template-product .select__fieldset .select__label {
+    font-size: 0.875rem;
+  }
 }

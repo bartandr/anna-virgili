@@ -36,6 +36,6 @@ body.template-product
   ul
   li
   a
-  img:focus {
+  img:visited {
   border: 1px solid #000;
 }

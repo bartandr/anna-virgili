@@ -54,7 +54,7 @@ body.template-product .is-nav-selected .product-single__thumbnail-link {
 /*Fine Modifiche Pagina Prodotto*/
 /*Modifiche Footer*/
 @media screen and (max-width: 992px) {
-  div.section-footer h2 em > strong {
+  div.newsletter-section__content h2 em > strong {
     font-size: 30px;
     font-weight: 400;
   }

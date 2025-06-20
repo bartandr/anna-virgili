@@ -13,7 +13,6 @@ body.template-product input[type="number"] {
 /*Modifiche pagina prodotto*/
 
 body.template-product .product-single__thumbnail {
-  margin-top: 0 !important;
   padding-top: 0 !important;
   padding-right: 0 !important;
   padding-left: 0 !important;
@@ -22,4 +21,7 @@ body.template-product .product-single__thumbnail {
 
 body.template-product .product-single__thumbnails .flickity-slider {
   overflow-y: hidden !important;
+}
+body.template-product .product-single__thumbnails {
+  margin-top: 0 !important;
 }

@@ -25,3 +25,6 @@ body.template-product .product-single__thumbnails .flickity-slider {
 body.template-product .product-single__thumbnails {
   margin-top: 0 !important;
 }
+body.template-product .product__block.product__meta-variants ul {
+  gap: 10px !important;
+}

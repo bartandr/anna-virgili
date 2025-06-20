@@ -17,7 +17,7 @@ body.template-product .product-single__thumbnail {
   padding-top: 0 !important;
   padding-right: 0 !important;
   padding-left: 0 !important;
-  padding-top: 20px !important;
+  padding-bottom: 20px !important;
 }
 
 body.template-product .product-single__thumbnails .flickity-slider {

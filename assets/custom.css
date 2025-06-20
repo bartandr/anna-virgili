@@ -15,3 +15,7 @@ body.template-product input[type="number"] {
 body.template-product .product-single__thumbnails {
   margin-top: 0 !important;
 }
+
+body.template-product .product-single__thumbnails .flickity-slider {
+  overflow-y: hidden !important;
+}

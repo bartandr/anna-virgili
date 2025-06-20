@@ -28,6 +28,6 @@ body.template-product .product-single__thumbnails {
 body.template-product .product__block.product__meta-variants ul {
   gap: 10px !important;
 }
-body.template-product div.product__block.product__meta-variants ul li a {
+body.template-product div.product__block.product__meta-variants ul li a img {
   border-radius: var(--radius-medium);
 }

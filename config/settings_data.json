@@ -161,24 +161,51 @@
     "checkout_error_color": "#d02e2e",
     "content_for_index": [],
     "blocks": {
-      "5946647744298494267": {
-        "type": "shopify://apps/wishlist-plus/blocks/wishlist-app-embed/80c3b1fc-3a8f-407e-8367-ffdeebb8b612",
+      "940388356285384148": {
+        "type": "shopify://apps/connectif/blocks/app-embed/2b4f4d30-7186-4bfa-b3d9-3e3cbf2f8a81",
         "disabled": false,
         "settings": {
-          "storefront_layout_enabled": false,
-          "storefront_layout_type": "as-drawer",
-          "storefront_layout_collection_enabled": true,
-          "storefront_layout_primary_bg_color": "#000000",
-          "storefront_layout_primary_text_color": "#ffffff",
-          "storefront_layout_secondary_bg_color": "#F4F8FE",
-          "storefront_layout_secondary_text_color": "#333333",
-          "storefront_layout_ui_border_radius": 6,
-          "storefront_layout_notification_enabled_as_default": true,
-          "storefront_layout_notification_position": "left",
-          "storefront_layout_action_popup_position": "left",
-          "storefront_layout_drawer_position": "left",
-          "storefront_layout_drawer_width": 400,
-          "storefront_layout_as_section_page": ""
+          "CartVariants": false,
+          "ProductId": "id",
+          "CustomProductImageHeight": 300,
+          "CustomProductImageWidth": 300,
+          "ShowNewsletterSubscriptionStatus": true,
+          "CustomCustomerTags": "",
+          "CustomProductTags": ""
+        }
+      },
+      "319724205969189013": {
+        "type": "shopify://apps/hulk-form-builder/blocks/app-embed/b6b8dd14-356b-4725-a4ed-77232212b3c3",
+        "disabled": false,
+        "settings": {}
+      },
+      "11813581335429059158": {
+        "type": "shopify://apps/seedgrow-whatsapp-chat/blocks/app-embed/b85b5e45-9cea-417a-9b9e-0aa961ccf3ef",
+        "disabled": true,
+        "settings": {
+          "show_on_desktop": true,
+          "show_on_mobile": true,
+          "show_label_on_desktop": true,
+          "show_dismiss_button_desktop": false,
+          "show_label_on_mobile": true,
+          "show_dismiss_button_mobile": false,
+          "show_scroll_bar": false,
+          "show_gdpr_notice": false,
+          "use_click_to_chat": false,
+          "widget_label_text": "Need Help? Chat with us",
+          "widget_text": "Start a Conversation",
+          "description": "Hi! Click one of our member below to chat on WhatsApp",
+          "response_text": "The team typically replies in a few minutes.",
+          "gdpr_text": "Please accept our privacy policy first to start a conversation.",
+          "background_color": "#2db742",
+          "text_color": "#ffffff",
+          "position": "right",
+          "label_width": 155,
+          "scroll_bar_height": 500,
+          "icon_size": 56,
+          "distance_left": 30,
+          "distance_right": 30,
+          "distance_bottom": 30
         }
       },
       "10274264662263595587": {
@@ -195,65 +222,38 @@
           "swym_collections_product_link_selector": "-",
           "swym_collections_product_tile_selector": "-",
           "enable_variant_selector": false,
-          "swym_add_to_wishlist_title_color": "#333",
+          "swym_add_to_wishlist_title_color": "#333333",
           "swym_variant_selector_font_size_1": 14,
-          "swym_variant_selector_popup_bg_color": "#fff",
-          "swym_variant_selector_section_heading_color": "#000",
+          "swym_variant_selector_popup_bg_color": "#ffffff",
+          "swym_variant_selector_section_heading_color": "#000000",
           "swym_variant_selector_section_heading_font_size_2": 12,
           "swym_variant_selector_choose_create_text": "Choose or Create new Wishlist",
           "swym_variant_selector_wishlist_btn_bg_color": "#292929",
-          "swym_variant_selector_wishlist_btn_color": "#fff",
-          "swym_variant_selector_product_detail_font_color": "#fff",
+          "swym_variant_selector_wishlist_btn_color": "#ffffff",
+          "swym_variant_selector_product_detail_font_color": "#ffffff",
           "swym_variant_selector_create_list_placeholder_text": "Enter wishlist name",
           "swym_variant_selector_create_list_title": "Name Your Wishlist"
         }
       },
-      "940388356285384148": {
-        "type": "shopify://apps/connectif/blocks/app-embed/2b4f4d30-7186-4bfa-b3d9-3e3cbf2f8a81",
-        "disabled": false,
+      "5946647744298494267": {
+        "type": "shopify://apps/wishlist-plus/blocks/wishlist-app-embed/80c3b1fc-3a8f-407e-8367-ffdeebb8b612",
+        "disabled": true,
         "settings": {
-          "CartVariants": false,
-          "ProductId": "id",
-          "CustomProductImageHeight": 300,
-          "CustomProductImageWidth": 300,
-          "ShowNewsletterSubscriptionStatus": true,
-          "CustomCustomerTags": "",
-          "CustomProductTags": ""
+          "storefront_layout_enabled": false,
+          "storefront_layout_type": "as-drawer",
+          "storefront_layout_collection_enabled": true,
+          "storefront_layout_primary_bg_color": "#000000",
+          "storefront_layout_primary_text_color": "#ffffff",
+          "storefront_layout_secondary_bg_color": "#f4f8fe",
+          "storefront_layout_secondary_text_color": "#333333",
+          "storefront_layout_ui_border_radius": 6,
+          "storefront_layout_notification_enabled_as_default": true,
+          "storefront_layout_notification_position": "left",
+          "storefront_layout_action_popup_position": "left",
+          "storefront_layout_drawer_position": "left",
+          "storefront_layout_drawer_width": 400,
+          "storefront_layout_as_section_page": ""
         }
-      },
-      "11813581335429059158": {
-        "type": "shopify://apps/seedgrow-whatsapp-chat/blocks/app-embed/b85b5e45-9cea-417a-9b9e-0aa961ccf3ef",
-        "disabled": false,
-        "settings": {
-          "show_on_desktop": true,
-          "show_on_mobile": true,
-          "show_label_on_desktop": true,
-          "show_dismiss_button_desktop": false,
-          "show_label_on_mobile": true,
-          "show_dismiss_button_mobile": false,
-          "show_scroll_bar": false,
-          "show_gdpr_notice": false,
-          "use_click_to_chat": false,
-          "widget_label_text": "Need Help? Chat with us",
-          "widget_text": "Start a Conversation",
-          "description": "Hi! Click one of our member below to chat on WhatsApp",
-          "response_text": "The team typically replies in a few minutes.",
-          "gdpr_text": "Please accept our privacy policy first to start a conversation.",
-          "background_color": "#2DB742",
-          "text_color": "#ffffff",
-          "position": "right",
-          "label_width": 155,
-          "scroll_bar_height": 500,
-          "icon_size": 56,
-          "distance_left": 30,
-          "distance_right": 30,
-          "distance_bottom": 30
-        }
-      },
-      "319724205969189013": {
-        "type": "shopify://apps/hulk-form-builder/blocks/app-embed/b6b8dd14-356b-4725-a4ed-77232212b3c3",
-        "disabled": false,
-        "settings": {}
       }
     }
   },

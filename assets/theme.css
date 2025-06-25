@@ -19109,3 +19109,31 @@ i.icon-swym-wishlist:after {
   /* content: '\f004'; */
   content: '\f08a';
 }
+
+.swym-button.swym-added .swym-icon-unfilled {
+    display: none;
+  }
+.swym-button:not(.swym-added) .swym-icon-filled {
+      display: none;
+  }
+
+div#swym-atw-button-container{
+    display: none !important;
+}
+
+button.swym-button.swym-add-to-wishlist.swym-icontext.swym-heart.swym-loaded,button.swym-button.swym-add-to-wishlist.swym-icontext.swym-heart.swym-loaded.swym-added{
+    z-index:10 !important;
+    background: white !important;
+    opacity: 1 !important;
+    position: absolute !important;
+    top:1% !important;
+    right:1% !important;
+    /*border-radius: 50% !important;*/
+    /*width:25px !important;*/
+}
+
+svg.swym-icon-unfilled,svg.swym-icon-filled{
+    position: absolute !important;
+    top:8px !important;
+    left:8px !important;
+}

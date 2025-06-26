@@ -91,20 +91,20 @@
         "accordion_block_2_3"
       ],
       "settings": {
-        "layout": "two-columns",
+        "layout": "one-column",
         "show_accordion_divider": false,
         "line_thickness": "normal",
         "subheading": "",
         "title": "Negozi Anna Virgili",
         "type_style": "font-heading",
-        "heading_size": 120,
+        "heading_size": 100,
         "text": "",
         "tabs_bg_color": "#fafafa",
         "bg_color": "",
         "gradient": "",
         "text_color": "text-dark",
         "border_color": "",
-        "width": "wrapper",
+        "width": "wrapper--narrow",
         "padding_top": 60,
         "padding_bottom": 60
       }

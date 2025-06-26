@@ -130,7 +130,7 @@
           "type": "text",
           "settings": {
             "title": "Posso modificare o annullare un ordine?",
-            "text": "<p>Una volta confermato, l’ordine non può essere modificato o cancellato. Ti invitiamo a verificare con attenzione il contenuto del carrello prima di procedere al pagamento. Per qualsiasi esigenza o segnalazione, puoi comunque contattarci attraverso la sezione Contatti del sito.</p>"
+            "text": "<p>Una volta confermato, l’ordine non può essere modificato o cancellato. Ti invitiamo a verificare con attenzione il contenuto del carrello prima di procedere al pagamento. Per qualsiasi esigenza o segnalazione, puoi comunque contattarci attraverso la <a href=\"/pages/contatti\" target=\"_blank\" title=\"Contatti\">sezione Contatti</a> del sito.</p>"
           }
         },
         "text_L6aVNA": {

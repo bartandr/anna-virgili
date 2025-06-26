@@ -64,7 +64,7 @@
         "bg_color": "",
         "gradient": "",
         "width": "wrapper",
-        "padding_top": 60,
+        "padding_top": 20,
         "padding_bottom": 60
       }
     }

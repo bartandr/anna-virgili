@@ -158,7 +158,7 @@
           "type": "text",
           "settings": {
             "title": "Come posso tracciare un ordine?",
-            "text": "<p>Al momento della spedizione, riceverai un'e-mail con il numero di tracking per monitorare l'avanzamento della spedizione tramite il sito del corriere o il link fornito. In alternativa, puoi sempre monitorare lo stato della spedizione dalla tua area personale.</p>"
+            "text": "<p>Al momento della spedizione, riceverai un'e-mail con il numero di tracking per monitorare l'avanzamento della spedizione tramite il sito del corriere o il link fornito. In alternativa, puoi sempre monitorare lo stato della spedizione dalla tua <a href=\"/account\" target=\"_blank\" title=\"/account\">area personale</a>.</p>"
           }
         }
       },

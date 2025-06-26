@@ -55,7 +55,7 @@
           "name": "Testo-contatti",
           "settings": {
             "text": "<p>Hai bisogno di supporto, desideri ricevere maggiori informazioni o sei interessato a collaborare con noi?<br/>Il nostro team di assistenza clienti è a tua completa disposizione dal lunedì al venerdì, dalle 09:00 alle 18:00 (esclusi i giorni festivi), e può essere contattato via e-mail, WhatsApp o telefono.<br/></p><p>In alternativa, compila il modulo sottostante indicando nome e cognome, numero di telefono, e-mail e un messaggio dettagliato: ti ricontatteremo il prima possibile per offrirti la migliore assistenza.</p>",
-            "size": 100
+            "size": 80
           }
         }
       },

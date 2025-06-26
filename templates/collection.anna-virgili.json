@@ -165,7 +165,8 @@
         "image_qqY7xe"
       ],
       "custom_css": [
-        "@media screen and (max-width: 768px) {.mosaic__item {max-width: 90%; } .mosaic__item:last-of-type {margin-top: -20%; margin-left: auto; } .mosaic__item__inner {border-radius: 0; }}"
+        "@media screen and (max-width: 768px) {.mosaic__item {max-width: 90%; } .mosaic__item:last-of-type {margin-top: -20%; margin-left: auto; } .mosaic__item__inner {border-radius: 0; }}",
+        ".mosaic__item__inner {border-radius: 0 !important;}"
       ],
       "settings": {
         "desktop_height": "five-fifty-height",

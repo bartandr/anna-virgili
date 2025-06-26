@@ -96,6 +96,9 @@
         "accordion_block_2_1",
         "accordion_block_2_3"
       ],
+      "custom_css": [
+        "h2 {font-size: 18px;}"
+      ],
       "settings": {
         "layout": "one-column",
         "show_accordion_divider": false,
@@ -177,6 +180,9 @@
         "text_zR7wjj",
         "text_Mq8Mjm"
       ],
+      "custom_css": [
+        "h2 {font-size: 18px;}"
+      ],
       "settings": {
         "layout": "one-column",
         "show_accordion_divider": false,
@@ -249,6 +255,9 @@
         "accordion_block_4_3",
         "accordion_block_4_4",
         "text_Czq8hr"
+      ],
+      "custom_css": [
+        "h2 {font-size: 18px;}"
       ],
       "settings": {
         "layout": "one-column",

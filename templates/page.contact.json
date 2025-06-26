@@ -63,7 +63,7 @@
         "button_size": "btn--medium",
         "bg_color": "",
         "gradient": "",
-        "width": "wrapper--narrow",
+        "width": "wrapper",
         "padding_top": 60,
         "padding_bottom": 60
       }

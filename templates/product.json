@@ -123,11 +123,47 @@
             "text_color": "text-dark",
             "show_accordion_divider": false,
             "line_thickness": "normal",
-            "accordion_heading": "SPEDIZIONE",
+            "accordion_heading": "SPEDIZIONE GRATUITA E RESI",
             "heading_style": "font-body",
-            "accordion_text": "<p>Ordina entro le ore 13:00 per ricevere domani.</p>",
+            "accordion_text": "<p>SPEDIZIONE GRATUITA E RESI</p>",
             "accordion_page": "",
             "padding_bottom": 10
+          }
+        },
+        "product_accordion_tMRrTC": {
+          "type": "product_accordion",
+          "settings": {
+            "show_description": false,
+            "show_read_more": true,
+            "open_by_default": false,
+            "enable_full_width": false,
+            "tabs_bg_color": "",
+            "text_color": "text-dark",
+            "show_accordion_divider": false,
+            "line_thickness": "normal",
+            "accordion_heading": "METODI DI PAGAMENTO",
+            "heading_style": "font-body",
+            "accordion_text": "<p>Use this accordion to add info such as Materials, Sizing, Features, Shipping and Returns policies</p>",
+            "accordion_page": "",
+            "padding_bottom": 20
+          }
+        },
+        "product_accordion_t6jDQc": {
+          "type": "product_accordion",
+          "settings": {
+            "show_description": false,
+            "show_read_more": true,
+            "open_by_default": false,
+            "enable_full_width": false,
+            "tabs_bg_color": "",
+            "text_color": "text-dark",
+            "show_accordion_divider": false,
+            "line_thickness": "normal",
+            "accordion_heading": "CONDIVIDI",
+            "heading_style": "font-body",
+            "accordion_text": "<p>Use this accordion to add info such as Materials, Sizing, Features, Shipping and Returns policies</p>",
+            "accordion_page": "",
+            "padding_bottom": 20
           }
         }
       },
@@ -141,7 +177,9 @@
         "wishlist_plus_wishlist_pdp_button_KnpUr6",
         "inventory_countdown",
         "product_accordion",
-        "9927e90d-2ecb-4104-af67-0dadf75b2a0a"
+        "9927e90d-2ecb-4104-af67-0dadf75b2a0a",
+        "product_accordion_tMRrTC",
+        "product_accordion_t6jDQc"
       ],
       "settings": {
         "product_sticky_enable": false,
@@ -159,6 +197,7 @@
     },
     "section_custom_html_TGm3Fi": {
       "type": "section-custom-html",
+      "disabled": true,
       "name": "Custom code",
       "settings": {
         "custom_code": "<div class=\"social-share\">\n  <a href=\"https://www.facebook.com/sharer/sharer.php?u={{ canonical_url }}\" target=\"_blank\" rel=\"noopener noreferrer\">\n    <i class=\"fab fa-facebook fa-2x\"></i>\n  </a>\n\n  <a href=\"https://api.whatsapp.com/send?text={{ canonical_url }}\" target=\"_blank\" rel=\"noopener noreferrer\">\n    <i class=\"fab fa-whatsapp fa-2x\"></i>\n  </a>\n\n  <a href=\"https://twitter.com/intent/tweet?url={{ canonical_url }}&text=Guarda questo prodotto!\" target=\"_blank\" rel=\"noopener noreferrer\">\n    <i class=\"fab fa-x-twitter fa-2x\"></i>\n  </a>\n\n  <a href=\"https://www.linkedin.com/sharing/share-offsite/?url={{ canonical_url }}\" target=\"_blank\" rel=\"noopener noreferrer\">\n    <i class=\"fab fa-linkedin fa-2x\"></i>\n  </a>\n\n  <a href=\"https://pinterest.com/pin/create/button/?url={{ canonical_url }}\" target=\"_blank\" rel=\"noopener noreferrer\">\n    <i class=\"fab fa-pinterest fa-2x\"></i>\n  </a>\n\n  <a href=\"https://t.me/share/url?url={{ canonical_url }}&text=Guarda questo prodotto!\" target=\"_blank\" rel=\"noopener noreferrer\">\n    <i class=\"fab fa-telegram fa-2x\"></i>\n  </a>\n\n  <a href=\"https://www.tiktok.com/@iltuoprofilo\" target=\"_blank\" rel=\"noopener noreferrer\">\n    <i class=\"fab fa-tiktok fa-2x\"></i>\n  </a>\n\n  <a href=\"mailto:?subject=Guarda questo prodotto&body=Guarda questo link: {{ canonical_url }}\">\n    <i class=\"fas fa-envelope fa-2x\"></i>\n  </a>\n</div>",
@@ -258,9 +297,9 @@
         "show_accordion_divider": false,
         "line_thickness": "normal",
         "subheading": "",
-        "title": "Frequently Asked Questions",
+        "title": "FAQ",
         "type_style": "font-heading",
-        "heading_size": 120,
+        "heading_size": 100,
         "text": "",
         "tabs_bg_color": "#fafafa",
         "bg_color": "",

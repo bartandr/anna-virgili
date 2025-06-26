@@ -225,7 +225,7 @@
           "type": "text",
           "settings": {
             "title": "Il reso è gratuito?",
-            "text": "<p>RESO ONLINE</p><p>La procedura ha un costo fisso di € 5,00, che verrà dedotto dall’importo rimborsato.</p><p>RESO IN UN PUNTO VENDITA ANNA VIRGILI</p><p>La procedura è GRATUITA e non prevede alcun costo. L'importo del tuo ordine verrà rimborsato per intero.</p><p>*Nota: L’importo delle spese di spedizione sostenute al momento dell’acquisto verrà rimborsato</p><p>per intero, salvo in caso di reso parziale. In quest’ultimo caso, il costo di spedizione iniziale non verrà rimborsato.</p>"
+            "text": "<p><strong>RESO ONLINE: </strong>la procedura ha un costo fisso di € 5,00, che verrà dedotto dall’importo rimborsato.</p><p><strong>RESO IN UN PUNTO VENDITA ANNA VIRGILI: </strong>la procedura è GRATUITA e non prevede alcun costo. L'importo del tuo ordine verrà rimborsato per intero.</p><p>*Nota: L’importo delle spese di spedizione sostenute al momento dell’acquisto verrà rimborsato per intero, salvo in caso di reso parziale. In quest’ultimo caso, il costo di spedizione iniziale non verrà rimborsato.</p>"
           }
         },
         "text_Czq8hr": {

@@ -379,26 +379,28 @@
 
           {%- case block.type -%}
             {%- when 'product-meta-variants' -%}
-            {% comment %} CUSTOM VARIANTS {% endcomment %}
+              {% comment %} CUSTOM VARIANTS {% endcomment %}
               <div class="product__block product__meta-variants">
                 <ul>
                   {% if product.metafields.product.product_variants != blank %}
                     <li>
                       <a href="{{ product.url }}">
-                        {{ product.featured_image | image_url: width: 500 | image_tag: width: 100, height: 120  }}
+                        {{ product.featured_image | image_url: width: 500 | image_tag: width: 100, height: 120 }}
                       </a>
                     </li>
                     {% for var in product.metafields.product.product_variants.value %}
-                      <li>
-                        <a href="{{ var.url }}">
-                          {{ var.featured_image | image_url: width: 500 | image_tag: width: 100, height: 120  }}
-                        </a>
-                      </li>
+                      {% unless var.handle == product.handle %}
+                        <li>
+                          <a href="{{ var.url }}">
+                            {{ var.featured_image | image_url: width: 500 | image_tag: width: 100, height: 120 }}
+                          </a>
+                        </li>
+                      {% endunless %}
                     {% endfor %}
                   {% endif %}
                 </ul>
               </div>
-            {% comment %} ENDCUSTOM {% endcomment %}
+              {% comment %} ENDCUSTOM {% endcomment %}
             {%- when '@app' -%}
               {%- capture app_code -%}
                 {%- render block -%}
@@ -467,60 +469,63 @@
                     </nav>
                 {%- endcase -%}
 
-                {% comment %} <h1
-                  class="product__title"
-                  {% if title_style != blank %}
-                    {{- title_style -}}
-                  {% endif %}
-                >
-                  {%- if template.name == 'product' and section_type != 'featured' -%}
-                    {{- product_title -}}
-                  {%- else -%}
-                    <a href="{{ product_url }}" title="{{ product_title }}">{{ product_title }}</a>
-                  {%- endif -%}
-                </h1> {% endcomment %}
-              </div>{%- liquid
-  assign currency_code_enable = settings.currency_code_enable
+                {% comment %}
+                  <h1
+                    class="product__title"
+                    {% if title_style != blank %}
+                      {{- title_style -}}
+                    {% endif %}
+                  >
+                    {%- if template.name == 'product' and section_type != 'featured' -%}
+                      {{- product_title -}}
+                    {%- else -%}
+                      <a href="{{ product_url }}" title="{{ product_title }}">{{ product_title }}</a>
+                    {%- endif -%}
+                  </h1>
+                {% endcomment %}
+              </div>
+              {%- liquid
+                assign currency_code_enable = settings.currency_code_enable
 
-  if price_size != 1
-    capture price_style
-      echo ' style="'
-      echo '--adjust-body-desktop: calc(var(--FONT-ADJUST-BODY) * ' | append: price_size | append: ');'
-      if price_size_mobile != blank
-        echo ' --adjust-body-mobile: calc(var(--FONT-ADJUST-BODY) * ' | append: price_size_mobile | append: ');'
-      endif
-      echo '"'
-    endcapture
-  endif
+                if price_size != 1
+                  capture price_style
+                    echo ' style="'
+                    echo '--adjust-body-desktop: calc(var(--FONT-ADJUST-BODY) * ' | append: price_size | append: ');'
+                    if price_size_mobile != blank
+                      echo ' --adjust-body-mobile: calc(var(--FONT-ADJUST-BODY) * ' | append: price_size_mobile | append: ');'
+                    endif
+                    echo '"'
+                  endcapture
+                endif
 
-  assign show_saving_badge = settings.show_saving_badge
-  assign final_sale_product = product.metafields.theme.final_sale.value
-  assign final_sale = settings.final_sale
-  assign final_sale_variant = false
+                assign show_saving_badge = settings.show_saving_badge
+                assign final_sale_product = product.metafields.theme.final_sale.value
+                assign final_sale = settings.final_sale
+                assign final_sale_variant = false
 
-  unless final_sale_product == null
-    assign final_sale = final_sale_product
-  endunless
+                unless final_sale_product == null
+                  assign final_sale = final_sale_product
+                endunless
 
-  for variant in product.variants
-    if variant.metafields.theme.final_sale.value == true
-      assign final_sale_variant = true
-    endif
-  endfor
+                for variant in product.variants
+                  if variant.metafields.theme.final_sale.value == true
+                    assign final_sale_variant = true
+                  endif
+                endfor
 
-  assign color_body_text = settings.color_body_text
-  assign final_sale_color = settings.final_sale_color
+                assign color_body_text = settings.color_body_text
+                assign final_sale_color = settings.final_sale_color
 
-  if final_sale_color.alpha == 0.0 or final_sale_color == ''
-    assign final_sale_color = color_body_text
-  endif
+                if final_sale_color.alpha == 0.0 or final_sale_color == ''
+                  assign final_sale_color = color_body_text
+                endif
 
-  capture sale_style
-    echo '--final-sale-color: ' | append: final_sale_color | append: ';'
-  endcapture
--%}
+                capture sale_style
+                  echo '--final-sale-color: ' | append: final_sale_color | append: ';'
+                endcapture
+              -%}
 
-{% capture saving_final_sale_markup %}
+              {% capture saving_final_sale_markup %}
   {% if show_saving_badge or final_sale or final_sale_variant %}
     <span class="product__price--off hidden"
       data-price-off
@@ -544,80 +549,86 @@
   {% endif %}
 {% endcapture %}
 
-<div
-  class="product__block product__price-and-badge"
-  {% if animations_enabled %}
-    data-aos="hero"
-    data-aos-anchor="{{ animation_anchor }}"
-    data-aos-order="{{ animation_order }}"
-    {%- assign animation_order = animation_order | plus: 1 -%}
-  {% endif %}
-  {{ block_style }}
->
-  <div class="product__price-wrapper">
-    <div
-      class="product__price"
-      data-price-wrapper
-      {% if price_style != blank %}
-        {{- price_style -}}
-      {% endif %}
-    >
-      {%- unless product == blank -%}
-        <span
-          data-product-price
-          class="product__price--regular{% if current_variant.compare_at_price > current_variant.price %} product__price--sale{% endif %}{% if bold_price %} product__price--bold{% endif %}"
-        >
-          {%- liquid
-            if current_variant.price == 0
-              echo 'products.product.free' | t
-            elsif currency_code_enable
-              echo current_variant.price | money_with_currency
-            else
-              echo current_variant.price | money
-            endif
-          -%}
-        </span>
-      {%- else -%}
-        <span id="ProductPrice" class="product__price--regular{% if bold_price %} product__price--bold{% endif %}">
-          {%- liquid
-            if currency_code_enable
-              echo 1999 | money_with_currency
-            else
-              echo 1999 | money
-            endif
-          -%}
-        </span>
-      {%- endunless -%}
+              <div
+                class="product__block product__price-and-badge"
+                {% if animations_enabled %}
+                  data-aos="hero"
+                  data-aos-anchor="{{ animation_anchor }}"
+                  data-aos-order="{{ animation_order }}"
+                  {%- assign animation_order = animation_order | plus: 1 -%}
+                {% endif %}
+                {{ block_style }}
+              >
+                <div class="product__price-wrapper">
+                  <div
+                    class="product__price"
+                    data-price-wrapper
+                    {% if price_style != blank %}
+                      {{- price_style -}}
+                    {% endif %}
+                  >
+                    {%- unless product == blank -%}
+                      <span
+                        data-product-price
+                        class="product__price--regular{% if current_variant.compare_at_price > current_variant.price %} product__price--sale{% endif %}{% if bold_price %} product__price--bold{% endif %}"
+                      >
+                        {%- liquid
+                          if current_variant.price == 0
+                            echo 'products.product.free' | t
+                          elsif currency_code_enable
+                            echo current_variant.price | money_with_currency
+                          else
+                            echo current_variant.price | money
+                          endif
+                        -%}
+                      </span>
+                    {%- else -%}
+                      <span
+                        id="ProductPrice"
+                        class="product__price--regular{% if bold_price %} product__price--bold{% endif %}"
+                      >
+                        {%- liquid
+                          if currency_code_enable
+                            echo 1999 | money_with_currency
+                          else
+                            echo 1999 | money
+                          endif
+                        -%}
+                      </span>
+                    {%- endunless -%}
 
-      <s data-compare-price class="product__price--compare{% if bold_price %} product__price--bold{% endif %}">
-        {%- liquid
-          if current_variant.compare_at_price
-            if currency_code_enable
-              echo current_variant.compare_at_price | money_with_currency
-            else
-              echo current_variant.compare_at_price | money
-            endif
-          endif
-        -%}
-      </s>
+                    <s
+                      data-compare-price
+                      class="product__price--compare{% if bold_price %} product__price--bold{% endif %}"
+                    >
+                      {%- liquid
+                        if current_variant.compare_at_price
+                          if currency_code_enable
+                            echo current_variant.compare_at_price | money_with_currency
+                          else
+                            echo current_variant.compare_at_price | money
+                          endif
+                        endif
+                      -%}
+                    </s>
 
-      {%- liquid
-        assign units = product.variants | map: 'unit_price' | compact
-        if units[0]
-          assign has_units = true
-        else
-          assign has_units = false
-        endif
-      -%}
+                    {%- liquid
+                      assign units = product.variants | map: 'unit_price' | compact
+                      if units[0]
+                        assign has_units = true
+                      else
+                        assign has_units = false
+                      endif
+                    -%}
 
-      {%- if has_units -%}
-        {%- assign current_variant_unit_price = current_variant.unit_price -%}
+                    {%- if has_units -%}
+                      {%- assign current_variant_unit_price = current_variant.unit_price -%}
 
-        {%- capture unit_price_separator -%}
+                      {%- capture unit_price_separator -%}
           <span aria-hidden="true">/</span><span class="visually-hidden">{{ 'general.accessibility.unit_price_separator' | t }}&nbsp;</span>
         {%- endcapture -%}
 
-        {%- capture unit_price_base_unit -%}
+                      {%- capture unit_price_base_unit -%}
           <span>
             {%- if current_variant.unit_price_measurement -%}
               {% if current_variant.unit_price_measurement.reference_value != 1 %}
@@ -628,31 +639,33 @@
           </span>
         {%- endcapture -%}
 
-        <span class="product__unit-price">
-          <span
-            data-product-unit
-            class="product__price--unit{% unless current_variant_unit_price %} hidden{% endunless %}"
-          >
-            <span class="visually-hidden">{{ 'products.product.unit_price_label' | t }}</span>
-            <span data-product-unit-price id="unit-price-{{ section.id }}">
-              {{- current_variant_unit_price | money -}}
-            </span>
-            {{ unit_price_separator }}
-            <span data-product-base id="unit-price-base-{{ section.id }}">{{ unit_price_base_unit }}</span>
-          </span>
-        </span>
-      {%- endif -%}
-      {% if section_type != 'quickview' %}
-        {{ saving_final_sale_markup }}
-      {% endif %}
-    </div>
-  </div>
+                      <span class="product__unit-price">
+                        <span
+                          data-product-unit
+                          class="product__price--unit{% unless current_variant_unit_price %} hidden{% endunless %}"
+                        >
+                          <span class="visually-hidden">{{ 'products.product.unit_price_label' | t }}</span>
+                          <span data-product-unit-price id="unit-price-{{ section.id }}">
+                            {{- current_variant_unit_price | money -}}
+                          </span>
+                          {{ unit_price_separator }}
+                          <span data-product-base id="unit-price-base-{{ section.id }}">
+                            {{- unit_price_base_unit -}}
+                          </span>
+                        </span>
+                      </span>
+                    {%- endif -%}
+                    {% if section_type != 'quickview' %}
+                      {{ saving_final_sale_markup }}
+                    {% endif %}
+                  </div>
+                </div>
 
-  {% if section_type == 'quickview' %}
-    {{ saving_final_sale_markup }}
-  {% endif %}
-</div>
-{%- when 'form' -%}
+                {% if section_type == 'quickview' %}
+                  {{ saving_final_sale_markup }}
+                {% endif %}
+              </div>
+            {%- when 'form' -%}
               {%- liquid
                 assign show_quantity = block.settings.show_quantity
                 assign show_payment_button = block.settings.show_payment_button
@@ -671,168 +684,170 @@
                   {{ block_style }}
                   {{ block.shopify_attributes }}
                 >
-                  {%- comment -%} Product Form Partial {%- endcomment -%}<!-- /partials/product-form.liquid -->
+                  {%- comment -%} Product Form Partial {%- endcomment -%}
+                  <!-- /partials/product-form.liquid -->
 
-{%- liquid
-  assign current_variant = product.selected_or_first_available_variant
-  assign unique = unique | default: ''
-  assign variants_style = settings.variants_style
-  assign show_payment_button = false
-  assign show_variant_image = settings.show_variant_image
-  assign gift_card_recipient_feature_active = false
+                  {%- liquid
+                    assign current_variant = product.selected_or_first_available_variant
+                    assign unique = unique | default: ''
+                    assign variants_style = settings.variants_style
+                    assign show_payment_button = false
+                    assign show_variant_image = settings.show_variant_image
+                    assign gift_card_recipient_feature_active = false
 
-  if settings.show_gift_card_recipient and product.gift_card?
-    assign gift_card_recipient_feature_active = true
-  endif
+                    if settings.show_gift_card_recipient and product.gift_card?
+                      assign gift_card_recipient_feature_active = true
+                    endif
 
-  if block.settings.show_payment_button and gift_card_recipient_feature_active == false
-    assign show_payment_button = true
-  endif
+                    if block.settings.show_payment_button and gift_card_recipient_feature_active == false
+                      assign show_payment_button = true
+                    endif
 
-  comment
-    Override buy button setting if there are selling plan groups and cart terms
-  endcomment
-  if show_payment_button and product.selling_plan_groups.size < 1 and settings.enable_accept_terms == false
-    assign show_payment_button = true
-  else
-    assign show_payment_button = false
-  endif
+                    comment
+                      Override buy button setting if there are selling plan groups and cart terms
+                    endcomment
+                    if show_payment_button and product.selling_plan_groups.size < 1 and settings.enable_accept_terms == false
+                      assign show_payment_button = true
+                    else
+                      assign show_payment_button = false
+                    endif
 
-  assign product_form_id = 'AddToCartForm--' | append: unique
--%}{%- comment -%}
-  Size chart
+                    assign product_form_id = 'AddToCartForm--' | append: unique
+                  -%}
+                  {%- comment -%}
+                    Size chart
 
-  Inherited variables:
-    - product: {Object} Product object.
-    - section: {Object} the current Section this code block belongs to.
-  Returns variables:
-    - specific_pages_arr: {Array} Page handles array from product tags
-    - info_page: {Object} Page object || blank
-    - show_size_guide: {Boolean}
-    - size_chart_button_as_label: {Boolean}
-    - size_chart_button: {String} captured markup of a button that opens the size chart drawer
-    - size_chart_drawer: {String} captured markup of the size chart drawer
-{%- endcomment -%}
+                    Inherited variables:
+                      - product: {Object} Product object.
+                      - section: {Object} the current Section this code block belongs to.
+                    Returns variables:
+                      - specific_pages_arr: {Array} Page handles array from product tags
+                      - info_page: {Object} Page object || blank
+                      - show_size_guide: {Boolean}
+                      - size_chart_button_as_label: {Boolean}
+                      - size_chart_button: {String} captured markup of a button that opens the size chart drawer
+                      - size_chart_drawer: {String} captured markup of the size chart drawer
+                  {%- endcomment -%}
 
-{%- liquid
-  assign show_size_guide = false
-  assign size_guide_string = 'general.size_chart.button' | t
-  assign info_page_title_override = settings.info_page_title_override
-  assign type_style = settings.type_style
-  assign tab_heading_size = settings.tab_heading_size | times: 0.01
+                  {%- liquid
+                    assign show_size_guide = false
+                    assign size_guide_string = 'general.size_chart.button' | t
+                    assign info_page_title_override = settings.info_page_title_override
+                    assign type_style = settings.type_style
+                    assign tab_heading_size = settings.tab_heading_size | times: 0.01
 
-  capture type_adjustment
-    case type_style
-      when 'font-heading'
-        echo 'var(--adjust-heading)'
-      when 'font-body'
-        echo 'var(--adjust-body)'
-      when 'subheading-text'
-        echo 'var(--adjust-accent)'
-    endcase
-  endcapture
+                    capture type_adjustment
+                      case type_style
+                        when 'font-heading'
+                          echo 'var(--adjust-heading)'
+                        when 'font-body'
+                          echo 'var(--adjust-body)'
+                        when 'subheading-text'
+                          echo 'var(--adjust-accent)'
+                      endcase
+                    endcapture
 
-  capture size_chart_button_text
-    assign size_button_text = size_guide_string
-    if info_page_title_override != blank
-      assign size_button_text = info_page_title_override
-    endif
+                    capture size_chart_button_text
+                      assign size_button_text = size_guide_string
+                      if info_page_title_override != blank
+                        assign size_button_text = info_page_title_override
+                      endif
 
-    if label_text_caps
-      assign size_button_text = size_button_text | replace: 'ß', '<span style="text-transform: lowercase;">ß</span>'
-    endif
+                      if label_text_caps
+                        assign size_button_text = size_button_text | replace: 'ß', '<span style="text-transform: lowercase;">ß</span>'
+                      endif
 
-    echo size_button_text
-  endcapture
+                      echo size_button_text
+                    endcapture
 
-  assign tags_string = product.tags | join: ','
-  assign size_separator = '_size_'
-  assign specific_pages = ''
-  if tags_string contains size_separator
-    for tag in product.tags
-      if tag contains size_separator
-        assign page_handle = tag | split: size_separator | last | split: ',' | first
-        assign specific_pages = specific_pages | append: page_handle | append: ','
-      endif
-    endfor
-  endif
-  assign specific_pages_arr = specific_pages | split: ','
-  if specific_pages_arr.size > 0
-    assign show_size_guide = true
-  endif
+                    assign tags_string = product.tags | join: ','
+                    assign size_separator = '_size_'
+                    assign specific_pages = ''
+                    if tags_string contains size_separator
+                      for tag in product.tags
+                        if tag contains size_separator
+                          assign page_handle = tag | split: size_separator | last | split: ',' | first
+                          assign specific_pages = specific_pages | append: page_handle | append: ','
+                        endif
+                      endfor
+                    endif
+                    assign specific_pages_arr = specific_pages | split: ','
+                    if specific_pages_arr.size > 0
+                      assign show_size_guide = true
+                    endif
 
-  assign product_size_chart = product.metafields.theme.size_chart.value
-  assign info_page = settings.info_page
-  if product_size_chart != blank or info_page != blank
-    if product_size_chart != blank
-      assign info_page = product_size_chart
-    elsif info_page != blank
-      assign info_page = pages[info_page]
-    endif
+                    assign product_size_chart = product.metafields.theme.size_chart.value
+                    assign info_page = settings.info_page
+                    if product_size_chart != blank or info_page != blank
+                      if product_size_chart != blank
+                        assign info_page = product_size_chart
+                      elsif info_page != blank
+                        assign info_page = pages[info_page]
+                      endif
 
-    assign show_size_guide = true
-  endif
+                      assign show_size_guide = true
+                    endif
 
-  assign size_chart_button_as_label = false
-  assign has_size_option = false
-  unless product.has_only_default_variant
-    for option in product.options_with_values
-      assign separator = option.name | handle | prepend: ',' | append: ','
-      assign size_translation = 'general.size_chart.size' | t
-      assign translation_string = size_translation | remove: '  ' | replace: ', ', ',' | replace: ' ,', ',' | replace: ',', '____' | handle | replace: '____', ',' | append: ',' | prepend: ','
+                    assign size_chart_button_as_label = false
+                    assign has_size_option = false
+                    unless product.has_only_default_variant
+                      for option in product.options_with_values
+                        assign separator = option.name | handle | prepend: ',' | append: ','
+                        assign size_translation = 'general.size_chart.size' | t
+                        assign translation_string = size_translation | remove: '  ' | replace: ', ', ',' | replace: ' ,', ',' | replace: ',', '____' | handle | replace: '____', ',' | append: ',' | prepend: ','
 
-      unless translation_string contains separator
-        continue
-      endunless
+                        unless translation_string contains separator
+                          continue
+                        endunless
 
-      assign has_size_option = true
-    endfor
-  endunless
+                        assign has_size_option = true
+                      endfor
+                    endunless
 
-  if has_size_option and show_labels
-    assign size_chart_button_as_label = true
-  endif
--%}
+                    if has_size_option and show_labels
+                      assign size_chart_button_as_label = true
+                    endif
+                  -%}
 
-{%- if show_size_guide -%}
-  {%- liquid
-    assign empty_size_guide = true
+                  {%- if show_size_guide -%}
+                    {%- liquid
+                      assign empty_size_guide = true
 
-    capture drawer_classes
-      echo 'popup-chart drawer drawer--right'
-      if section_type == 'quickview'
-        echo ' popup-chart--quickview'
-      else
-        echo ' cv-h'
-      endif
-    endcapture
+                      capture drawer_classes
+                        echo 'popup-chart drawer drawer--right'
+                        if section_type == 'quickview'
+                          echo ' popup-chart--quickview'
+                        else
+                          echo ' cv-h'
+                        endif
+                      endcapture
 
-    capture drawer_close_icon
-      if section_type == 'quickview'
-        render 'icon-chevron-right'
-      else
-        render 'icon-close'
-      endif
-    endcapture
+                      capture drawer_close_icon
+                        if section_type == 'quickview'
+                          render 'icon-chevron-right'
+                        else
+                          render 'icon-close'
+                        endif
+                      endcapture
 
-    assign show_tabs_nav = false
-    assign tabs_navigation = ''
-    assign tabs = ''
-    assign has_current = false
-    assign index = 0
-    assign pages_count = 0
-  -%}
+                      assign show_tabs_nav = false
+                      assign tabs_navigation = ''
+                      assign tabs = ''
+                      assign has_current = false
+                      assign index = 0
+                      assign pages_count = 0
+                    -%}
 
-  {%- for page_handle in specific_pages_arr -%}
-    {%- assign page_size_chart = pages[page_handle] -%}
+                    {%- for page_handle in specific_pages_arr -%}
+                      {%- assign page_size_chart = pages[page_handle] -%}
 
-    {%- if page_size_chart.title != blank -%}
-      {%- capture tabs_navigation -%}
+                      {%- if page_size_chart.title != blank -%}
+                        {%- capture tabs_navigation -%}
         {{ tabs_navigation }}
         <li class="tabs__link" data-tabs-link="{{ forloop.index0 }}" tabindex="0">{{ page_size_chart.title }}</li>
       {%- endcapture -%}
 
-      {%- capture tabs -%}
+                        {%- capture tabs -%}
         {{ tabs }}
         <div class="tab{% unless has_current %} current{% endunless %}" data-tab="{{ forloop.index0 }}">
           {%- if page_size_chart.content != blank -%}
@@ -843,22 +858,22 @@
         </div>
       {%- endcapture -%}
 
-      {%- assign has_current = true -%}
-      {%- assign pages_count = pages_count | plus: 1 -%}
-    {%- endif -%}
-  {%- endfor -%}
+                        {%- assign has_current = true -%}
+                        {%- assign pages_count = pages_count | plus: 1 -%}
+                      {%- endif -%}
+                    {%- endfor -%}
 
-  {%- if info_page != blank -%}
-    {%- assign index = specific_pages_arr.size -%}
+                    {%- if info_page != blank -%}
+                      {%- assign index = specific_pages_arr.size -%}
 
-    {%- capture tabs_navigation -%}
+                      {%- capture tabs_navigation -%}
       {{ tabs_navigation }}
       {%- if info_page.title != blank -%}
         <li class="tabs__link" data-tabs-link="{{ index }}" data-lock-scroll tabindex="0">{{ info_page.title }}</li>
       {%- endif -%}
     {%- endcapture -%}
 
-    {%- capture tabs -%}
+                      {%- capture tabs -%}
       {{ tabs }}
       <div class="tab{% unless has_current %} current{% endunless %}" data-tab="{{ index }}">
         {%- if info_page.content != blank -%}
@@ -869,20 +884,20 @@
       </div>
     {%- endcapture -%}
 
-    {%- assign has_current = true -%}
-    {%- assign pages_count = pages_count | plus: 1 -%}
-  {%- endif -%}
+                      {%- assign has_current = true -%}
+                      {%- assign pages_count = pages_count | plus: 1 -%}
+                    {%- endif -%}
 
-  {%- liquid
-    if tabs != blank
-      assign empty_size_guide = false
-    endif
-    if pages_count > 1 and tabs_navigation != blank
-      assign show_tabs_nav = true
-    endif
-  -%}
+                    {%- liquid
+                      if tabs != blank
+                        assign empty_size_guide = false
+                      endif
+                      if pages_count > 1 and tabs_navigation != blank
+                        assign show_tabs_nav = true
+                      endif
+                    -%}
 
-  {%- capture size_chart_drawer -%}
+                    {%- capture size_chart_drawer -%}
     {%- unless empty_size_guide -%}
       <div class="{{ drawer_classes }}" id="size-chart--{{ unique }}" aria-hidden="true" role="dialog" data-drawer>
         <button type="button" class="drawer__close-button" aria-controls="size-chart--{{ unique }}" data-drawer-toggle>
@@ -924,7 +939,7 @@
     {%- endunless -%}
   {%- endcapture -%}
 
-  {%- capture size_chart_button -%}
+                    {%- capture size_chart_button -%}
     {%- unless empty_size_guide -%}
       <button type="button" class="product__popup__link label-typography" href="{{ info_page.url | default: '#!' }}" aria-controls="size-chart--{{ unique }}" data-drawer-toggle>
         {% render 'icon-ruler' %}
@@ -932,51 +947,52 @@
       </button>
     {%- endunless -%}
   {%- endcapture -%}
-{%- endif -%}{%- form 'product',
-  product,
-  class: 'product__form',
-  data-product-form: '',
-  id: product_form_id,
-  data-recipient-errors: gift_card_recipient_feature_active,
-  data-max-inventory-reached: max_inventory_reached,
-  data-error-message-position: error_message_position,
-  data-variant-title: current_variant_title
--%}
-  {% comment %} The input with name="id" submits to cart {% endcomment %}
-  <input type="hidden" name="id" value="{{ current_variant.id }}" data-product-select>
+                  {%- endif -%}
+                  {%- form 'product',
+                    product,
+                    class: 'product__form',
+                    data-product-form: '',
+                    id: product_form_id,
+                    data-recipient-errors: gift_card_recipient_feature_active,
+                    data-max-inventory-reached: max_inventory_reached,
+                    data-error-message-position: error_message_position,
+                    data-variant-title: current_variant_title
+                  -%}
+                    {% comment %} The input with name="id" submits to cart {% endcomment %}
+                    <input type="hidden" name="id" value="{{ current_variant.id }}" data-product-select>
 
-  {%- unless show_quantity -%}
-    <input type="hidden" name="quantity" value="1">
-  {%- endunless -%}
+                    {%- unless show_quantity -%}
+                      <input type="hidden" name="quantity" value="1">
+                    {%- endunless -%}
 
-  {%- unless size_chart_button_as_label or size_chart_button == blank -%}
-    <div
-      class="product__form__size-chart"
-      {% if animations_enabled %}
-        data-aos="hero"
-        data-aos-anchor="{{ animation_anchor }}"
-        data-aos-order="{{ animation_order }}"
-        {%- assign animation_order = animation_order | plus: 1 -%}
-      {% endif %}
-    >
-      {{- size_chart_button -}}
-    </div>
-  {%- endunless -%}
+                    {%- unless size_chart_button_as_label or size_chart_button == blank -%}
+                      <div
+                        class="product__form__size-chart"
+                        {% if animations_enabled %}
+                          data-aos="hero"
+                          data-aos-anchor="{{ animation_anchor }}"
+                          data-aos-order="{{ animation_order }}"
+                          {%- assign animation_order = animation_order | plus: 1 -%}
+                        {% endif %}
+                      >
+                        {{- size_chart_button -}}
+                      </div>
+                    {%- endunless -%}
 
-  {% comment %} Shop pay split payment terms {% endcomment %}
-  <div
-    class="shop-pay-terms"
-    {% if animations_enabled %}
-      data-aos="hero"
-      data-aos-anchor="{{ animation_anchor }}"
-      data-aos-order="{{ animation_order }}"
-      {%- assign animation_order = animation_order | plus: 1 -%}
-    {% endif %}
-  >
-    {{ form | payment_terms }}
-  </div>
+                    {% comment %} Shop pay split payment terms {% endcomment %}
+                    <div
+                      class="shop-pay-terms"
+                      {% if animations_enabled %}
+                        data-aos="hero"
+                        data-aos-anchor="{{ animation_anchor }}"
+                        data-aos-order="{{ animation_order }}"
+                        {%- assign animation_order = animation_order | plus: 1 -%}
+                      {% endif %}
+                    >
+                      {{ form | payment_terms }}
+                    </div>
 
-  {%- capture quantity_selector -%}
+                    {%- capture quantity_selector -%}
     <div class="select__fieldset">
       <span class="select__label label-typography" id="{{ unique }}-select-quantity-label">{{ 'products.product.quantity' | t }}</span>
 
@@ -1019,7 +1035,7 @@
     </div>
   {%- endcapture -%}
 
-  {%- capture form_fields -%}
+                    {%- capture form_fields -%}
     {%- unless product.has_only_default_variant -%}
       {%- assign selects_counter = 0 -%}
       <div class="product__selectors">
@@ -1478,234 +1494,235 @@
     {%- endunless -%}
   {%- endcapture -%}
 
-  {{- form_fields -}}
+                    {{- form_fields -}}
 
-  <noscript>
-    <select
-      name="id"
-      class="product__form__select"
-      aria-label="{{ product.options_with_values | map: 'name' | uniq | join: ', ' }}"
-    >
-      {%- for variant in product.variants -%}
-        <option
-          {% if variant == current_variant %}
-            selected="selected"
-          {% endif %}
-          {% unless variant.available %}
-            disabled="disabled"
-          {% endunless %}
-          value="{{ variant.id }}"
-        >
-          {{- variant.title -}}
-        </option>
-      {%- endfor -%}
-    </select>
-  </noscript>
+                    <noscript>
+                      <select
+                        name="id"
+                        class="product__form__select"
+                        aria-label="{{ product.options_with_values | map: 'name' | uniq | join: ', ' }}"
+                      >
+                        {%- for variant in product.variants -%}
+                          <option
+                            {% if variant == current_variant %}
+                              selected="selected"
+                            {% endif %}
+                            {% unless variant.available %}
+                              disabled="disabled"
+                            {% endunless %}
+                            value="{{ variant.id }}"
+                          >
+                            {{- variant.title -}}
+                          </option>
+                        {%- endfor -%}
+                      </select>
+                    </noscript>
 
-  {%- if gift_card_recipient_feature_active -%}
-    {%- render 'gift-card-recipient-form',
-      product: product,
-      form: form,
-      section: section,
-      animations_enabled: animations_enabled,
-      animation_order: animation_order,
-      animation_anchor: animation_anchor
-    -%}
-    {%- assign animation_order = animation_order | plus: 1 -%}
-  {%- endif -%}
+                    {%- if gift_card_recipient_feature_active -%}
+                      {%- render 'gift-card-recipient-form',
+                        product: product,
+                        form: form,
+                        section: section,
+                        animations_enabled: animations_enabled,
+                        animation_order: animation_order,
+                        animation_anchor: animation_anchor
+                      -%}
+                      {%- assign animation_order = animation_order | plus: 1 -%}
+                    {%- endif -%}
 
-  {%- if product.selling_plan_groups.size > 0 -%}
-    {%- if enable_subscriptions_selectors -%}
-      {%- render 'subscription-form',
-        product: product,
-        animations_enabled: animations_enabled,
-        animation_anchor: animation_anchor,
-        animation_order: animation_order
-      -%}
-    {%- endif -%}
-    {%- assign animation_order = animation_order | plus: 1 -%}
-    {%- comment -%} Delete the following line to block the theme from updating subscription prices {%- endcomment -%}
-    <span data-subscription-watch-price></span>
-  {%- endif -%}
+                    {%- if product.selling_plan_groups.size > 0 -%}
+                      {%- if enable_subscriptions_selectors -%}
+                        {%- render 'subscription-form',
+                          product: product,
+                          animations_enabled: animations_enabled,
+                          animation_anchor: animation_anchor,
+                          animation_order: animation_order
+                        -%}
+                      {%- endif -%}
+                      {%- assign animation_order = animation_order | plus: 1 -%}
+                      {%- comment -%} Delete the following line to block the theme from updating subscription prices {%- endcomment -%}
+                      <span data-subscription-watch-price></span>
+                    {%- endif -%}
 
-  {%- if show_quantity -%}
-    <div
-      class="selector-wrapper selector-wrapper--qty"
-      data-selector-wrapper
-      {% if animations_enabled %}
-        data-aos="hero"
-        data-aos-anchor="{{ animation_anchor }}"
-        data-aos-order="{{ animation_order }}"
-        {%- assign animation_order = animation_order | plus: 1 -%}
-      {% endif %}
-    >
-      {{ quantity_selector }}
-    </div>
+                    {%- if show_quantity -%}
+                      <div
+                        class="selector-wrapper selector-wrapper--qty"
+                        data-selector-wrapper
+                        {% if animations_enabled %}
+                          data-aos="hero"
+                          data-aos-anchor="{{ animation_anchor }}"
+                          data-aos-order="{{ animation_order }}"
+                          {%- assign animation_order = animation_order | plus: 1 -%}
+                        {% endif %}
+                      >
+                        {{ quantity_selector }}
+                      </div>
 
-    <noscript>
-      <input
-        class="quantity__input"
-        type="number"
-        name="quantity"
-        id="product-quantity-buttons-noscript-{{ section.id }}"
-        min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
-        {% if product.selected_or_first_available_variant.quantity_rule.max != null %}
-          max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
-        {% endif %}
-        step="{{ product.selected_or_first_available_variant.quantity_rule.increment }}"
-        value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
-        form="{{ product_form_id }}"
-      >
-    </noscript>
-  {%- endif -%}
+                      <noscript>
+                        <input
+                          class="quantity__input"
+                          type="number"
+                          name="quantity"
+                          id="product-quantity-buttons-noscript-{{ section.id }}"
+                          min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                          {% if product.selected_or_first_available_variant.quantity_rule.max != null %}
+                            max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+                          {% endif %}
+                          step="{{ product.selected_or_first_available_variant.quantity_rule.increment }}"
+                          value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                          form="{{ product_form_id }}"
+                        >
+                      </noscript>
+                    {%- endif -%}
 
-  {%- assign sold_out_text = 'products.product.sold_out' | t -%}
-  {%- if show_newsletter -%}
-    {%- assign newsletter_text = 'general.newsletter_form.newsletter_product_availability' | t -%}
-    {%- assign sold_out_text = sold_out_text | append: ' - ' | append: newsletter_text -%}
-  {%- endif -%}
+                    {%- assign sold_out_text = 'products.product.sold_out' | t -%}
+                    {%- if show_newsletter -%}
+                      {%- assign newsletter_text = 'general.newsletter_form.newsletter_product_availability' | t -%}
+                      {%- assign sold_out_text = sold_out_text | append: ' - ' | append: newsletter_text -%}
+                    {%- endif -%}
 
-  <div class="product__submit__holder{% if show_payment_button %} product__submit__holder--spb{% endif %}{% if show_newsletter %} product__submit__holder--notification{% endif %}">
-    <div class="product__submit__buttons">
-      <div
-        class="product__submit__item"
-        {% if animations_enabled %}
-          data-aos="hero"
-          data-aos-anchor="{{ animation_anchor }}"
-          data-aos-order="{{ animation_order }}"
-          {%- assign animation_order = animation_order | plus: 1 -%}
-        {% endif %}
-      >
-        <button
-          type="submit"
-          name="add"
-          id="AddToCart--{{ unique }}"
-          class="btn {{ atc_button_color }} {{ atc_button_style }} {{ atc_button_size }} btn--advanced btn--submit product__submit__add"
-          data-add-to-cart
-          {% if show_newsletter %}
-            data-notification-popup="{%- render 'notification-form', product_title: product.title, product_subtitle: current_variant.title, product_id: current_variant.id -%}"
-          {% endif %}
-        >
-          <hover-button></hover-button>
-          <span
-            data-add-to-cart-text
-            {% if settings.atc_show_product_price %}
-              data-price-wrapper data-atc-button
-            {% endif %}
-          >
-            {%- if current_variant.available and product.tags contains '_preorder' -%}
-              {{ 'products.product.preorder' | t }}
-            {%- elsif current_variant.available -%}
-              {{ 'products.product.add_to_cart' | t }}
-            {%- else -%}
-              {{ sold_out_text }}
-            {%- endif -%}
+                    <div class="product__submit__holder{% if show_payment_button %} product__submit__holder--spb{% endif %}{% if show_newsletter %} product__submit__holder--notification{% endif %}">
+                      <div class="product__submit__buttons">
+                        <div
+                          class="product__submit__item"
+                          {% if animations_enabled %}
+                            data-aos="hero"
+                            data-aos-anchor="{{ animation_anchor }}"
+                            data-aos-order="{{ animation_order }}"
+                            {%- assign animation_order = animation_order | plus: 1 -%}
+                          {% endif %}
+                        >
+                          <button
+                            type="submit"
+                            name="add"
+                            id="AddToCart--{{ unique }}"
+                            class="btn {{ atc_button_color }} {{ atc_button_style }} {{ atc_button_size }} btn--advanced btn--submit product__submit__add"
+                            data-add-to-cart
+                            {% if show_newsletter %}
+                              data-notification-popup="{%- render 'notification-form', product_title: product.title, product_subtitle: current_variant.title, product_id: current_variant.id -%}"
+                            {% endif %}
+                          >
+                            <hover-button></hover-button>
+                            <span
+                              data-add-to-cart-text
+                              {% if settings.atc_show_product_price %}
+                                data-price-wrapper data-atc-button
+                              {% endif %}
+                            >
+                              {%- if current_variant.available and product.tags contains '_preorder' -%}
+                                {{ 'products.product.preorder' | t }}
+                              {%- elsif current_variant.available -%}
+                                {{ 'products.product.add_to_cart' | t }}
+                              {%- else -%}
+                                {{ sold_out_text }}
+                              {%- endif -%}
 
-            {%- if settings.atc_show_product_price -%}
-              <span data-product-price class="product__price--regular">
-                {%- liquid
-                  if current_variant.price == 0
-                    echo 'products.product.free' | t
-                  elsif currency_code_enable
-                    echo current_variant.price | money_with_currency
-                  else
-                    echo current_variant.price | money
-                  endif
-                -%}
-              </span>
+                              {%- if settings.atc_show_product_price -%}
+                                <span data-product-price class="product__price--regular">
+                                  {%- liquid
+                                    if current_variant.price == 0
+                                      echo 'products.product.free' | t
+                                    elsif currency_code_enable
+                                      echo current_variant.price | money_with_currency
+                                    else
+                                      echo current_variant.price | money
+                                    endif
+                                  -%}
+                                </span>
 
-              <s data-compare-price class="product__price--compare">
-                {%- liquid
-                  if current_variant.compare_at_price
-                    if currency_code_enable
-                      echo current_variant.compare_at_price | money_with_currency
-                    else
-                      echo current_variant.compare_at_price | money
-                    endif
-                  endif
-                -%}
-              </s>
-            {%- endif -%}
-          </span>
+                                <s data-compare-price class="product__price--compare">
+                                  {%- liquid
+                                    if current_variant.compare_at_price
+                                      if currency_code_enable
+                                        echo current_variant.compare_at_price | money_with_currency
+                                      else
+                                        echo current_variant.compare_at_price | money
+                                      endif
+                                    endif
+                                  -%}
+                                </s>
+                              {%- endif -%}
+                            </span>
 
-          <em class="loader loader--line"><em class="loader-indeterminate"></em></em>
-        </button>
-      </div>
+                            <em class="loader loader--line"><em class="loader-indeterminate"></em></em>
+                          </button>
+                        </div>
 
-      {%- if show_payment_button -%}
-        <div
-          class="product__submit__item{% if sold_out %} hidden{% endif %} {{ buynow_btn_color }} {{ buynow_btn_style }} {{ buynow_button_size }} btn--advanced"
-          data-buy-it-now
-          {% if animations_enabled %}
-            data-aos="hero"
-            data-aos-anchor="{{ animation_anchor }}"
-            data-aos-order="{{ animation_order }}"
-            {%- assign animation_order = animation_order | plus: 1 -%}
-          {% endif %}
-        >
-          {{ form | payment_button }}
-        </div>
-      {%- endif -%}
-    </div>
+                        {%- if show_payment_button -%}
+                          <div
+                            class="product__submit__item{% if sold_out %} hidden{% endif %} {{ buynow_btn_color }} {{ buynow_btn_style }} {{ buynow_button_size }} btn--advanced"
+                            data-buy-it-now
+                            {% if animations_enabled %}
+                              data-aos="hero"
+                              data-aos-anchor="{{ animation_anchor }}"
+                              data-aos-order="{{ animation_order }}"
+                              {%- assign animation_order = animation_order | plus: 1 -%}
+                            {% endif %}
+                          >
+                            {{ form | payment_button }}
+                          </div>
+                        {%- endif -%}
+                      </div>
 
-    <div data-cart-errors-container role="alert" class="product__form__errors"></div>
-  </div>
-{%- endform -%}
-</div>
+                      <div data-cart-errors-container role="alert" class="product__form__errors"></div>
+                    </div>
+                  {%- endform -%}
+                </div>
               {%- else -%}
                 <div
                   class="product__block product__form__wrapper{{ hide_labels_class }}{% if enable_half_width_btn and atc_show_product_price == false %} btn--half{% endif %}"
                   {{ block_style }}
                   {{ block.shopify_attributes }}
-                >{%- liquid
-  assign color_swatches_type = settings.color_swatches_type
-  assign variants_style = settings.variants_style
-  assign show_quantity = block.settings.show_quantity
-  assign show_payment_button = false
-  if block.settings.show_payment_button and settings.enable_accept_terms == false
-    assign show_payment_button = true
-  endif
+                >
+                  {%- liquid
+                    assign color_swatches_type = settings.color_swatches_type
+                    assign variants_style = settings.variants_style
+                    assign show_quantity = block.settings.show_quantity
+                    assign show_payment_button = false
+                    if block.settings.show_payment_button and settings.enable_accept_terms == false
+                      assign show_payment_button = true
+                    endif
 
-  if settings.atc_show_product_price
-    capture product_price
-      if currency_code_enable
-        echo 1999 | money_with_currency
-      else
-        echo 1999 | money
-      endif
-    endcapture
-  endif
+                    if settings.atc_show_product_price
+                      capture product_price
+                        if currency_code_enable
+                          echo 1999 | money_with_currency
+                        else
+                          echo 1999 | money
+                        endif
+                      endcapture
+                    endif
 
-  assign enable_variant_boxes = false
-  if variants_style == 'boxes' or variants_style == 'auto'
-    assign enable_variant_boxes = true
-  endif
+                    assign enable_variant_boxes = false
+                    if variants_style == 'boxes' or variants_style == 'auto'
+                      assign enable_variant_boxes = true
+                    endif
 
-  capture selector_wrapper_class_swatches
-    echo 'selector-wrapper'
-    if enable_variant_boxes
-      echo ' selector-wrapper--boxes'
-    endif
-    if color_swatches_type != 'disabled'
-      echo ' selector-wrapper--swatches'
-    endif
-  endcapture
+                    capture selector_wrapper_class_swatches
+                      echo 'selector-wrapper'
+                      if enable_variant_boxes
+                        echo ' selector-wrapper--boxes'
+                      endif
+                      if color_swatches_type != 'disabled'
+                        echo ' selector-wrapper--swatches'
+                      endif
+                    endcapture
 
-  capture selector_wrapper_class
-    echo 'selector-wrapper'
-    echo ' selector-wrapper--grid'
-    if enable_variant_boxes
-      echo ' selector-wrapper--boxes'
-    endif
-  endcapture
+                    capture selector_wrapper_class
+                      echo 'selector-wrapper'
+                      echo ' selector-wrapper--grid'
+                      if enable_variant_boxes
+                        echo ' selector-wrapper--boxes'
+                      endif
+                    endcapture
 
-  assign size_label = 'homepage.onboarding.size' | t
-  if label_text_caps
-    assign size_label = size_label | replace: 'ß', '<span style="text-transform: lowercase;">ß</span>'
-  endif
--%}
+                    assign size_label = 'homepage.onboarding.size' | t
+                    if label_text_caps
+                      assign size_label = size_label | replace: 'ß', '<span style="text-transform: lowercase;">ß</span>'
+                    endif
+                  -%}
 
-{%- capture quantity_selector -%}
+                  {%- capture quantity_selector -%}
 <div class="select__fieldset">
   <span class="select__label label-typography" id="{{ section.id }}-select-quantity-label">{{ 'products.product.quantity' | t }}</span>
 
@@ -1748,191 +1765,277 @@
 </div>
 {%- endcapture -%}
 
-<div class="product__form product__form--onboarding">
-  <div class="product__selectors">
-    <div class="{{ selector_wrapper_class_swatches }}"
-      data-option-position="1"
-      {% if animations_enabled %}
-        data-aos="hero"
-        data-aos-anchor="{{ animation_anchor }}"
-        data-aos-order="{{ animation_order }}"
-        {%- assign animation_order = animation_order | plus: 1 -%}
-      {% endif %}>
-      {%- if enable_variant_boxes or color_swatches_type != 'disabled' -%}
-        <fieldset class="radio__fieldset radio__fieldset--{{ settings.color_swatches_product_style }}">
-          <legend class="radio__legend">
-            <span class="radio__legend__label label-typography">{{- 'homepage.onboarding.color' | t -}}</span>
-          </legend>
+                  <div class="product__form product__form--onboarding">
+                    <div class="product__selectors">
+                      <div
+                        class="{{ selector_wrapper_class_swatches }}"
+                        data-option-position="1"
+                        {% if animations_enabled %}
+                          data-aos="hero"
+                          data-aos-anchor="{{ animation_anchor }}"
+                          data-aos-order="{{ animation_order }}"
+                          {%- assign animation_order = animation_order | plus: 1 -%}
+                        {% endif %}
+                      >
+                        {%- if enable_variant_boxes or color_swatches_type != 'disabled' -%}
+                          <fieldset class="radio__fieldset radio__fieldset--{{ settings.color_swatches_product_style }}">
+                            <legend class="radio__legend">
+                              <span class="radio__legend__label label-typography">
+                                {{- 'homepage.onboarding.color' | t -}}
+                              </span>
+                            </legend>
 
-          {%- if color_swatches_type != 'disabled' -%}
-            {%- render 'product-swatch--onboarding' -%}
-          {%- else -%}
-            {%- for i in (1..3) -%}
-              {%- capture value -%}{%- cycle 'White', 'Grey', 'Black' -%}{%- endcapture -%}
-              <span class="radio__button">
-                <input
-                  type="radio"
-                  class="radio__input"
-                  data-single-option-selector
-                  data-index="option1"
-                  name="color--{{ section.id }}"
-                  value="{{ value | escape_once }}"
-                  id="option-{{ value }}-0-{{ section.id }}"
-                  {% if forloop.index == 1 %}checked{% endif %}>
-                <label for="option-{{ value }}-0-{{ section.id }}" class="radio__label">
-                  <span>{{ value | escape_once }}</span>
-                </label>
-              </span>
-            {%- endfor -%}
-          {%- endif -%}
-        </fieldset>
-      {%- else -%}
-        <div class="select__fieldset">
-          <span class="radio__legend">
-            <span class="radio__legend__label label-typography" id="onboarding-{{ section.id }}-option-0-label">{{- 'homepage.onboarding.color' | t -}}</span>
-          </span>
+                            {%- if color_swatches_type != 'disabled' -%}
+                              {%- render 'product-swatch--onboarding' -%}
+                            {%- else -%}
+                              {%- for i in (1..3) -%}
+                                {%- capture value -%}{%- cycle 'White', 'Grey', 'Black' -%}{%- endcapture -%}
+                                <span class="radio__button">
+                                  <input
+                                    type="radio"
+                                    class="radio__input"
+                                    data-single-option-selector
+                                    data-index="option1"
+                                    name="color--{{ section.id }}"
+                                    value="{{ value | escape_once }}"
+                                    id="option-{{ value }}-0-{{ section.id }}"
+                                    {% if forloop.index == 1 %}
+                                      checked
+                                    {% endif %}
+                                  >
+                                  <label for="option-{{ value }}-0-{{ section.id }}" class="radio__label">
+                                    <span>{{ value | escape_once }}</span>
+                                  </label>
+                                </span>
+                              {%- endfor -%}
+                            {%- endif -%}
+                          </fieldset>
+                        {%- else -%}
+                          <div class="select__fieldset">
+                            <span class="radio__legend">
+                              <span
+                                class="radio__legend__label label-typography"
+                                id="onboarding-{{ section.id }}-option-0-label"
+                              >
+                                {{- 'homepage.onboarding.color' | t -}}
+                              </span>
+                            </span>
 
-          <popout-select class="select-popout" data-popout-prevent="true">
-            <button type="button" class="select-popout__toggle" aria-expanded="false" aria-controls="onboarding-{{ section.id }}-option-0-list" aria-labelledby="onboarding-{{ section.id }}-option-0-label" data-popout-toggle>
-              <span class="select-popout__value" data-popout-text>White</span>
-              {%- render 'icon-select' -%}
-            </button>
+                            <popout-select class="select-popout" data-popout-prevent="true">
+                              <button
+                                type="button"
+                                class="select-popout__toggle"
+                                aria-expanded="false"
+                                aria-controls="onboarding-{{ section.id }}-option-0-list"
+                                aria-labelledby="onboarding-{{ section.id }}-option-0-label"
+                                data-popout-toggle
+                              >
+                                <span class="select-popout__value" data-popout-text>White</span>
+                                {%- render 'icon-select' -%}
+                              </button>
 
-            <div id="onboarding-{{ section.id }}-option-0-list" class="select-popout__list" data-popout-list>
-              <ul class="select-popout__list__scroll">
-                {%- for i in (1..3) -%}
-                  {%- capture value -%}{%- cycle 'White', 'Grey', 'Black' -%}{%- endcapture -%}
-                  <li class="select-popout__item{% if forloop.index == 1 %} select-popout__item--current{% endif %}">
-                    <a class="select-popout__option" href="#"{% if forloop.index == 1 %} aria-current="true"{% endif %} data-value="{{ value | escape_once }}" data-popout-option>
-                      <span>
-                        {{ value | escape_once }}
-                      </span>
-                    </a>
-                  </li>
-                {%- endfor -%}
-              </ul>
-            </div>
-            <input type="hidden" name="options[Color]" id="onboarding-{{ section.id }}-option-0" value="White" data-popout-input data-single-option-selector data-index="option1"/>
-          </popout-select>
-        </div>
-      {%- endif -%}
-    </div>
+                              <div
+                                id="onboarding-{{ section.id }}-option-0-list"
+                                class="select-popout__list"
+                                data-popout-list
+                              >
+                                <ul class="select-popout__list__scroll">
+                                  {%- for i in (1..3) -%}
+                                    {%- capture value -%}{%- cycle 'White', 'Grey', 'Black' -%}{%- endcapture -%}
+                                    <li class="select-popout__item{% if forloop.index == 1 %} select-popout__item--current{% endif %}">
+                                      <a
+                                        class="select-popout__option"
+                                        href="#"
+                                        {% if forloop.index == 1 %}
+                                          aria-current="true"
+                                        {% endif %}
+                                        data-value="{{ value | escape_once }}"
+                                        data-popout-option
+                                      >
+                                        <span>
+                                          {{ value | escape_once }}
+                                        </span>
+                                      </a>
+                                    </li>
+                                  {%- endfor -%}
+                                </ul>
+                              </div>
+                              <input
+                                type="hidden"
+                                name="options[Color]"
+                                id="onboarding-{{ section.id }}-option-0"
+                                value="White"
+                                data-popout-input
+                                data-single-option-selector
+                                data-index="option1"
+                              >
+                            </popout-select>
+                          </div>
+                        {%- endif -%}
+                      </div>
 
-    <div class="selector-wrapper{% if enable_variant_boxes %} selector-wrapper--boxes{% endif %}"
-      data-selector-wrapper
-      data-option-position="2"
-      {% if animations_enabled %}
-        data-aos="hero"
-        data-aos-anchor="{{ animation_anchor }}"
-        data-aos-order="{{ animation_order }}"
-        {%- assign animation_order = animation_order | plus: 1 -%}
-      {% endif %}>
-      {%- if enable_variant_boxes -%}
-        <fieldset class="radio__fieldset">
-          <legend class="radio__legend">
-            <span class="radio__legend__label label-typography">{{- size_label -}}</span>
-          </legend>
+                      <div
+                        class="selector-wrapper{% if enable_variant_boxes %} selector-wrapper--boxes{% endif %}"
+                        data-selector-wrapper
+                        data-option-position="2"
+                        {% if animations_enabled %}
+                          data-aos="hero"
+                          data-aos-anchor="{{ animation_anchor }}"
+                          data-aos-order="{{ animation_order }}"
+                          {%- assign animation_order = animation_order | plus: 1 -%}
+                        {% endif %}
+                      >
+                        {%- if enable_variant_boxes -%}
+                          <fieldset class="radio__fieldset">
+                            <legend class="radio__legend">
+                              <span class="radio__legend__label label-typography">{{- size_label -}}</span>
+                            </legend>
 
-          {%- for i in (1..3) -%}
-            {%- capture value -%}{%- cycle 'Small', 'Medium', 'Large' -%}{%- endcapture -%}
-            <span class="radio__button">
-              <input
-                type="radio"
-                class="radio__input"
-                data-single-option-selector
-                data-index="option2"
-                name="size--{{ section.id }}"
-                value="{{ value | escape_once }}"
-                id="option-{{ value }}-1-{{ section.id }}"
-                {% if forloop.index == 1 %}checked{% endif %}>
-              <label for="option-{{ value }}-1-{{ section.id }}" class="radio__label">
-                <span>{{ value | escape_once }}</span>
-              </label>
-            </span>
-          {%- endfor -%}
-        </fieldset>
-      {%- else -%}
-        <div class="select__fieldset">
-          <span class="radio__legend">
-            <span class="radio__legend__label label-typography" id="onboarding-{{ section.id }}-option-1-label">{{- size_label -}}</span>
-          </span>
+                            {%- for i in (1..3) -%}
+                              {%- capture value -%}{%- cycle 'Small', 'Medium', 'Large' -%}{%- endcapture -%}
+                              <span class="radio__button">
+                                <input
+                                  type="radio"
+                                  class="radio__input"
+                                  data-single-option-selector
+                                  data-index="option2"
+                                  name="size--{{ section.id }}"
+                                  value="{{ value | escape_once }}"
+                                  id="option-{{ value }}-1-{{ section.id }}"
+                                  {% if forloop.index == 1 %}
+                                    checked
+                                  {% endif %}
+                                >
+                                <label for="option-{{ value }}-1-{{ section.id }}" class="radio__label">
+                                  <span>{{ value | escape_once }}</span>
+                                </label>
+                              </span>
+                            {%- endfor -%}
+                          </fieldset>
+                        {%- else -%}
+                          <div class="select__fieldset">
+                            <span class="radio__legend">
+                              <span
+                                class="radio__legend__label label-typography"
+                                id="onboarding-{{ section.id }}-option-1-label"
+                              >
+                                {{- size_label -}}
+                              </span>
+                            </span>
 
-          <popout-select class="select-popout" data-popout-prevent="true">
-            <button type="button" class="select-popout__toggle" aria-expanded="false" aria-controls="onboarding-{{ section.id }}-option-1-list" aria-labelledby="onboarding-{{ section.id }}-option-1-label" data-popout-toggle>
-              <span class="select-popout__value" data-popout-text>Small</span>
-              {%- render 'icon-select' -%}
-            </button>
+                            <popout-select class="select-popout" data-popout-prevent="true">
+                              <button
+                                type="button"
+                                class="select-popout__toggle"
+                                aria-expanded="false"
+                                aria-controls="onboarding-{{ section.id }}-option-1-list"
+                                aria-labelledby="onboarding-{{ section.id }}-option-1-label"
+                                data-popout-toggle
+                              >
+                                <span class="select-popout__value" data-popout-text>Small</span>
+                                {%- render 'icon-select' -%}
+                              </button>
 
-            <div id="onboarding-{{ section.id }}-option-1-list" class="select-popout__list" data-popout-list>
-              <ul class="select-popout__list__scroll">
-                {%- for i in (1..3) -%}
-                  {%- capture value -%}{%- cycle 'Small', 'Medium', 'Large' -%}{%- endcapture -%}
-                  <li class="select-popout__item{% if forloop.index == 1 %} select-popout__item--current{% endif %}">
-                    <a class="select-popout__option" href="#"{% if forloop.index == 1 %} aria-current="true"{% endif %} data-value="{{ value | escape_once }}" data-popout-option>
-                      <span>
-                        {{ value | escape_once }}
-                      </span>
-                    </a>
-                  </li>
-                {%- endfor -%}
-              </ul>
-            </div>
-            <input type="hidden" name="options[Size]" id="onboarding-{{ section.id }}-option-1" value="White" data-popout-input data-single-option-selector data-index="option2"/>
-          </popout-select>
-        </div>
-      {%- endif -%}
-    </div>
-  </div>
+                              <div
+                                id="onboarding-{{ section.id }}-option-1-list"
+                                class="select-popout__list"
+                                data-popout-list
+                              >
+                                <ul class="select-popout__list__scroll">
+                                  {%- for i in (1..3) -%}
+                                    {%- capture value -%}{%- cycle 'Small', 'Medium', 'Large' -%}{%- endcapture -%}
+                                    <li class="select-popout__item{% if forloop.index == 1 %} select-popout__item--current{% endif %}">
+                                      <a
+                                        class="select-popout__option"
+                                        href="#"
+                                        {% if forloop.index == 1 %}
+                                          aria-current="true"
+                                        {% endif %}
+                                        data-value="{{ value | escape_once }}"
+                                        data-popout-option
+                                      >
+                                        <span>
+                                          {{ value | escape_once }}
+                                        </span>
+                                      </a>
+                                    </li>
+                                  {%- endfor -%}
+                                </ul>
+                              </div>
+                              <input
+                                type="hidden"
+                                name="options[Size]"
+                                id="onboarding-{{ section.id }}-option-1"
+                                value="White"
+                                data-popout-input
+                                data-single-option-selector
+                                data-index="option2"
+                              >
+                            </popout-select>
+                          </div>
+                        {%- endif -%}
+                      </div>
+                    </div>
 
-  {%- if show_quantity -%}
-    <div class="selector-wrapper{% if variants_style == 'boxes' %} selector-wrapper--qty{% endif %}"
-      data-selector-wrapper
-      {% if animations_enabled %}
-        data-aos="hero"
-        data-aos-anchor="{{ animation_anchor }}"
-        data-aos-order="{{ animation_order }}"
-        {%- assign animation_order = animation_order | plus: 1 -%}
-      {% endif %}>
-      {{ quantity_selector }}
-    </div>
-  {%- endif -%}
+                    {%- if show_quantity -%}
+                      <div
+                        class="selector-wrapper{% if variants_style == 'boxes' %} selector-wrapper--qty{% endif %}"
+                        data-selector-wrapper
+                        {% if animations_enabled %}
+                          data-aos="hero"
+                          data-aos-anchor="{{ animation_anchor }}"
+                          data-aos-order="{{ animation_order }}"
+                          {%- assign animation_order = animation_order | plus: 1 -%}
+                        {% endif %}
+                      >
+                        {{ quantity_selector }}
+                      </div>
+                    {%- endif -%}
 
-  <div class="product__submit__holder{% if show_payment_button %} product__submit__holder--spb{% endif %}">
-    <div class="product__submit__buttons">
-      <div class="product__submit__item"
-        {% if animations_enabled %}
-          data-aos="hero"
-          data-aos-anchor="{{ animation_anchor }}"
-          data-aos-order="{{ animation_order }}"
-          {%- assign animation_order = animation_order | plus: 1 -%}
-        {% endif %}>
-        <button type="button" class="btn {{ atc_button_color }} {{ atc_button_style }} {{ atc_button_size }} btn--advanced btn--submit product__submit__add">
-          <hover-button></hover-button>
-          {{- 'products.product.add_to_cart' | t -}}
-          {%- if settings.atc_show_product_price -%}
-            <span data-product-price class="product__price--regular">{{ product_price }}</span>
-          {%- endif -%}
-        </button>
-      </div>
-      {% if show_payment_button %}
-        <div class="product__submit__item"
-          {% if animations_enabled %}
-            data-aos="hero"
-            data-aos-anchor="{{ animation_anchor }}"
-            data-aos-order="{{ animation_order }}"
-            {%- assign animation_order = animation_order | plus: 1 -%}
-          {% endif %}>
-          <div class="shopify-payment-button">
-            <button class="{{ buynow_btn_color }} {{ buynow_btn_style }} {{ buynow_button_size }} btn--advanced shopify-payment-button__button shopify-payment-button__button--unbranded">
-              <hover-button></hover-button>
-              Buy it now
-            </button>
-          </div>
-        </div>
-      {% endif %}
-    </div>
-  </div>
-</div></div>
+                    <div class="product__submit__holder{% if show_payment_button %} product__submit__holder--spb{% endif %}">
+                      <div class="product__submit__buttons">
+                        <div
+                          class="product__submit__item"
+                          {% if animations_enabled %}
+                            data-aos="hero"
+                            data-aos-anchor="{{ animation_anchor }}"
+                            data-aos-order="{{ animation_order }}"
+                            {%- assign animation_order = animation_order | plus: 1 -%}
+                          {% endif %}
+                        >
+                          <button
+                            type="button"
+                            class="btn {{ atc_button_color }} {{ atc_button_style }} {{ atc_button_size }} btn--advanced btn--submit product__submit__add"
+                          >
+                            <hover-button></hover-button>
+                            {{- 'products.product.add_to_cart' | t -}}
+                            {%- if settings.atc_show_product_price -%}
+                              <span data-product-price class="product__price--regular">{{ product_price }}</span>
+                            {%- endif -%}
+                          </button>
+                        </div>
+                        {% if show_payment_button %}
+                          <div
+                            class="product__submit__item"
+                            {% if animations_enabled %}
+                              data-aos="hero"
+                              data-aos-anchor="{{ animation_anchor }}"
+                              data-aos-order="{{ animation_order }}"
+                              {%- assign animation_order = animation_order | plus: 1 -%}
+                            {% endif %}
+                          >
+                            <div class="shopify-payment-button">
+                              <button class="{{ buynow_btn_color }} {{ buynow_btn_style }} {{ buynow_button_size }} btn--advanced shopify-payment-button__button shopify-payment-button__button--unbranded">
+                                <hover-button></hover-button>
+                                Buy it now
+                              </button>
+                            </div>
+                          </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               {%- endunless -%}
 
             {%- when 'pickup' -%}
@@ -1986,22 +2089,24 @@
                 {% endif %}
                 {{ block_style }}
                 {{ block.shopify_attributes }}
-              >{%- if product.metafields.theme.cutline != blank and product.metafields.theme.cutline.type == 'single_line_text_field' -%}
+              >
+                {%- if product.metafields.theme.cutline != blank
+                  and product.metafields.theme.cutline.type == 'single_line_text_field'
+                -%}
+                  {%- liquid
+                    capture style
+                      case cutline_color
+                        when 'body'
+                          echo 'color: var(--text);'
+                        when 'accent'
+                          echo 'color: var(--accent);'
+                      endcase
+                    endcapture
+                  -%}
 
-{%- liquid
-  capture style
-    case cutline_color
-      when 'body'
-        echo 'color: var(--text);'
-      when 'accent'
-        echo 'color: var(--accent);'
-    endcase
-  endcapture
--%}
-
-  <p class="product-cutline" style="{{ style }}">{{ product.metafields.theme.cutline.value }}</p>
-{%- endif -%}
-</div>
+                  <p class="product-cutline" style="{{ style }}">{{ product.metafields.theme.cutline.value }}</p>
+                {%- endif -%}
+              </div>
 
             {%- when 'product_accordion' -%}
               {%- if enable_full_width -%}
@@ -2481,108 +2586,113 @@
                 {%- endif -%}
               </div>
 
-            {%- when 'feature' -%}{%- liquid
-  assign block_id = block.id
-  assign prev_index = forloop.index0 | minus: 1
-  assign next_index = forloop.index0 | plus: 1
-  assign prev_block = section.blocks[prev_index]
-  assign next_block = section.blocks[next_index]
-  assign bg_color = block.settings.bg_color
-  assign text_color = block.settings.text_color
-  assign icon_name = block.settings.icon_name
-  assign title = block.settings.title
-  assign text = block.settings.text
-  assign icon_image = block.settings.icon_image
-  assign icon_width = block.settings.icon_width
-
-  capture style
-    echo '--bg: ' | append: bg_color | append: ';'
-
-    if text_color != '' and text_color != 'rgba(0,0,0,0)'
-      echo '--text: ' | append: text_color | append: ';'
-      echo '--heading: ' | append: text_color | append: ';'
-    endif
-
-    if bg_color != 'rgba(0,0,0,0)' and bg_color != '' and bg_color != section.settings.bg_color
-      echo 'padding: ' | append: 'var(--grid-gutter);'
-    endif
-  endcapture
-
-  capture icon_style
-    echo '--icon-size: ' | append: icon_width | append: 'px;'
-
-    if icon_image
-      echo 1 | divided_by: icon_image.aspect_ratio | times: 100 | round: 1 | append: '%;' | prepend: '--aspect-ratio: '
-    endif
-
-    if text_color != '' and text_color != 'rgba(0,0,0,0)' and icon_image == blank
-      echo '--text: ' | append: text_color | append: ';'
-    endif
-  endcapture
--%}
-
-{%- if forloop.index0 == 0 or prev_block.type != 'feature' -%}
-  <div class="product__block product__features"
-    {% if animations_enabled %}
-      data-aos="hero"
-      data-aos-anchor="{{ animation_anchor }}"
-      data-aos-order="{{ animation_order }}"
-      {%- assign animation_order = animation_order | plus: 1 -%}
-    {% endif %}
-    data-slider
-    {{ block_style }}>
-{%- endif -%}
-
-<div class="product__feature"
-  data-block-id="{{ block_id }}"
-  style="{{ style }}"
-  {{ block.shopify_attributes }}>
-
-  <div class="product__feature__content">
-    {%- unless icon_image == blank and icon_name == 'none' and title == blank -%}
-      <div class="product__feature__icon__container">
-        {%- unless icon_image == blank and icon_name == 'none' -%}
-          <div class="product__icon icon-stroke" style="{{ icon_style }}">
-            {%- if icon_image != blank -%}
+            {%- when 'feature' -%}
               {%- liquid
-                assign retina_size = icon_width | times: 2
-                assign image_widths = icon_width | append: ', ' | append: retina_size
-                assign sizes = icon_width | append: 'px'
+                assign block_id = block.id
+                assign prev_index = forloop.index0 | minus: 1
+                assign next_index = forloop.index0 | plus: 1
+                assign prev_block = section.blocks[prev_index]
+                assign next_block = section.blocks[next_index]
+                assign bg_color = block.settings.bg_color
+                assign text_color = block.settings.text_color
+                assign icon_name = block.settings.icon_name
+                assign title = block.settings.title
+                assign text = block.settings.text
+                assign icon_image = block.settings.icon_image
+                assign icon_width = block.settings.icon_width
+
+                capture style
+                  echo '--bg: ' | append: bg_color | append: ';'
+
+                  if text_color != '' and text_color != 'rgba(0,0,0,0)'
+                    echo '--text: ' | append: text_color | append: ';'
+                    echo '--heading: ' | append: text_color | append: ';'
+                  endif
+
+                  if bg_color != 'rgba(0,0,0,0)' and bg_color != '' and bg_color != section.settings.bg_color
+                    echo 'padding: ' | append: 'var(--grid-gutter);'
+                  endif
+                endcapture
+
+                capture icon_style
+                  echo '--icon-size: ' | append: icon_width | append: 'px;'
+
+                  if icon_image
+                    echo 1 | divided_by: icon_image.aspect_ratio | times: 100 | round: 1 | append: '%;' | prepend: '--aspect-ratio: '
+                  endif
+
+                  if text_color != '' and text_color != 'rgba(0,0,0,0)' and icon_image == blank
+                    echo '--text: ' | append: text_color | append: ';'
+                  endif
+                endcapture
               -%}
-              <div class="product__icon__holder">
-                {%- render 'image',
-                  image: icon_image,
-                  width: retina_size,
-                  sizes: sizes,
-                  widths: image_widths,
-                  classes: 'product__icon__img' -%}
+
+              {%- if forloop.index0 == 0 or prev_block.type != 'feature' -%}
+                <div
+                  class="product__block product__features"
+                  {% if animations_enabled %}
+                    data-aos="hero"
+                    data-aos-anchor="{{ animation_anchor }}"
+                    data-aos-order="{{ animation_order }}"
+                    {%- assign animation_order = animation_order | plus: 1 -%}
+                  {% endif %}
+                  data-slider
+                  {{ block_style }}
+                >
+              {%- endif -%}
+
+              <div
+                class="product__feature"
+                data-block-id="{{ block_id }}"
+                style="{{ style }}"
+                {{ block.shopify_attributes }}
+              >
+                <div class="product__feature__content">
+                  {%- unless icon_image == blank and icon_name == 'none' and title == blank -%}
+                    <div class="product__feature__icon__container">
+                      {%- unless icon_image == blank and icon_name == 'none' -%}
+                        <div class="product__icon icon-stroke" style="{{ icon_style }}">
+                          {%- if icon_image != blank -%}
+                            {%- liquid
+                              assign retina_size = icon_width | times: 2
+                              assign image_widths = icon_width | append: ', ' | append: retina_size
+                              assign sizes = icon_width | append: 'px'
+                            -%}
+                            <div class="product__icon__holder">
+                              {%- render 'image',
+                                image: icon_image,
+                                width: retina_size,
+                                sizes: sizes,
+                                widths: image_widths,
+                                classes: 'product__icon__img'
+                              -%}
+                            </div>
+                          {%- else -%}
+                            {%- render 'icons', icon: icon_name -%}
+                          {%- endif -%}
+                        </div>
+                      {%- endunless -%}
+
+                      {%- if title != blank -%}
+                        <div class="product__feature__heading">
+                          <h5>{{ title }}</h5>
+                        </div>
+                      {%- endif -%}
+                    </div>
+                  {%- endunless -%}
+
+                  {%- if text != blank -%}
+                    <div class="product__feature__text">
+                      {{ text }}
+                    </div>
+                  {%- endif -%}
+                </div>
               </div>
-            {%- else -%}
-              {%- render 'icons', icon: icon_name -%}
-            {%- endif -%}
-          </div>
-        {%- endunless -%}
 
-        {%- if title != blank -%}
-          <div class="product__feature__heading">
-            <h5>{{ title }}</h5>
-          </div>
-        {%- endif -%}
-      </div>
-    {%- endunless -%}
-
-    {%- if text != blank -%}
-      <div class="product__feature__text">
-        {{ text }}
-      </div>
-    {%- endif -%}
-  </div>
-</div>
-
-{%- if forloop.index == section.blocks.size or next_block.type != 'feature' -%}
-  </div>
-{%- endif -%}
-{%- when 'badges' -%}
+              {%- if forloop.index == section.blocks.size or next_block.type != 'feature' -%}
+                </div>
+              {%- endif -%}
+            {%- when 'badges' -%}
               <div
                 class="product__block"
                 {% if animations_enabled %}
@@ -2625,45 +2735,47 @@
                 assign digits_size_mobile = digits_size | times: 0.8 | at_least: 0.75
                 assign digits_size_unit = digits_size | at_least: 0.8
                 assign digits_size_unit_mobile = digits_size_mobile | at_least: 1
-              -%}{%- liquid
-  assign end_date = block.settings.end_date
-  assign end_time = block.settings.end_time
-  assign period = block.settings.period
-  assign end_message = block.settings.end_message
+              -%}
+              {%- liquid
+                assign end_date = block.settings.end_date
+                assign end_time = block.settings.end_time
+                assign period = block.settings.period
+                assign end_message = block.settings.end_message
 
-  assign end_time_hour = end_time | split: ':' | first | times: 1
-  assign end_time_minute = end_time | split: ':' | last
+                assign end_time_hour = end_time | split: ':' | first | times: 1
+                assign end_time_minute = end_time | split: ':' | last
 
-  capture expiration_date
-    echo end_date
-    echo ' '
-    case period
-      when 'am'
-        case end_time_hour
-          when 0, 12
-            echo '00' | append: ':' | append: end_time_minute
-          else
-            echo end_time
-        endcase
+                capture expiration_date
+                  echo end_date
+                  echo ' '
+                  case period
+                    when 'am'
+                      case end_time_hour
+                        when 0, 12
+                          echo '00' | append: ':' | append: end_time_minute
+                        else
+                          echo end_time
+                      endcase
 
-      when 'pm'
-        capture hour
-          case end_time_hour
-            when 0, 12
-              echo '12'
-            else
-              if end_time_hour < 12
-                echo end_time_hour | plus: 12
-              else
-                echo end_time_hour
-              endif
-          endcase
-        endcapture
+                    when 'pm'
+                      capture hour
+                        case end_time_hour
+                          when 0, 12
+                            echo '12'
+                          else
+                            if end_time_hour < 12
+                              echo end_time_hour | plus: 12
+                            else
+                              echo end_time_hour
+                            endif
+                        endcase
+                      endcapture
 
-        echo hour | append: ':' | append: end_time_minute
-    endcase
-  endcapture
--%}<div
+                      echo hour | append: ':' | append: end_time_minute
+                  endcase
+                endcapture
+              -%}
+              <div
                 class="product__block product__block--timer {{ text_align }}"
                 {% if animations_enabled %}
                   data-aos="hero"
@@ -2935,48 +3047,49 @@
                 {% endif %}
               >
                 <a href="{{ product_url }}" title="{{ product_title }}">{{ product_title }}</a>
-              </h1>{%- liquid
-  assign currency_code_enable = settings.currency_code_enable
+              </h1>
+              {%- liquid
+                assign currency_code_enable = settings.currency_code_enable
 
-  if price_size != 1
-    capture price_style
-      echo ' style="'
-      echo '--adjust-body-desktop: calc(var(--FONT-ADJUST-BODY) * ' | append: price_size | append: ');'
-      if price_size_mobile != blank
-        echo ' --adjust-body-mobile: calc(var(--FONT-ADJUST-BODY) * ' | append: price_size_mobile | append: ');'
-      endif
-      echo '"'
-    endcapture
-  endif
+                if price_size != 1
+                  capture price_style
+                    echo ' style="'
+                    echo '--adjust-body-desktop: calc(var(--FONT-ADJUST-BODY) * ' | append: price_size | append: ');'
+                    if price_size_mobile != blank
+                      echo ' --adjust-body-mobile: calc(var(--FONT-ADJUST-BODY) * ' | append: price_size_mobile | append: ');'
+                    endif
+                    echo '"'
+                  endcapture
+                endif
 
-  assign show_saving_badge = settings.show_saving_badge
-  assign final_sale_product = product.metafields.theme.final_sale.value
-  assign final_sale = settings.final_sale
-  assign final_sale_variant = false
+                assign show_saving_badge = settings.show_saving_badge
+                assign final_sale_product = product.metafields.theme.final_sale.value
+                assign final_sale = settings.final_sale
+                assign final_sale_variant = false
 
-  unless final_sale_product == null
-    assign final_sale = final_sale_product
-  endunless
+                unless final_sale_product == null
+                  assign final_sale = final_sale_product
+                endunless
 
-  for variant in product.variants
-    if variant.metafields.theme.final_sale.value == true
-      assign final_sale_variant = true
-    endif
-  endfor
+                for variant in product.variants
+                  if variant.metafields.theme.final_sale.value == true
+                    assign final_sale_variant = true
+                  endif
+                endfor
 
-  assign color_body_text = settings.color_body_text
-  assign final_sale_color = settings.final_sale_color
+                assign color_body_text = settings.color_body_text
+                assign final_sale_color = settings.final_sale_color
 
-  if final_sale_color.alpha == 0.0 or final_sale_color == ''
-    assign final_sale_color = color_body_text
-  endif
+                if final_sale_color.alpha == 0.0 or final_sale_color == ''
+                  assign final_sale_color = color_body_text
+                endif
 
-  capture sale_style
-    echo '--final-sale-color: ' | append: final_sale_color | append: ';'
-  endcapture
--%}
+                capture sale_style
+                  echo '--final-sale-color: ' | append: final_sale_color | append: ';'
+                endcapture
+              -%}
 
-{% capture saving_final_sale_markup %}
+              {% capture saving_final_sale_markup %}
   {% if show_saving_badge or final_sale or final_sale_variant %}
     <span class="product__price--off hidden"
       data-price-off
@@ -3000,80 +3113,86 @@
   {% endif %}
 {% endcapture %}
 
-<div
-  class="product__block product__price-and-badge"
-  {% if animations_enabled %}
-    data-aos="hero"
-    data-aos-anchor="{{ animation_anchor }}"
-    data-aos-order="{{ animation_order }}"
-    {%- assign animation_order = animation_order | plus: 1 -%}
-  {% endif %}
-  {{ block_style }}
->
-  <div class="product__price-wrapper">
-    <div
-      class="product__price"
-      data-price-wrapper
-      {% if price_style != blank %}
-        {{- price_style -}}
-      {% endif %}
-    >
-      {%- unless product == blank -%}
-        <span
-          data-product-price
-          class="product__price--regular{% if current_variant.compare_at_price > current_variant.price %} product__price--sale{% endif %}{% if bold_price %} product__price--bold{% endif %}"
-        >
-          {%- liquid
-            if current_variant.price == 0
-              echo 'products.product.free' | t
-            elsif currency_code_enable
-              echo current_variant.price | money_with_currency
-            else
-              echo current_variant.price | money
-            endif
-          -%}
-        </span>
-      {%- else -%}
-        <span id="ProductPrice" class="product__price--regular{% if bold_price %} product__price--bold{% endif %}">
-          {%- liquid
-            if currency_code_enable
-              echo 1999 | money_with_currency
-            else
-              echo 1999 | money
-            endif
-          -%}
-        </span>
-      {%- endunless -%}
+              <div
+                class="product__block product__price-and-badge"
+                {% if animations_enabled %}
+                  data-aos="hero"
+                  data-aos-anchor="{{ animation_anchor }}"
+                  data-aos-order="{{ animation_order }}"
+                  {%- assign animation_order = animation_order | plus: 1 -%}
+                {% endif %}
+                {{ block_style }}
+              >
+                <div class="product__price-wrapper">
+                  <div
+                    class="product__price"
+                    data-price-wrapper
+                    {% if price_style != blank %}
+                      {{- price_style -}}
+                    {% endif %}
+                  >
+                    {%- unless product == blank -%}
+                      <span
+                        data-product-price
+                        class="product__price--regular{% if current_variant.compare_at_price > current_variant.price %} product__price--sale{% endif %}{% if bold_price %} product__price--bold{% endif %}"
+                      >
+                        {%- liquid
+                          if current_variant.price == 0
+                            echo 'products.product.free' | t
+                          elsif currency_code_enable
+                            echo current_variant.price | money_with_currency
+                          else
+                            echo current_variant.price | money
+                          endif
+                        -%}
+                      </span>
+                    {%- else -%}
+                      <span
+                        id="ProductPrice"
+                        class="product__price--regular{% if bold_price %} product__price--bold{% endif %}"
+                      >
+                        {%- liquid
+                          if currency_code_enable
+                            echo 1999 | money_with_currency
+                          else
+                            echo 1999 | money
+                          endif
+                        -%}
+                      </span>
+                    {%- endunless -%}
 
-      <s data-compare-price class="product__price--compare{% if bold_price %} product__price--bold{% endif %}">
-        {%- liquid
-          if current_variant.compare_at_price
-            if currency_code_enable
-              echo current_variant.compare_at_price | money_with_currency
-            else
-              echo current_variant.compare_at_price | money
-            endif
-          endif
-        -%}
-      </s>
+                    <s
+                      data-compare-price
+                      class="product__price--compare{% if bold_price %} product__price--bold{% endif %}"
+                    >
+                      {%- liquid
+                        if current_variant.compare_at_price
+                          if currency_code_enable
+                            echo current_variant.compare_at_price | money_with_currency
+                          else
+                            echo current_variant.compare_at_price | money
+                          endif
+                        endif
+                      -%}
+                    </s>
 
-      {%- liquid
-        assign units = product.variants | map: 'unit_price' | compact
-        if units[0]
-          assign has_units = true
-        else
-          assign has_units = false
-        endif
-      -%}
+                    {%- liquid
+                      assign units = product.variants | map: 'unit_price' | compact
+                      if units[0]
+                        assign has_units = true
+                      else
+                        assign has_units = false
+                      endif
+                    -%}
 
-      {%- if has_units -%}
-        {%- assign current_variant_unit_price = current_variant.unit_price -%}
+                    {%- if has_units -%}
+                      {%- assign current_variant_unit_price = current_variant.unit_price -%}
 
-        {%- capture unit_price_separator -%}
+                      {%- capture unit_price_separator -%}
           <span aria-hidden="true">/</span><span class="visually-hidden">{{ 'general.accessibility.unit_price_separator' | t }}&nbsp;</span>
         {%- endcapture -%}
 
-        {%- capture unit_price_base_unit -%}
+                      {%- capture unit_price_base_unit -%}
           <span>
             {%- if current_variant.unit_price_measurement -%}
               {% if current_variant.unit_price_measurement.reference_value != 1 %}
@@ -3084,31 +3203,33 @@
           </span>
         {%- endcapture -%}
 
-        <span class="product__unit-price">
-          <span
-            data-product-unit
-            class="product__price--unit{% unless current_variant_unit_price %} hidden{% endunless %}"
-          >
-            <span class="visually-hidden">{{ 'products.product.unit_price_label' | t }}</span>
-            <span data-product-unit-price id="unit-price-{{ section.id }}">
-              {{- current_variant_unit_price | money -}}
-            </span>
-            {{ unit_price_separator }}
-            <span data-product-base id="unit-price-base-{{ section.id }}">{{ unit_price_base_unit }}</span>
-          </span>
-        </span>
-      {%- endif -%}
-      {% if section_type != 'quickview' %}
-        {{ saving_final_sale_markup }}
-      {% endif %}
-    </div>
-  </div>
+                      <span class="product__unit-price">
+                        <span
+                          data-product-unit
+                          class="product__price--unit{% unless current_variant_unit_price %} hidden{% endunless %}"
+                        >
+                          <span class="visually-hidden">{{ 'products.product.unit_price_label' | t }}</span>
+                          <span data-product-unit-price id="unit-price-{{ section.id }}">
+                            {{- current_variant_unit_price | money -}}
+                          </span>
+                          {{ unit_price_separator }}
+                          <span data-product-base id="unit-price-base-{{ section.id }}">
+                            {{- unit_price_base_unit -}}
+                          </span>
+                        </span>
+                      </span>
+                    {%- endif -%}
+                    {% if section_type != 'quickview' %}
+                      {{ saving_final_sale_markup }}
+                    {% endif %}
+                  </div>
+                </div>
 
-  {% if section_type == 'quickview' %}
-    {{ saving_final_sale_markup }}
-  {% endif %}
-</div>
-</div>
+                {% if section_type == 'quickview' %}
+                  {{ saving_final_sale_markup }}
+                {% endif %}
+              </div>
+            </div>
 
             <div class="popup-quick-view__gallery">
               {{- product_gallery -}}
@@ -3116,165 +3237,167 @@
           </div>
 
           <div data-form-wrapper>
-            {%- comment -%} Product Form Variants {%- endcomment -%}<!-- /partials/product-form-quickview-body.liquid -->
+            {%- comment -%} Product Form Variants {%- endcomment -%}
+            <!-- /partials/product-form-quickview-body.liquid -->
 
-{%- liquid
-  assign current_variant = product.selected_or_first_available_variant
-  assign variants_style = settings.variants_style
-  assign show_payment_button = false
-  assign show_variant_image = settings.show_variant_image
-  assign gift_card_recipient_feature_active = false
+            {%- liquid
+              assign current_variant = product.selected_or_first_available_variant
+              assign variants_style = settings.variants_style
+              assign show_payment_button = false
+              assign show_variant_image = settings.show_variant_image
+              assign gift_card_recipient_feature_active = false
 
-  if settings.show_gift_card_recipient and product.gift_card?
-    assign gift_card_recipient_feature_active = true
-  endif
+              if settings.show_gift_card_recipient and product.gift_card?
+                assign gift_card_recipient_feature_active = true
+              endif
 
-  if settings.show_payment_button and gift_card_recipient_feature_active == false
-    assign show_payment_button = true
-  endif
+              if settings.show_payment_button and gift_card_recipient_feature_active == false
+                assign show_payment_button = true
+              endif
 
-  comment
-    Override buy button setting if there are selling plan groups and cart terms
-  endcomment
-  if show_payment_button and product.selling_plan_groups.size < 1 and settings.enable_accept_terms == false
-    assign show_payment_button = true
-  else
-    assign show_payment_button = false
-  endif
--%}{%- comment -%}
-  Size chart
+              comment
+                Override buy button setting if there are selling plan groups and cart terms
+              endcomment
+              if show_payment_button and product.selling_plan_groups.size < 1 and settings.enable_accept_terms == false
+                assign show_payment_button = true
+              else
+                assign show_payment_button = false
+              endif
+            -%}
+            {%- comment -%}
+              Size chart
 
-  Inherited variables:
-    - product: {Object} Product object.
-    - section: {Object} the current Section this code block belongs to.
-  Returns variables:
-    - specific_pages_arr: {Array} Page handles array from product tags
-    - info_page: {Object} Page object || blank
-    - show_size_guide: {Boolean}
-    - size_chart_button_as_label: {Boolean}
-    - size_chart_button: {String} captured markup of a button that opens the size chart drawer
-    - size_chart_drawer: {String} captured markup of the size chart drawer
-{%- endcomment -%}
+              Inherited variables:
+                - product: {Object} Product object.
+                - section: {Object} the current Section this code block belongs to.
+              Returns variables:
+                - specific_pages_arr: {Array} Page handles array from product tags
+                - info_page: {Object} Page object || blank
+                - show_size_guide: {Boolean}
+                - size_chart_button_as_label: {Boolean}
+                - size_chart_button: {String} captured markup of a button that opens the size chart drawer
+                - size_chart_drawer: {String} captured markup of the size chart drawer
+            {%- endcomment -%}
 
-{%- liquid
-  assign show_size_guide = false
-  assign size_guide_string = 'general.size_chart.button' | t
-  assign info_page_title_override = settings.info_page_title_override
-  assign type_style = settings.type_style
-  assign tab_heading_size = settings.tab_heading_size | times: 0.01
+            {%- liquid
+              assign show_size_guide = false
+              assign size_guide_string = 'general.size_chart.button' | t
+              assign info_page_title_override = settings.info_page_title_override
+              assign type_style = settings.type_style
+              assign tab_heading_size = settings.tab_heading_size | times: 0.01
 
-  capture type_adjustment
-    case type_style
-      when 'font-heading'
-        echo 'var(--adjust-heading)'
-      when 'font-body'
-        echo 'var(--adjust-body)'
-      when 'subheading-text'
-        echo 'var(--adjust-accent)'
-    endcase
-  endcapture
+              capture type_adjustment
+                case type_style
+                  when 'font-heading'
+                    echo 'var(--adjust-heading)'
+                  when 'font-body'
+                    echo 'var(--adjust-body)'
+                  when 'subheading-text'
+                    echo 'var(--adjust-accent)'
+                endcase
+              endcapture
 
-  capture size_chart_button_text
-    assign size_button_text = size_guide_string
-    if info_page_title_override != blank
-      assign size_button_text = info_page_title_override
-    endif
+              capture size_chart_button_text
+                assign size_button_text = size_guide_string
+                if info_page_title_override != blank
+                  assign size_button_text = info_page_title_override
+                endif
 
-    if label_text_caps
-      assign size_button_text = size_button_text | replace: 'ß', '<span style="text-transform: lowercase;">ß</span>'
-    endif
+                if label_text_caps
+                  assign size_button_text = size_button_text | replace: 'ß', '<span style="text-transform: lowercase;">ß</span>'
+                endif
 
-    echo size_button_text
-  endcapture
+                echo size_button_text
+              endcapture
 
-  assign tags_string = product.tags | join: ','
-  assign size_separator = '_size_'
-  assign specific_pages = ''
-  if tags_string contains size_separator
-    for tag in product.tags
-      if tag contains size_separator
-        assign page_handle = tag | split: size_separator | last | split: ',' | first
-        assign specific_pages = specific_pages | append: page_handle | append: ','
-      endif
-    endfor
-  endif
-  assign specific_pages_arr = specific_pages | split: ','
-  if specific_pages_arr.size > 0
-    assign show_size_guide = true
-  endif
+              assign tags_string = product.tags | join: ','
+              assign size_separator = '_size_'
+              assign specific_pages = ''
+              if tags_string contains size_separator
+                for tag in product.tags
+                  if tag contains size_separator
+                    assign page_handle = tag | split: size_separator | last | split: ',' | first
+                    assign specific_pages = specific_pages | append: page_handle | append: ','
+                  endif
+                endfor
+              endif
+              assign specific_pages_arr = specific_pages | split: ','
+              if specific_pages_arr.size > 0
+                assign show_size_guide = true
+              endif
 
-  assign product_size_chart = product.metafields.theme.size_chart.value
-  assign info_page = settings.info_page
-  if product_size_chart != blank or info_page != blank
-    if product_size_chart != blank
-      assign info_page = product_size_chart
-    elsif info_page != blank
-      assign info_page = pages[info_page]
-    endif
+              assign product_size_chart = product.metafields.theme.size_chart.value
+              assign info_page = settings.info_page
+              if product_size_chart != blank or info_page != blank
+                if product_size_chart != blank
+                  assign info_page = product_size_chart
+                elsif info_page != blank
+                  assign info_page = pages[info_page]
+                endif
 
-    assign show_size_guide = true
-  endif
+                assign show_size_guide = true
+              endif
 
-  assign size_chart_button_as_label = false
-  assign has_size_option = false
-  unless product.has_only_default_variant
-    for option in product.options_with_values
-      assign separator = option.name | handle | prepend: ',' | append: ','
-      assign size_translation = 'general.size_chart.size' | t
-      assign translation_string = size_translation | remove: '  ' | replace: ', ', ',' | replace: ' ,', ',' | replace: ',', '____' | handle | replace: '____', ',' | append: ',' | prepend: ','
+              assign size_chart_button_as_label = false
+              assign has_size_option = false
+              unless product.has_only_default_variant
+                for option in product.options_with_values
+                  assign separator = option.name | handle | prepend: ',' | append: ','
+                  assign size_translation = 'general.size_chart.size' | t
+                  assign translation_string = size_translation | remove: '  ' | replace: ', ', ',' | replace: ' ,', ',' | replace: ',', '____' | handle | replace: '____', ',' | append: ',' | prepend: ','
 
-      unless translation_string contains separator
-        continue
-      endunless
+                  unless translation_string contains separator
+                    continue
+                  endunless
 
-      assign has_size_option = true
-    endfor
-  endunless
+                  assign has_size_option = true
+                endfor
+              endunless
 
-  if has_size_option and show_labels
-    assign size_chart_button_as_label = true
-  endif
--%}
+              if has_size_option and show_labels
+                assign size_chart_button_as_label = true
+              endif
+            -%}
 
-{%- if show_size_guide -%}
-  {%- liquid
-    assign empty_size_guide = true
+            {%- if show_size_guide -%}
+              {%- liquid
+                assign empty_size_guide = true
 
-    capture drawer_classes
-      echo 'popup-chart drawer drawer--right'
-      if section_type == 'quickview'
-        echo ' popup-chart--quickview'
-      else
-        echo ' cv-h'
-      endif
-    endcapture
+                capture drawer_classes
+                  echo 'popup-chart drawer drawer--right'
+                  if section_type == 'quickview'
+                    echo ' popup-chart--quickview'
+                  else
+                    echo ' cv-h'
+                  endif
+                endcapture
 
-    capture drawer_close_icon
-      if section_type == 'quickview'
-        render 'icon-chevron-right'
-      else
-        render 'icon-close'
-      endif
-    endcapture
+                capture drawer_close_icon
+                  if section_type == 'quickview'
+                    render 'icon-chevron-right'
+                  else
+                    render 'icon-close'
+                  endif
+                endcapture
 
-    assign show_tabs_nav = false
-    assign tabs_navigation = ''
-    assign tabs = ''
-    assign has_current = false
-    assign index = 0
-    assign pages_count = 0
-  -%}
+                assign show_tabs_nav = false
+                assign tabs_navigation = ''
+                assign tabs = ''
+                assign has_current = false
+                assign index = 0
+                assign pages_count = 0
+              -%}
 
-  {%- for page_handle in specific_pages_arr -%}
-    {%- assign page_size_chart = pages[page_handle] -%}
+              {%- for page_handle in specific_pages_arr -%}
+                {%- assign page_size_chart = pages[page_handle] -%}
 
-    {%- if page_size_chart.title != blank -%}
-      {%- capture tabs_navigation -%}
+                {%- if page_size_chart.title != blank -%}
+                  {%- capture tabs_navigation -%}
         {{ tabs_navigation }}
         <li class="tabs__link" data-tabs-link="{{ forloop.index0 }}" tabindex="0">{{ page_size_chart.title }}</li>
       {%- endcapture -%}
 
-      {%- capture tabs -%}
+                  {%- capture tabs -%}
         {{ tabs }}
         <div class="tab{% unless has_current %} current{% endunless %}" data-tab="{{ forloop.index0 }}">
           {%- if page_size_chart.content != blank -%}
@@ -3285,22 +3408,22 @@
         </div>
       {%- endcapture -%}
 
-      {%- assign has_current = true -%}
-      {%- assign pages_count = pages_count | plus: 1 -%}
-    {%- endif -%}
-  {%- endfor -%}
+                  {%- assign has_current = true -%}
+                  {%- assign pages_count = pages_count | plus: 1 -%}
+                {%- endif -%}
+              {%- endfor -%}
 
-  {%- if info_page != blank -%}
-    {%- assign index = specific_pages_arr.size -%}
+              {%- if info_page != blank -%}
+                {%- assign index = specific_pages_arr.size -%}
 
-    {%- capture tabs_navigation -%}
+                {%- capture tabs_navigation -%}
       {{ tabs_navigation }}
       {%- if info_page.title != blank -%}
         <li class="tabs__link" data-tabs-link="{{ index }}" data-lock-scroll tabindex="0">{{ info_page.title }}</li>
       {%- endif -%}
     {%- endcapture -%}
 
-    {%- capture tabs -%}
+                {%- capture tabs -%}
       {{ tabs }}
       <div class="tab{% unless has_current %} current{% endunless %}" data-tab="{{ index }}">
         {%- if info_page.content != blank -%}
@@ -3311,20 +3434,20 @@
       </div>
     {%- endcapture -%}
 
-    {%- assign has_current = true -%}
-    {%- assign pages_count = pages_count | plus: 1 -%}
-  {%- endif -%}
+                {%- assign has_current = true -%}
+                {%- assign pages_count = pages_count | plus: 1 -%}
+              {%- endif -%}
 
-  {%- liquid
-    if tabs != blank
-      assign empty_size_guide = false
-    endif
-    if pages_count > 1 and tabs_navigation != blank
-      assign show_tabs_nav = true
-    endif
-  -%}
+              {%- liquid
+                if tabs != blank
+                  assign empty_size_guide = false
+                endif
+                if pages_count > 1 and tabs_navigation != blank
+                  assign show_tabs_nav = true
+                endif
+              -%}
 
-  {%- capture size_chart_drawer -%}
+              {%- capture size_chart_drawer -%}
     {%- unless empty_size_guide -%}
       <div class="{{ drawer_classes }}" id="size-chart--{{ unique }}" aria-hidden="true" role="dialog" data-drawer>
         <button type="button" class="drawer__close-button" aria-controls="size-chart--{{ unique }}" data-drawer-toggle>
@@ -3366,7 +3489,7 @@
     {%- endunless -%}
   {%- endcapture -%}
 
-  {%- capture size_chart_button -%}
+              {%- capture size_chart_button -%}
     {%- unless empty_size_guide -%}
       <button type="button" class="product__popup__link label-typography" href="{{ info_page.url | default: '#!' }}" aria-controls="size-chart--{{ unique }}" data-drawer-toggle>
         {% render 'icon-ruler' %}
@@ -3374,43 +3497,50 @@
       </button>
     {%- endunless -%}
   {%- endcapture -%}
-{%- endif -%}<div class="product__form">
-  {% comment %} The input with name="id" submits to cart {% endcomment %}
-  <input type="hidden" name="id" value="{{ current_variant.id }}" data-product-select>
+            {%- endif -%}
+            <div class="product__form">
+              {% comment %} The input with name="id" submits to cart {% endcomment %}
+              <input type="hidden" name="id" value="{{ current_variant.id }}" data-product-select>
 
-  {%- unless show_quantity -%}
-    <input type="hidden" name="quantity" value="1">
-  {%- endunless -%}
+              {%- unless show_quantity -%}
+                <input type="hidden" name="quantity" value="1">
+              {%- endunless -%}
 
-  {%- if show_remaining -%}
-    {%- render 'inventory-countdown',
-      current_variant: current_variant,
-      product_variants: product.variants
-    -%}
-  {%- endif -%}
+              {%- if show_remaining -%}
+                {%- render 'inventory-countdown',
+                  current_variant: current_variant,
+                  product_variants: product.variants
+                -%}
+              {%- endif -%}
 
-  {%- unless size_chart_button_as_label or size_chart_button == blank -%}
-    <div class="product__form__size-chart"
-      {% if animations_enabled %}
-        data-aos="fade-up"
-        data-aos-anchor="{{ animation_anchor }}"
-        data-aos-delay="{{ animation_delay }}"
-        {%- assign animation_delay = animation_delay | plus: 100 -%}
-      {% endif %}>
-      {{- size_chart_button -}}
-    </div>
-  {%- endunless -%}
+              {%- unless size_chart_button_as_label or size_chart_button == blank -%}
+                <div
+                  class="product__form__size-chart"
+                  {% if animations_enabled %}
+                    data-aos="fade-up"
+                    data-aos-anchor="{{ animation_anchor }}"
+                    data-aos-delay="{{ animation_delay }}"
+                    {%- assign animation_delay = animation_delay | plus: 100 -%}
+                  {% endif %}
+                >
+                  {{- size_chart_button -}}
+                </div>
+              {%- endunless -%}
 
-  {% comment %} Shop pay split payment terms {% endcomment %}
-  <div class="shop-pay-terms"
-    {% if animations_enabled %}
-      data-aos="fade-up"
-      data-aos-anchor="{{ animation_anchor }}"
-      data-aos-delay="{{ animation_delay }}"
-      {%- assign animation_delay = animation_delay | plus: 100 -%}
-    {% endif %}>{{ form | payment_terms }}</div>
+              {% comment %} Shop pay split payment terms {% endcomment %}
+              <div
+                class="shop-pay-terms"
+                {% if animations_enabled %}
+                  data-aos="fade-up"
+                  data-aos-anchor="{{ animation_anchor }}"
+                  data-aos-delay="{{ animation_delay }}"
+                  {%- assign animation_delay = animation_delay | plus: 100 -%}
+                {% endif %}
+              >
+                {{ form | payment_terms }}
+              </div>
 
-  {%- capture quantity_selector -%}
+              {%- capture quantity_selector -%}
     <div class="select__fieldset">
       <span class="select__label label-typography" id="{{ unique }}-select-quantity-label">{{ 'products.product.quantity' | t }}</span>
 
@@ -3453,7 +3583,7 @@
     </div>
   {%- endcapture -%}
 
-  {%- capture form_fields -%}
+              {%- capture form_fields -%}
     {%- unless product.has_only_default_variant -%}
       {%- assign selects_counter = 0 -%}
       <div class="product__selectors">
@@ -3794,77 +3924,92 @@
     {%- endunless -%}
   {%- endcapture -%}
 
-  {{- form_fields -}}
+              {{- form_fields -}}
 
-  <noscript>
-    <select name="id" class="product__form__select" aria-label="{{ product.options_with_values | map: 'name' | uniq | join: ', ' }}">
-      {%- for variant in product.variants -%}
-        <option
-          {% if variant == current_variant %}selected="selected"{% endif %}
-          {% unless variant.available %}disabled="disabled"{% endunless %}
-          value="{{ variant.id }}">
-            {{- variant.title -}}
-        </option>
-      {%- endfor -%}
-    </select>
-  </noscript>
+              <noscript>
+                <select
+                  name="id"
+                  class="product__form__select"
+                  aria-label="{{ product.options_with_values | map: 'name' | uniq | join: ', ' }}"
+                >
+                  {%- for variant in product.variants -%}
+                    <option
+                      {% if variant == current_variant %}
+                        selected="selected"
+                      {% endif %}
+                      {% unless variant.available %}
+                        disabled="disabled"
+                      {% endunless %}
+                      value="{{ variant.id }}"
+                    >
+                      {{- variant.title -}}
+                    </option>
+                  {%- endfor -%}
+                </select>
+              </noscript>
 
-  {%- if gift_card_recipient_feature_active -%}
-    {%- render 'gift-card-recipient-form',
-      product: product,
-      form: form,
-      section: section,
-      animations_enabled: animations_enabled,
-      animation_delay: animation_delay,
-      animation_anchor: animation_anchor -%}
-  {%- endif -%}
+              {%- if gift_card_recipient_feature_active -%}
+                {%- render 'gift-card-recipient-form',
+                  product: product,
+                  form: form,
+                  section: section,
+                  animations_enabled: animations_enabled,
+                  animation_delay: animation_delay,
+                  animation_anchor: animation_anchor
+                -%}
+              {%- endif -%}
 
-  {%- if product.selling_plan_groups.size > 0 -%}
-    {%- if enable_subscriptions_selectors -%}
-      {%- render 'subscription-form',
-        product: product,
-        animations_enabled: animations_enabled,
-        animation_anchor: animation_anchor,
-        animation_delay: animation_delay
-      -%}
-    {%- endif -%}
-    {%- assign animation_delay = animation_delay | plus: 100 -%}
-    {%- comment -%} Delete the following line to block the theme from updating subscription prices {%- endcomment -%}
-    <span data-subscription-watch-price></span>
-  {%- endif -%}
+              {%- if product.selling_plan_groups.size > 0 -%}
+                {%- if enable_subscriptions_selectors -%}
+                  {%- render 'subscription-form',
+                    product: product,
+                    animations_enabled: animations_enabled,
+                    animation_anchor: animation_anchor,
+                    animation_delay: animation_delay
+                  -%}
+                {%- endif -%}
+                {%- assign animation_delay = animation_delay | plus: 100 -%}
+                {%- comment -%} Delete the following line to block the theme from updating subscription prices {%- endcomment -%}
+                <span data-subscription-watch-price></span>
+              {%- endif -%}
 
-  {%- if show_quantity -%}
-    <div class="selector-wrapper selector-wrapper--qty"
-      data-selector-wrapper
-      {% if animations_enabled %}
-        data-aos="fade-up"
-        data-aos-anchor="{{ animation_anchor }}"
-        data-aos-delay="{{ animation_delay }}"
-        {%- assign animation_delay = animation_delay | plus: 100 -%}
-      {% endif %}>
-      {{ quantity_selector }}
-    </div>
-  {%- endif -%}
+              {%- if show_quantity -%}
+                <div
+                  class="selector-wrapper selector-wrapper--qty"
+                  data-selector-wrapper
+                  {% if animations_enabled %}
+                    data-aos="fade-up"
+                    data-aos-anchor="{{ animation_anchor }}"
+                    data-aos-delay="{{ animation_delay }}"
+                    {%- assign animation_delay = animation_delay | plus: 100 -%}
+                  {% endif %}
+                >
+                  {{ quantity_selector }}
+                </div>
+              {%- endif -%}
 
-  {%- assign sold_out_text = 'products.product.sold_out' | t -%}
-</div></div>
+              {%- assign sold_out_text = 'products.product.sold_out' | t -%}
+            </div>
+          </div>
 
-          {%- if settings.quick_buy_text == 'cutline' -%}{%- if product.metafields.theme.cutline != blank and product.metafields.theme.cutline.type == 'single_line_text_field' -%}
+          {%- if settings.quick_buy_text == 'cutline' -%}
+            {%- if product.metafields.theme.cutline != blank
+              and product.metafields.theme.cutline.type == 'single_line_text_field'
+            -%}
+              {%- liquid
+                capture style
+                  case cutline_color
+                    when 'body'
+                      echo 'color: var(--text);'
+                    when 'accent'
+                      echo 'color: var(--accent);'
+                  endcase
+                endcapture
+              -%}
 
-{%- liquid
-  capture style
-    case cutline_color
-      when 'body'
-        echo 'color: var(--text);'
-      when 'accent'
-        echo 'color: var(--accent);'
-    endcase
-  endcapture
--%}
-
-  <p class="product-cutline" style="{{ style }}">{{ product.metafields.theme.cutline.value }}</p>
-{%- endif -%}
-{%- elsif settings.quick_buy_text == 'description' -%}
+              <p class="product-cutline" style="{{ style }}">{{ product.metafields.theme.cutline.value }}</p>
+            {%- endif -%}
+          {%- elsif settings.quick_buy_text == 'description' -%}
             <p>{{ product.description | strip_html | truncatewords: settings.quick_buy_text_length }}</p>
           {% endif %}
         </div>
@@ -3872,60 +4017,70 @@
         <div class="popup-quick-view__foot" data-quick-view-foot>
           {%- comment -%} We need the "foot__inner" container to avoid the vertical scroll that appears when animating the foot element {%- endcomment -%}
           <div class="popup-quick-view__foot__inner" data-quick-view-foot-inner>
-            {%- comment -%} Product Form Buttons {%- endcomment -%}<!-- /partials/product-form-quickview-actions.liquid -->
+            {%- comment -%} Product Form Buttons {%- endcomment -%}
+            <!-- /partials/product-form-quickview-actions.liquid -->
 
-<div class="product__submit__holder{% if show_payment_button %} product__submit__holder--spb{% endif %}">
-  <div class="product__submit__buttons">
-    <div class="product__submit__item">
-      <button
-        type="submit"
-        name="add"
-        id="AddToCart--{{ unique }}"
-        class="btn {{ atc_button_color }} {{ atc_button_style }} {{ atc_button_size }} btn--advanced btn--submit product__submit__add"
-        data-add-to-cart>
-        <hover-button></hover-button>
-        <span data-add-to-cart-text{% if settings.atc_show_product_price %} data-price-wrapper data-atc-button{% endif %}>
-          {%- if current_variant.available and product.tags contains '_preorder' -%}
-            {{ 'products.product.preorder' | t }}
-          {%- elsif current_variant.available -%}
-            {{ 'products.product.add_to_cart' | t }}
-          {%- else -%}
-            {{ sold_out_text }}
-          {%- endif -%}
+            <div class="product__submit__holder{% if show_payment_button %} product__submit__holder--spb{% endif %}">
+              <div class="product__submit__buttons">
+                <div class="product__submit__item">
+                  <button
+                    type="submit"
+                    name="add"
+                    id="AddToCart--{{ unique }}"
+                    class="btn {{ atc_button_color }} {{ atc_button_style }} {{ atc_button_size }} btn--advanced btn--submit product__submit__add"
+                    data-add-to-cart
+                  >
+                    <hover-button></hover-button>
+                    <span
+                      data-add-to-cart-text
+                      {% if settings.atc_show_product_price %}
+                        data-price-wrapper data-atc-button
+                      {% endif %}
+                    >
+                      {%- if current_variant.available and product.tags contains '_preorder' -%}
+                        {{ 'products.product.preorder' | t }}
+                      {%- elsif current_variant.available -%}
+                        {{ 'products.product.add_to_cart' | t }}
+                      {%- else -%}
+                        {{ sold_out_text }}
+                      {%- endif -%}
 
-          {%- if settings.atc_show_product_price -%}
-            <span data-product-price class="product__price--regular">
-              {%- liquid
-                if current_variant.price == 0
-                  echo 'products.product.free' | t
-                elsif currency_code_enable
-                  echo current_variant.price | money_with_currency
-                else
-                  echo current_variant.price | money
-                endif
-              -%}
-            </span>
-          {%- endif -%}
-        </span>
+                      {%- if settings.atc_show_product_price -%}
+                        <span data-product-price class="product__price--regular">
+                          {%- liquid
+                            if current_variant.price == 0
+                              echo 'products.product.free' | t
+                            elsif currency_code_enable
+                              echo current_variant.price | money_with_currency
+                            else
+                              echo current_variant.price | money
+                            endif
+                          -%}
+                        </span>
+                      {%- endif -%}
+                    </span>
 
-        <em class="loader loader--line"><em class="loader-indeterminate"></em></em>
-      </button>
-    </div>
+                    <em class="loader loader--line"><em class="loader-indeterminate"></em></em>
+                  </button>
+                </div>
 
-    {%- if show_payment_button -%}
-      <div class="product__submit__item{% if sold_out %} hidden{% endif %} {{ buynow_btn_color }} {{ buynow_btn_style }} {{ buynow_button_size }}" data-buy-it-now>
-        {{ form | payment_button }}
-      </div>
-    {%- endif -%}
-  </div>
+                {%- if show_payment_button -%}
+                  <div
+                    class="product__submit__item{% if sold_out %} hidden{% endif %} {{ buynow_btn_color }} {{ buynow_btn_style }} {{ buynow_button_size }}"
+                    data-buy-it-now
+                  >
+                    {{ form | payment_button }}
+                  </div>
+                {%- endif -%}
+              </div>
 
-  <div data-cart-errors-container role="alert" class="product__form__errors"></div>
-</div>
+              <div data-cart-errors-container role="alert" class="product__form__errors"></div>
+            </div>
 
-{%- if show_free_shipping_message -%}
-  {%- render 'cart-empty-message' -%}
-{%- endif -%}
-<a class="popup-quick-view__view-button popup-quick-view__view-button--desktop" href="{{ product_url }}">
+            {%- if show_free_shipping_message -%}
+              {%- render 'cart-empty-message' -%}
+            {%- endif -%}
+            <a class="popup-quick-view__view-button popup-quick-view__view-button--desktop" href="{{ product_url }}">
               {{- 'products.general.view_all_details' | t -}}
             </a>
           </div>

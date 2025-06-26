@@ -111,7 +111,7 @@
     "upsells_button_style": "btn--solid-border",
     "upsells_button_size": "btn--medium",
     "loading_image_width": 150,
-    "loading_appearance": "once",
+    "loading_appearance": "never",
     "show_spacer_lines": false,
     "line_thickness": "normal",
     "arrow_style": "chevron",

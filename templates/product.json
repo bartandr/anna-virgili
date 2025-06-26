@@ -297,6 +297,13 @@
         "text_iJ6hiP": {
           "type": "text",
           "settings": {
+            "title": "Come posso tracciare un ordine?",
+            "text": "<p>Al momento della spedizione, riceverai un'e-mail con il numero di tracking per monitorare l'avanzamento della spedizione tramite il sito del corriere o il link fornito. In alternativa, puoi sempre monitorare lo stato della spedizione dalla tua <a href=\"https://gs10epeycs2nvzl9-90220888441.shopifypreview.com/account\" target=\"_blank\" title=\"/account\">area personale</a>.</p>"
+          }
+        },
+        "text_BJnXhc": {
+          "type": "text",
+          "settings": {
             "title": "Come faccio a trovare il negozio Anna Virgili più vicino a me?",
             "text": "<p>Puoi cliccare qui per accedere al nostro <a href=\"https://gs10epeycs2nvzl9-90220888441.shopifypreview.com/pages/store-locator\" target=\"_blank\" title=\"Store Locator\">motore di ricerca store</a> e scoprire il punto vendita Anna Virgili più vicino a te.</p><p>Troverai tutte le informazioni utili: indirizzo, contatti, giorni e orari di apertura.</p>"
           }
@@ -306,7 +313,8 @@
         "text_KdnygX",
         "text_FbRPcQ",
         "text_wQyUFf",
-        "text_iJ6hiP"
+        "text_iJ6hiP",
+        "text_BJnXhc"
       ],
       "settings": {
         "layout": "one-column",

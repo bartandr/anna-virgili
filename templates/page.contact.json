@@ -22,12 +22,6 @@
     "contact-form": {
       "type": "section-contact-form",
       "blocks": {
-        "contact-form-0": {
-          "type": "heading",
-          "settings": {
-            "title": "Contattaci"
-          }
-        },
         "contact-form-1": {
           "type": "text",
           "settings": {
@@ -42,6 +36,13 @@
             "required": true
           }
         },
+        "telephone_iaxMhq": {
+          "type": "telephone",
+          "settings": {
+            "title": "Numero di telefono",
+            "required": true
+          }
+        },
         "contact-form-3": {
           "type": "body",
           "settings": {
@@ -51,9 +52,9 @@
         }
       },
       "block_order": [
-        "contact-form-0",
         "contact-form-1",
         "contact-form-2",
+        "telephone_iaxMhq",
         "contact-form-3"
       ],
       "settings": {

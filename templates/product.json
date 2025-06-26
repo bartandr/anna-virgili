@@ -279,10 +279,18 @@
             "title": "I vostri prodotti sono autentici?",
             "text": "<p>Sì, tutti i nostri prodotti sono nuovi e autentici. Siamo rivenditori ufficiali di tutti i brand disponibili sul nostro sito. Tutti i prodotti sono completi di etichette e packaging originale.</p>"
           }
+        },
+        "text_FbRPcQ": {
+          "type": "text",
+          "settings": {
+            "title": "Posso effettuare un ordine e ritirarlo in un punto vendita Anna Virgili?",
+            "text": "<p>Sì, durante il checkout potrai scegliere tra diverse modalità di spedizione.</p><p>Oltre alla consegna a domicilio, è disponibile anche il ritiro in negozio, selezionando il punto vendita Anna Virgili più vicino alla tua posizione tra quelli disponibili.</p><p>Il servizio è GRATUITO e non prevede costi di spedizione aggiuntivi.</p><p>Non appena il tuo ordine sarà disponibile per il ritiro, riceverai una notifica via email e un aggiornamento sarà visibile anche all’interno del tuo account personale.</p>"
+          }
         }
       },
       "block_order": [
-        "text_KdnygX"
+        "text_KdnygX",
+        "text_FbRPcQ"
       ],
       "settings": {
         "layout": "one-column",

@@ -42,21 +42,21 @@
         "accordion_block_1_2"
       ],
       "settings": {
-        "layout": "two-columns",
+        "layout": "one-column",
         "show_accordion_divider": false,
         "line_thickness": "normal",
         "subheading": "",
         "title": "Prodotti",
         "type_style": "font-heading",
-        "heading_size": 120,
+        "heading_size": 100,
         "text": "",
-        "tabs_bg_color": "#fafafa",
+        "tabs_bg_color": "#ffffff",
         "bg_color": "",
         "gradient": "",
         "text_color": "text-dark",
         "border_color": "",
-        "width": "wrapper",
-        "padding_top": 60,
+        "width": "wrapper--narrow",
+        "padding_top": 20,
         "padding_bottom": 60
       }
     },

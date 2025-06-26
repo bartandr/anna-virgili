@@ -103,4 +103,8 @@ svg.swym-icon-unfilled,svg.swym-icon-filled{
 .mobile-menu__item #customer_register_link {
   display: none !important;
 }
+.body--rounded-corners .product-grid-item__image, .body--rounded-corners .product__media__slider:not(.flickity-enabled) .product-gallery__media
+{
+  border-radius: 0 !important;
+}
 /*Fine modifiche fix*/

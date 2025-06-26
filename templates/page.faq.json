@@ -172,7 +172,7 @@
         "text_Mq8Mjm"
       ],
       "settings": {
-        "layout": "two-columns",
+        "layout": "one-column",
         "show_accordion_divider": false,
         "line_thickness": "normal",
         "subheading": "",
@@ -185,7 +185,7 @@
         "gradient": "",
         "text_color": "text-dark",
         "border_color": "",
-        "width": "wrapper",
+        "width": "wrapper--narrow",
         "padding_top": 60,
         "padding_bottom": 60
       }
@@ -245,7 +245,7 @@
         "text_Czq8hr"
       ],
       "settings": {
-        "layout": "two-columns",
+        "layout": "one-column",
         "show_accordion_divider": false,
         "line_thickness": "normal",
         "subheading": "",
@@ -258,7 +258,7 @@
         "gradient": "",
         "text_color": "text-dark",
         "border_color": "",
-        "width": "wrapper",
+        "width": "wrapper--narrow",
         "padding_top": 60,
         "padding_bottom": 60
       }

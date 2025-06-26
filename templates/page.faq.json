@@ -116,7 +116,7 @@
           "type": "text",
           "settings": {
             "title": "In quali paesi spedite?",
-            "text": "<p>Spediamo in tutto il mondo con UPS. I tempi e i costi variano sulla base del paese di spedizione.</p><p>Per consultare l’elenco dei paesi in cui spediamo e i relativi tempi e costi di spedizione, consulta la pagina Spedizioni.</p>"
+            "text": "<p>Spediamo in tutto il mondo con UPS. I tempi e i costi variano sulla base del paese di spedizione.</p><p>Per consultare l’elenco dei paesi in cui spediamo e i relativi tempi e costi di spedizione, consulta la pagina <a href=\"/pages/ordini-e-spedizioni\" target=\"_blank\" title=\"Ordini e spedizioni\">Ordini & Spedizioni</a>.</p>"
           }
         },
         "accordion_block_3_1": {

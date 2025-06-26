@@ -19,112 +19,6 @@
         "padding_bottom": 60
       }
     },
-    "section_text_jrUGaB": {
-      "type": "section-text",
-      "blocks": {
-        "heading_gDg3nw": {
-          "type": "heading",
-          "settings": {
-            "text": "<p><strong>Contatti</strong></p>",
-            "size": 100,
-            "heading_highlight_type": "underline-hand-drawn",
-            "highlight_color": "#000000",
-            "highlight_text_color": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_gDg3nw"
-      ],
-      "settings": {
-        "text_position": "left",
-        "bg_color": "",
-        "gradient": "",
-        "text_color": "text-dark",
-        "width": "wrapper--full-padded",
-        "padding_top": 60,
-        "padding_bottom": 0
-      }
-    },
-    "section_text_zqkWem": {
-      "type": "section-text",
-      "blocks": {
-        "text_6TYaYR": {
-          "type": "text",
-          "name": "Testo-contatti",
-          "settings": {
-            "text": "<p>Hai bisogno di supporto, desideri ricevere maggiori informazioni o sei interessato a collaborare con noi?<br/>Il nostro team di assistenza clienti è a tua completa disposizione dal lunedì al venerdì, dalle 09:00 alle 18:00 (esclusi i giorni festivi), e può essere contattato via e-mail, WhatsApp o telefono.<br/></p><p>In alternativa, compila il modulo sottostante indicando nome e cognome, numero di telefono, e-mail e un messaggio dettagliato: ti ricontatteremo il prima possibile per offrirti la migliore assistenza.</p>",
-            "size": 100
-          }
-        },
-        "text_kDayYH": {
-          "type": "text",
-          "settings": {
-            "text": "<p><strong>E-mail:</strong> <a href=\"mailto:clienti@annavirgili.it\" title=\"mailto:clienti@annavirgili.it\">clienti@annavirgili.it</a><br/><strong>Telefono:</strong> <a href=\"tel:+390735757536\" title=\"tel:+390735757536\">(+39) 0735 757536</a><br/><strong>Whatsapp:</strong> <a href=\"https://wa.link/1qg6jf\" target=\"_blank\" title=\"https://wa.link/1qg6jf\">(+39) 378 303 7807</a><br/><strong>Sede:</strong> Contrada San Giovanni snc, 63074 San Benedetto del Tronto AP</p>",
-            "size": 100
-          }
-        }
-      },
-      "block_order": [
-        "text_6TYaYR",
-        "text_kDayYH"
-      ],
-      "settings": {
-        "text_position": "left",
-        "bg_color": "",
-        "gradient": "",
-        "text_color": "text-dark",
-        "width": "wrapper--full-padded",
-        "padding_top": 40,
-        "padding_bottom": 0
-      }
-    },
-    "section_image_with_text_WBPtA9": {
-      "type": "section-image-with-text",
-      "blocks": {
-        "text_DMaE3X": {
-          "type": "text",
-          "settings": {
-            "text": "<p><strong>E-mail:</strong> <a href=\"mailto:clienti@annavirgili.it\" title=\"mailto:clienti@annavirgili.it\">clienti@annavirgili.it</a><br/><strong>Telefono:</strong> <a href=\"tel:+390735757536\" title=\"tel:+390735757536\">(+39) 0735 757536</a><br/><strong>Whatsapp:</strong> in pending<br/><strong>Sede:</strong> Contrada San Giovanni snc, 63074 San Benedetto del Tronto AP</p>",
-            "size": 100,
-            "text_position": "left",
-            "spacing_bottom": 12
-          }
-        },
-        "text_r6pTMR": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Ti invitiamo inoltre a visitare la nostra sezione <strong>FAQ</strong> per trovare risposte rapide alle domande più frequenti, e la pagina <a href=\"/pages/store-locator\" title=\"Store Locator\">Store Locator</a> per scoprire tutti i nostri punti vendita.</p>",
-            "size": 100,
-            "text_position": "left",
-            "spacing_bottom": 12
-          }
-        }
-      },
-      "block_order": [
-        "text_DMaE3X",
-        "text_r6pTMR"
-      ],
-      "settings": {
-        "show_accordion_divider": true,
-        "increase_border_radius": false,
-        "section_height": "three-fifty-height",
-        "enable_mobile_height": false,
-        "mobile_height": "four-fifty-height-mobile",
-        "layout": "inline",
-        "image_location": "right",
-        "image_width": "extra-narrow",
-        "image": "shopify://shop_images/logo-av-mini.svg",
-        "block_bg_color": "",
-        "text_color": "text-dark",
-        "bg_color": "",
-        "gradient": "",
-        "section_width": "wrapper",
-        "add_gutter": true,
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
-    },
     "contact-form": {
       "type": "section-contact-form",
       "blocks": {
@@ -176,9 +70,6 @@
   },
   "order": [
     "main",
-    "section_text_jrUGaB",
-    "section_text_zqkWem",
-    "section_image_with_text_WBPtA9",
     "contact-form"
   ]
 }

@@ -57,10 +57,18 @@
             "text": "<p>Hai bisogno di supporto, desideri ricevere maggiori informazioni o sei interessato a collaborare con noi?<br/>Il nostro team di assistenza clienti è a tua completa disposizione dal lunedì al venerdì, dalle 09:00 alle 18:00 (esclusi i giorni festivi), e può essere contattato via e-mail, WhatsApp o telefono.<br/></p><p>In alternativa, compila il modulo sottostante indicando nome e cognome, numero di telefono, e-mail e un messaggio dettagliato: ti ricontatteremo il prima possibile per offrirti la migliore assistenza.</p>",
             "size": 100
           }
+        },
+        "text_kDayYH": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>E-mail:</strong> <a href=\"mailto:clienti@annavirgili.it\" title=\"mailto:clienti@annavirgili.it\">clienti@annavirgili.it</a><br/><strong>Telefono:</strong> <a href=\"tel:+390735757536\" title=\"tel:+390735757536\">(+39) 0735 757536</a><br/><strong>Whatsapp:</strong> <a href=\"https://wa.link/1qg6jf\" target=\"_blank\" title=\"https://wa.link/1qg6jf\">(+39) 378 303 7807</a><br/><strong>Sede:</strong> Contrada San Giovanni snc, 63074 San Benedetto del Tronto AP</p>",
+            "size": 100
+          }
         }
       },
       "block_order": [
-        "text_6TYaYR"
+        "text_6TYaYR",
+        "text_kDayYH"
       ],
       "settings": {
         "text_position": "left",

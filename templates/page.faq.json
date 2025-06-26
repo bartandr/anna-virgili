@@ -44,6 +44,9 @@
         "accordion_block_1_1",
         "accordion_block_1_2"
       ],
+      "custom_css": [
+        "h2 {font-size: 18px;}"
+      ],
       "settings": {
         "layout": "one-column",
         "show_accordion_divider": false,

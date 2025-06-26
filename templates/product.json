@@ -36,10 +36,6 @@
             "padding_bottom": 20
           }
         },
-        "product_meta_variants_He9drc": {
-          "type": "product-meta-variants",
-          "settings": {}
-        },
         "title": {
           "type": "title",
           "settings": {
@@ -49,6 +45,10 @@
             "bold_price": true,
             "padding_bottom": 0
           }
+        },
+        "product_meta_variants_He9drc": {
+          "type": "product-meta-variants",
+          "settings": {}
         },
         "form": {
           "type": "form",
@@ -135,8 +135,8 @@
         "text_A7y6PV",
         "text_9HbVgG",
         "text_FTy7k3",
-        "product_meta_variants_He9drc",
         "title",
+        "product_meta_variants_He9drc",
         "form",
         "wishlist_plus_wishlist_pdp_button_KnpUr6",
         "inventory_countdown",

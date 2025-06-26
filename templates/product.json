@@ -139,11 +139,11 @@
             "enable_full_width": false,
             "tabs_bg_color": "",
             "text_color": "text-dark",
-            "show_accordion_divider": false,
+            "show_accordion_divider": true,
             "line_thickness": "normal",
             "accordion_heading": "METODI DI PAGAMENTO",
             "heading_style": "font-body",
-            "accordion_text": "<p>Use this accordion to add info such as Materials, Sizing, Features, Shipping and Returns policies</p>",
+            "accordion_text": "<p>CARTA DI CREDITO</p><p>PAYPAL</p><p>SCALAPAY</p><p>WALLET DIGITALI (Apple Pay, Google Pay)</p><p>Anna Virgili garantisce la massima sicurezza per tutti i tuoi acquisti.</p>",
             "accordion_page": "",
             "padding_bottom": 20
           }

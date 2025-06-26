@@ -232,7 +232,7 @@
           "type": "text",
           "settings": {
             "title": "Posso cambiare un prodotto acquistato con un’altra taglia o colore?",
-            "text": "<p>Al momento non offriamo la possibilità di effettuare cambi diretti. Se desideri una taglia o un colore diverso, ti invitiamo a effettuare un nuovo ordine e a procedere con il reso dell’articolo che</p><p>non intendi tenere, seguendo le modalità indicate nella sezione Resi & Rimborsi.</p><p>Per qualsiasi dubbio o necessità, il nostro <a href=\"/pages/contatti\" target=\"_blank\" title=\"Contatti\">Servizio Clienti</a> è sempre a tua disposizione.</p>"
+            "text": "<p>Al momento non offriamo la possibilità di effettuare cambi diretti. Se desideri una taglia o un colore diverso, ti invitiamo a effettuare un nuovo ordine e a procedere con il reso dell’articolo che non intendi tenere, seguendo le modalità indicate nella <a href=\"/pages/resi-e-rimborsi\" target=\"_blank\" title=\"Resi e rimborsi\">sezione Resi & Rimborsi</a>.</p><p>Per qualsiasi dubbio o necessità, il nostro <a href=\"/pages/contatti\" target=\"_blank\" title=\"Contatti\">Servizio Clienti</a> è sempre a tua disposizione.</p>"
           }
         }
       },

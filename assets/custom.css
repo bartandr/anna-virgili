@@ -99,3 +99,8 @@ svg.swym-icon-unfilled,svg.swym-icon-filled{
     top:8px !important;
     left:8px !important;
 }
+/*Modifiche di fix*/
+.mobile-menu__item #customer_register_link {
+  display: none !important;
+}
+/*Fine modifiche fix*/

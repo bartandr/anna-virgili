@@ -137,7 +137,7 @@
     "show_scroll_to_top": false,
     "suggest_collections": false,
     "suggestions_results_limit": 5,
-    "popular_searches_menu": "footer",
+    "popular_searches_menu": "main-menu",
     "show_browse_categories_menu": false,
     "suggestions_terms_limit": 10,
     "social_instagram_link": "https://www.instagram.com/anna.virgili/",

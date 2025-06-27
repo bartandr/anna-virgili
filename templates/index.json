@@ -319,7 +319,7 @@
       ],
       "settings": {
         "collection": "dev-borse-da-donna",
-        "products_layout": "grid",
+        "products_layout": "carousel",
         "products_limit": 8,
         "products_per_row_on_desktop": 4,
         "columns_mobile": "2",

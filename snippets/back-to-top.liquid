@@ -12,11 +12,7 @@
     var btn = document.getElementById('backToTop');
 
     window.addEventListener('scroll', function () {
-      if (window.scrollY > 300) {
-        btn.style.display = 'block';
-      } else {
-        btn.style.display = 'none';
-      }
+      btn.style.display = window.scrollY > 300 ? 'block' : 'none';
     });
 
     btn.addEventListener('click', function () {

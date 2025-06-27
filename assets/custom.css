@@ -107,4 +107,8 @@ svg.swym-icon-unfilled,svg.swym-icon-filled{
 {
   border-radius: 0 !important;
 }
+#swym-anchor {
+  display: none !important;
+  pointer-events: none;
+}
 /*Fine modifiche fix*/

@@ -49,7 +49,7 @@
         "direction": "ticker-ltr",
         "text_caps": false,
         "type_font": "helvetica_n4",
-        "text_size": 125,
+        "text_size": 100,
         "letter_spacing": 0,
         "message_spacing": 25,
         "bg_color": "#97d1dc",

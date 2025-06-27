@@ -146,7 +146,7 @@
             "enable_full_width": false,
             "tabs_bg_color": "",
             "text_color": "text-dark",
-            "show_accordion_divider": false,
+            "show_accordion_divider": true,
             "line_thickness": "normal",
             "accordion_heading": "CONDIVIDI",
             "heading_style": "font-body",

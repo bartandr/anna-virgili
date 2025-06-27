@@ -25,7 +25,7 @@
           "settings": {
             "title": "<p>{{ product.title }}</p>",
             "text_alignment": "left",
-            "padding_bottom": 20
+            "padding_bottom": 10
           }
         },
         "text_FTy7k3": {

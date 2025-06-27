@@ -50,8 +50,8 @@
       ],
       "settings": {
         "desktop_height": "three-fifty-height",
-        "enable_mobile_height": false,
-        "mobile_height": "four-fifty-height-mobile",
+        "enable_mobile_height": true,
+        "mobile_height": "two-fifty-height-mobile",
         "heading_size": 130,
         "text_size": 100,
         "button_1_color": "btn--white",

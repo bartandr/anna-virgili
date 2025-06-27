@@ -1,110 +1,124 @@
 <!doctype html>
 <html class="no-js no-touch page-loading" lang="{{ request.locale.iso_code }}">
-<head><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
-<link rel="canonical" href="{{ canonical_url }}">
-{{ 'custom.css' | asset_url | stylesheet_tag }}
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="canonical" href="{{ canonical_url }}">
+    {{ 'custom.css' | asset_url | stylesheet_tag }}
 
-{%- unless settings.type_heading_font.system? and settings.type_base_font.system? -%}
-  <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
-{%- endunless -%}
-{%- unless settings.type_base_font.system? -%}
-  <link rel="preload" as="font" href="{{ settings.type_base_font | font_url }}" type="font/woff2" crossorigin>
-{%- endunless -%}
-{%- unless settings.type_heading_font.system? -%}
-  <link rel="preload" as="font" href="{{ settings.type_heading_font | font_url }}" type="font/woff2" crossorigin>
-{%- endunless -%}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-dfg0c3Vx2oNhqdS6vL7epO4pO6Iu6DHsJuYgF2cdM0k7zD2mQb6f/OA1Onw96HzlEbAT3vGPzC3DgVbSuIZi7A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="preload" as="image" href="{{ 'loading.svg' | asset_url }}">{%- liquid
-  assign loading_appearance = settings.loading_appearance
-  assign image_width = settings.loading_image_width
-  assign image = settings.loading_image
-  assign loading_background = settings.loading_background
-  assign loading_svg_color = '#fff'
-  assign loading_background_brightness = loading_background | color_brightness | round
-  if loading_background_brightness > 153
-    assign loading_svg_color = '#000'
-  endif
--%}
+    {%- unless settings.type_heading_font.system? and settings.type_base_font.system? -%}
+      <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+    {%- endunless -%}
+    {%- unless settings.type_base_font.system? -%}
+      <link rel="preload" as="font" href="{{ settings.type_base_font | font_url }}" type="font/woff2" crossorigin>
+    {%- endunless -%}
+    {%- unless settings.type_heading_font.system? -%}
+      <link rel="preload" as="font" href="{{ settings.type_heading_font | font_url }}" type="font/woff2" crossorigin>
+    {%- endunless -%}
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-dfg0c3Vx2oNhqdS6vL7epO4pO6Iu6DHsJuYgF2cdM0k7zD2mQb6f/OA1Onw96HzlEbAT3vGPzC3DgVbSuIZi7A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    >
+    <link rel="preload" as="image" href="{{ 'loading.svg' | asset_url }}">
+    {%- liquid
+      assign loading_appearance = settings.loading_appearance
+      assign image_width = settings.loading_image_width
+      assign image = settings.loading_image
+      assign loading_background = settings.loading_background
+      assign loading_svg_color = '#fff'
+      assign loading_background_brightness = loading_background | color_brightness | round
+      if loading_background_brightness > 153
+        assign loading_svg_color = '#000'
+      endif
+    -%}
 
-{%- style -%}
-  {% if loading_background.alpha != 0.0 and loading_background != '' %}
-    :root {
-      --overlay-bg: {{ loading_background }};
-      --overlay-bg-svg: {{ loading_svg_color }};
-    }
-  {% endif %}
-  .no-js.page-loading .loading-overlay,
-  html:not(.page-loading) .loading-overlay { opacity: 0; visibility: hidden; pointer-events: none; animation: fadeOut 1s ease; transition: visibility 0s linear 1s; }
+    {%- style -%}
+      {% if loading_background.alpha != 0.0 and loading_background != '' %}
+        :root {
+          --overlay-bg: {{ loading_background }};
+          --overlay-bg-svg: {{ loading_svg_color }};
+        }
+      {% endif %}
+      .no-js.page-loading .loading-overlay,
+      html:not(.page-loading) .loading-overlay { opacity: 0; visibility: hidden; pointer-events: none; animation: fadeOut 1s ease; transition: visibility 0s linear 1s; }
 
-  .loading-overlay { position: fixed; top: 0; left: 0; z-index: 99999; width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--overlay-bg, var(--COLOR-BLACK-WHITE)); }
-{%- endstyle -%}
+      .loading-overlay { position: fixed; top: 0; left: 0; z-index: 99999; width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--overlay-bg, var(--COLOR-BLACK-WHITE)); }
+    {%- endstyle -%}
 
-{%- unless loading_appearance == 'never' -%}
-  {%- if image != blank -%}
-    {%- assign image_height = image_width | divided_by: image.aspect_ratio | round -%}
-    {%- capture preload_image_size -%}{{ image_width }}x{{ image_height }}{%- endcapture -%}
-    <link rel="preload" as="image" href="{{ image | img_url: preload_image_size }}" data-preload="{{ preload_image_size }}">
-  {%- endif -%}
+    {%- unless loading_appearance == 'never' -%}
+      {%- if image != blank -%}
+        {%- assign image_height = image_width | divided_by: image.aspect_ratio | round -%}
+        {%- capture preload_image_size -%}{{ image_width }}x{{ image_height }}{%- endcapture -%}
+        <link
+          rel="preload"
+          as="image"
+          href="{{ image | img_url: preload_image_size }}"
+          data-preload="{{ preload_image_size }}"
+        >
+      {%- endif -%}
 
-  {%- style -%}
-    .loader__image__holder { position: absolute; top: 0; left: 0; width: 100%; height: 100%; font-size: 0; display: none; align-items: center; justify-content: center; animation: pulse-loading 2s infinite ease-in-out; }
-    .loader__image__holder:has(.loader__image--fallback) { animation: none; }
-    .loading-image .loader__image__holder { display: flex; }
-    .loader__image { max-width: {{ image_width }}px; height: auto; object-fit: contain; }
-    .loading-image .loader__image--fallback { width: 150px; height: 150px; max-width: 150px; mask: var(--loading-svg) center center/contain no-repeat; background: var(--overlay-bg-svg, var(--COLOR-WHITE-BLACK)); }
-  {%- endstyle -%}
+      {%- style -%}
+        .loader__image__holder { position: absolute; top: 0; left: 0; width: 100%; height: 100%; font-size: 0; display: none; align-items: center; justify-content: center; animation: pulse-loading 2s infinite ease-in-out; }
+        .loader__image__holder:has(.loader__image--fallback) { animation: none; }
+        .loading-image .loader__image__holder { display: flex; }
+        .loader__image { max-width: {{ image_width }}px; height: auto; object-fit: contain; }
+        .loading-image .loader__image--fallback { width: 150px; height: 150px; max-width: 150px; mask: var(--loading-svg) center center/contain no-repeat; background: var(--overlay-bg-svg, var(--COLOR-WHITE-BLACK)); }
+      {%- endstyle -%}
 
-  <script>
-    const loadingAppearance = {{ loading_appearance | json }};
-    const loaded = sessionStorage.getItem('loaded');
+      <script>
+        const loadingAppearance = {{ loading_appearance | json }};
+        const loaded = sessionStorage.getItem('loaded');
 
-    if (loadingAppearance === 'once') {
-      if (loaded === null) {
-        sessionStorage.setItem('loaded', true);
-        document.documentElement.classList.add('loading-image');
-      }
-    } else {
-      document.documentElement.classList.add('loading-image');
-    }
-  </script>
-{%- endunless -%}{%- if settings.favicon != blank -%}
-  <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
-{%- endif -%}
+        if (loadingAppearance === 'once') {
+          if (loaded === null) {
+            sessionStorage.setItem('loaded', true);
+            document.documentElement.classList.add('loading-image');
+          }
+        } else {
+          document.documentElement.classList.add('loading-image');
+        }
+      </script>
+    {%- endunless -%}
+    {%- if settings.favicon != blank -%}
+      <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+    {%- endif -%}
 
-{% comment %} Title and description {% endcomment %}
-<title>
-  {{- page_title }}
-  {% if current_tags -%}
-    {%- assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
-  {%- endif %}
-  {% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}
-  {% unless page_title contains shop.name %} &ndash; {{ shop.name -}}{% endunless -%}
-</title>
+    {% comment %} Title and description {% endcomment %}
+    <title>
+      {{- page_title }}
+      {% if current_tags -%}
+        {%- assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
+      {%- endif %}
+      {% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}
+      {% unless page_title contains shop.name %} &ndash; {{ shop.name -}}{% endunless -%}
+    </title>
 
-{%- if page_description -%}
-  <meta name="description" content="{{ page_description | escape }}">
-{%- else -%}
-  <meta name="description" content="{{ shop.description | escape }}">
-{%- endif -%}
+    {%- if page_description -%}
+      <meta name="description" content="{{ page_description | escape }}">
+    {%- else -%}
+      <meta name="description" content="{{ shop.description | escape }}">
+    {%- endif -%}
 
-{%- render 'social-meta-tags' -%}
+    {%- render 'social-meta-tags' -%}
 
-{%- render 'css-variables' -%}
+    {%- render 'css-variables' -%}
 
-{%- comment -%} CSS {%- endcomment -%}
-{{- 'theme.css' | asset_url | stylesheet_tag -}}
+    {%- comment -%} CSS {%- endcomment -%}
+    {{- 'theme.css' | asset_url | stylesheet_tag -}}
 
-{%- liquid
-  capture icon_close
-    render 'icon-close'
-  endcapture
--%}
+    {%- liquid
+      capture icon_close
+        render 'icon-close'
+      endcapture
+    -%}
 
-<script
-  type="text/javascript"
->
+    <script
+      type="text/javascript"
+    >
     if (window.MSInputMethodContext && document.documentMode) {
       var scripts = document.getElementsByTagName('script')[0];
       var polyfill = document.createElement("script");
@@ -220,38 +234,39 @@
     window.isHeaderTransparent = false;
     window.stickyHeaderHeight = 60;
     window.lastWindowWidth = window.innerWidth || document.documentElement.clientWidth;
-</script>
+    </script>
 
-{%- if request.page_type contains 'customers/' -%}
-  <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
-{%- endif -%}
+    {%- if request.page_type contains 'customers/' -%}
+      <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
+    {%- endif -%}
 
-<script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script>
-{% comment %} <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script> {% endcomment %}
-<script src="{{ 'theme.dev.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script>
+    {% comment %} <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script> {% endcomment %}
+    <script src="{{ 'theme.dev.js' | asset_url }}" defer="defer"></script>
 
-{%- if request.design_mode -%}
-  <script
-    src="{{ 'theme-editor.js' | asset_url }}"
-    defer="defer"
-    data-owner-email="{{ shop.email }}"
-    data-owner-id="{{ shop.id }}"
-  ></script>
-{%- endif -%}
+    {%- if request.design_mode -%}
+      <script
+        src="{{ 'theme-editor.js' | asset_url }}"
+        defer="defer"
+        data-owner-email="{{ shop.email }}"
+        data-owner-id="{{ shop.id }}"
+      ></script>
+    {%- endif -%}
 
-{%- comment -%}
-  If you need to do some edits in Theme JS use theme.dev.js file
+    {%- comment -%}
+      If you need to do some edits in Theme JS use theme.dev.js file
 
-  *** DO NOT EDIT theme.js file ***
+      *** DO NOT EDIT theme.js file ***
 
-  Then call theme.dev.js file by editing the row above from:
-  <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
-  to
-  <script src="{{ 'theme.dev.js' | asset_url }}" defer="defer"></script>
-{%- endcomment -%}
+      Then call theme.dev.js file by editing the row above from:
+      <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+      to
+      <script src="{{ 'theme.dev.js' | asset_url }}" defer="defer"></script>
+    {%- endcomment -%}
 
-{{ content_for_header }}
-</head>{%- capture body_classes -%}
+    {{ content_for_header }}
+  </head>
+  {%- capture body_classes -%}
 template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}
 {% if customer %} customer-logged-in{% endif %}
 {% if settings.show_rounded_corners %} body--rounded-corners{% endif %}
@@ -260,40 +275,48 @@ template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}
 {% if settings.color_body_bg == '#ffffff' or settings.color_body_bg == '#fff' %} palette--light{% endif %}
   no-outline
 {%- endcapture -%}
-{%- assign body_classes = body_classes | strip_newlines | strip -%}<body id="{{ page_title | handle }}" class="{{ body_classes }}">
-  {%- render 'loading' -%}
+  {%- assign body_classes = body_classes | strip_newlines | strip -%}
+  <body id="{{ page_title | handle }}" class="{{ body_classes }}">
+    {%- render 'loading' -%}
 
-  <a class="in-page-link skip-link" data-skip-content href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
+    <a class="in-page-link skip-link" data-skip-content href="#MainContent">
+      {{- 'general.accessibility.skip_to_content' | t -}}
+    </a>
 
-  {% sections 'group-header' %}
-  {% sections 'group-overlay' %}
+    {% sections 'group-header' %}
+    {% sections 'group-overlay' %}
 
-  <main id="MainContent" class="main-content" data-main>
-    {{ content_for_layout }}
-  </main>
+    <main id="MainContent" class="main-content" data-main>
+      {{ content_for_layout }}
+    </main>
 
-  {% sections 'group-footer' %}
+    {% sections 'group-footer' %}
 
-  {%- comment -%} Photoswipe containers {%- endcomment -%}
-  {%- render 'zoom-pswp', template_index: 0 -%}
-  {%- render 'zoom-pswp', template_index: 1 -%}
+    {%- comment -%} Photoswipe containers {%- endcomment -%}
+    {%- render 'zoom-pswp', template_index: 0 -%}
+    {%- render 'zoom-pswp', template_index: 1 -%}
 
-  {%- if settings.show_scroll_to_top -%}
-    <button type="button" class="btn btn--primary btn--solid btn--scroll-top" data-scroll-top-button aria-label="{{ 'general.accessibility.scroll_to_top' | t }}">
-      <hover-button></hover-button>
-      {% render 'icon-select' %}
-    </button>
-  {%- endif -%}
+    {%- if settings.show_scroll_to_top -%}
+      <button
+        type="button"
+        class="btn btn--primary btn--solid btn--scroll-top"
+        data-scroll-top-button
+        aria-label="{{ 'general.accessibility.scroll_to_top' | t }}"
+      >
+        <hover-button></hover-button>
+        {% render 'icon-select' %}
+      </button>
+    {%- endif -%}
 
-  {%- comment -%}
-    In order to use your custom javascript file at assets/custom.js
-    just cut this next line and paste it outside this comment:
-    <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
-  {%- endcomment -%}
+    {%- comment -%}
+      In order to use your custom javascript file at assets/custom.js
+      just cut this next line and paste it outside this comment:
+      <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
+    {%- endcomment -%}
 
-  <!-- Paste marketing code or third party scripts below this comment line ============== -->
+    <!-- Paste marketing code or third party scripts below this comment line ============== -->
 
-  <!-- And above this comment line ================================================== -->
-
-</body>
+    <!-- And above this comment line ================================================== -->
+    {% render 'back-to-top' %}
+  </body>
 </html>
